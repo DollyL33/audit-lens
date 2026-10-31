@@ -1,8 +1,11 @@
 """Look and feel: CSS and small HTML building blocks for the dark Audit Lens style."""
 
 import html
+from pathlib import Path
 
 import streamlit as st
+
+LOGO_PATH = Path(__file__).resolve().parent.parent / "assets" / "logo.svg"
 
 # Colours from spec.md > Look and Feel
 INK = "#eef2f7"
@@ -21,6 +24,8 @@ CSS = f"""
   text-transform: uppercase; color: {MUTED}; border: 1px solid {LINE};
   padding: 3px 10px; border-radius: 999px;
 }}
+.al-brand {{ display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.15rem; }}
+.al-brand svg {{ width: 40px; height: 40px; }}
 .al-hero {{
   font-size: 2.8rem; font-weight: 800; line-height: 1.1; letter-spacing: -.02em;
   margin: .6rem 0 .4rem; color: {INK};
@@ -37,10 +42,21 @@ def inject_css():
     st.markdown(CSS, unsafe_allow_html=True)
 
 
+def logo_svg():
+    return LOGO_PATH.read_text()
+
+
+def brand():
+    """Logo and name, shown at the top of every stage."""
+    st.markdown(
+        f'<div class="al-brand">{logo_svg()}<span>Audit Lens</span></div>',
+        unsafe_allow_html=True,
+    )
+
+
 def hero():
     st.markdown(
         """
-        <span class="al-tag">Audit Lens</span>
         <div class="al-hero">Let your data speak.<span>See it through an auditor's eyes.</span></div>
         <div class="al-sub">Upload a sales or transactions spreadsheet. Audit Lens tidies it up with
         your approval, then runs forensic audit checks and tells you which questions to ask.</div>

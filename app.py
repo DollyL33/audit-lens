@@ -52,6 +52,7 @@ def show_review():
     st.button("Analyse another file", on_click=start_over)
 
 
+ui.brand()
 if state.stage == "upload":
     show_upload()
 elif state.stage == "review":

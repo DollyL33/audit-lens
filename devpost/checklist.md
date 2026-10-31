@@ -9,7 +9,7 @@ Build mode: learn
 
 ## Slices
 
-- [ ] **1. You can upload a file and see it on the dark Audit Lens page**
+- [x] **1. You can upload a file and see it on the dark Audit Lens page**
   Becomes usable: `streamlit run app.py` opens a dark-themed page with the Audit Lens headline and an upload box; uploading the sample CSV (or any CSV/Excel) shows the first rows as a table; a wrong file type shows a friendly message; "Analyse another file" goes back to the start.
   Why now: Proves the whole setup end to end: Python 3.14 compatibility (the spec's first thing to verify), libraries, the dark theme, reading files, and the stage-by-stage page. It also creates the made-up sample data every later slice tests against.
   PRD ref: `prd.md > Upload`, `prd.md > Screens and Layout`, `prd.md > Look and Feel`
@@ -81,3 +81,4 @@ Reflection:
 Activity mode:
 
 ## Revisions
+- Added an Audit Lens logo (magnifying glass with a mini Benford chart and one orange spike) shown at the top of every stage — the learner asked for a logo after slice 1.
