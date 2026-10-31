@@ -2,6 +2,8 @@
 
 **Let your data speak. See it through an auditor's eyes.**
 
+**Try it live:** https://audit-lens.streamlit.app (download [`sample_data/messy_sales.csv`](sample_data/messy_sales.csv) to test it)
+
 Audit Lens is a Streamlit app for internal and forensic auditors. Upload a messy CSV or Excel file, approve the suggested clean-up, and get an audit dashboard:
 
 - **Suggested fixes with tick boxes.** Mixed date formats, `$1,250`-style amounts, messy names and blanks are spotted. You choose which fixes to apply and see a before/after preview. Duplicates are never deleted, because they're evidence.

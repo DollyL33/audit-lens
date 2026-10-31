@@ -56,7 +56,8 @@ PRD ref: `prd.md > The Core Journey`.
   2. At https://share.streamlit.io, sign in with GitHub → *Create app* → pick the repo, branch `main`, main file `app.py` → *Advanced settings*: Python 3.12; Secrets: `NVIDIA_API_KEY = "..."`.
   3. Deploy → get a `*.streamlit.app` link.
   Docs: https://docs.streamlit.io/deploy/streamlit-community-cloud · secrets: https://docs.streamlit.io/deploy/streamlit-community-cloud/deploy-your-app/secrets-management
-- **Submission:** a short demo video (record the local or deployed app: upload sample → untick one fix → approve → dashboard with the Benford's red flag and duplicates) + the public GitHub repo. The deployed link is a bonus, not a replacement.
+- **Published:** public repository https://github.com/DollyL33/audit-lens · live app https://audit-lens.streamlit.app (Streamlit Community Cloud, Python 3.12, no NVIDIA secret set, so built-in rules suggest fixes). The Devpost deadline passed; the learner is showcasing it as a side project on LinkedIn instead of submitting.
+- **Submission (not used):** a short demo video (record the local or deployed app: upload sample → untick one fix → approve → dashboard with the Benford's red flag and duplicates) + the public GitHub repo. The deployed link is a bonus, not a replacement.
 
 ## Look and Feel
 Implements `prd.md > Look and Feel`.
