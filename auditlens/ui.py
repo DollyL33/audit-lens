@@ -34,6 +34,12 @@ CSS = f"""
 .al-sub {{ color: {MUTED}; font-size: 1.1rem; max-width: 640px; margin-bottom: 1.5rem; }}
 .al-section {{ font-size: 1.3rem; font-weight: 700; margin: 1.6rem 0 .4rem; }}
 .al-note {{ color: {MUTED}; font-size: .9rem; }}
+.al-kpi {{
+  background: {SURFACE}; border: 1px solid {LINE}; border-radius: 14px; padding: 14px 16px; height: 100%;
+}}
+.al-kpi-label {{ font-size: .7rem; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; color: {MUTED}; }}
+.al-kpi-value {{ font-size: 1.7rem; font-weight: 800; color: {INK}; margin-top: 2px; }}
+.al-kpi-change {{ font-size: .85rem; font-weight: 600; }}
 .al-finding-label {{ font-size: .75rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }}
 .al-finding-headline {{ font-size: 1.5rem; font-weight: 800; margin: .2rem 0 .3rem; color: {INK}; }}
 .al-question {{
@@ -73,6 +79,36 @@ def hero():
 
 def section(title):
     st.markdown(f'<div class="al-section">{html.escape(title)}</div>', unsafe_allow_html=True)
+
+
+def kpi_cards(cards):
+    """A row of number cards. Each card: (label, value, change text or None, up: True/False/None for neutral)."""
+    for column, (label, value, change, up) in zip(st.columns(len(cards)), cards):
+        change_html = ""
+        if change:
+            colour, arrow = {True: (GREEN, "▲ "), False: (ORANGE, "▼ "), None: (MUTED, "")}[up]
+            change_html = f'<div class="al-kpi-change" style="color:{colour}">{arrow}{html.escape(change)}</div>'
+        column.markdown(
+            f"""<div class="al-kpi"><div class="al-kpi-label">{html.escape(label)}</div>
+            <div class="al-kpi-value">{html.escape(value)}</div>{change_html}</div>""",
+            unsafe_allow_html=True,
+        )
+
+
+def monthly_chart(monthly):
+    import plotly.graph_objects as go
+
+    fig = go.Figure(go.Bar(
+        x=monthly["month"], y=monthly["total"], marker_color=BAR,
+        hovertemplate="%{x|%b %Y}<br>Total: %{y:,.0f}<extra></extra>",
+    ))
+    fig.update_traces(marker_color=[BAR] * (len(monthly) - 1) + [GREEN])
+    fig.update_layout(
+        template="plotly_dark", paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
+        height=280, margin=dict(l=10, r=10, t=10, b=10), bargap=0.3,
+        xaxis=dict(tickformat="%b %Y", dtick="M1"), yaxis=dict(title="Total", gridcolor=LINE),
+    )
+    st.plotly_chart(fig, width="stretch", config={"displayModeBar": False})
 
 
 def finding_header(label, flagged, headline, sentence):

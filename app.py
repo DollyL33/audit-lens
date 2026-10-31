@@ -6,7 +6,7 @@ Run with:  streamlit run app.py
 import pandas as pd
 import streamlit as st
 
-from auditlens import benford, detect, duplicates, questions, ui
+from auditlens import benford, detect, duplicates, metrics, questions, ui
 from auditlens import fixes as fixes_mod
 from auditlens.loader import LoadError, load_file
 
@@ -110,10 +110,43 @@ def show_dashboard():
              if cols[key]]
     ui.note(f"{len(df):,} rows · " + (" · ".join(found) if found else "No amount, date or name columns recognised"))
 
+    if not found:
+        st.info("We couldn't find amounts, dates or names to analyse in this file. "
+                "Below is the one check that works on any table: looking for repeated rows.")
+    else:
+        show_overview(df, cols)
+
     ui.section("Audit findings")
     show_benford(df, cols)
     show_duplicates(df, cols)
     st.button("Analyse another file", on_click=start_over)
+
+
+def show_overview(df, cols):
+    numbers = metrics.kpis(df, cols)
+    if numbers is None:
+        ui.note("Number cards, the monthly comparison and Benford's Law need a column of amounts, "
+                "and this file doesn't seem to have one.")
+        return
+
+    change = numbers["change"]
+    ui.kpi_cards([
+        ("Total amount", f"{numbers['total']:,.0f}", None, True),
+        ("Transactions", f"{numbers['count']:,}", None, True),
+        ("Biggest transaction", f"{numbers['biggest']:,.0f}" if numbers["biggest"] is not None else "–", None, True),
+        ("vs last month", f"{abs(change['pct']):.1f}%" if change else "–",
+         change["label"] if change else "Needs dates", (change["pct"] >= 0) if change else None),
+    ])
+
+    ui.section("Monthly comparison")
+    monthly = metrics.monthly_totals(df, cols)
+    if monthly is None:
+        ui.note("No date column found, so the monthly comparison isn't available.")
+    else:
+        ui.monthly_chart(monthly)
+
+    ui.section("Biggest transactions")
+    st.dataframe(fixes_mod.to_display(metrics.top_transactions(df, cols)), width="stretch", hide_index=True)
 
 
 def show_benford(df, cols):

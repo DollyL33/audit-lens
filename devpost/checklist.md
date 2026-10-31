@@ -39,7 +39,7 @@ Build mode: learn
   Learner check: Upload the messy sample, approve the fixes, and read the Benford's and duplicates cards as an auditor would. Do the verdicts and questions make sense to you? Then try `clean_natural.csv` and see it called normal.
   Commit: `Add Benford's Law and same-same-same duplicate findings`
 
-- [ ] **4. You see the number cards, monthly comparison, and biggest transactions**
+- [x] **4. You see the number cards, monthly comparison, and biggest transactions**
   Becomes usable: Above the findings, the dashboard shows 4 number cards (total, count, biggest, change vs. last month), a monthly comparison chart, and the top 5 transactions. Files missing a date or amount column show "not available" notes instead of errors.
   Why now: Completes the dashboard around the kernel and handles the "show what it can" states.
   PRD ref: `prd.md > Dashboard: Number Cards and Comparison`, `prd.md > States and Boundaries`
