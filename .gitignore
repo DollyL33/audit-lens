@@ -13,3 +13,6 @@ __pycache__/
 .claude/
 agent/
 skills-lock.json
+
+# LinkedIn post drafts and screenshots
+linkedin/
