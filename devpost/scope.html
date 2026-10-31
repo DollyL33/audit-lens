@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audit Lens Scope</title>
+<style>
+  :root {
+    --bg: #f6f5f1; --surface: #ffffff; --ink: #1d2327; --muted: #5d6870;
+    --line: #dcdcd4; --accent: #1f6f5c; --accent-soft: #e2f0eb;
+    --warn: #b4532a; --warn-soft: #f8e6dc; --bar: #9fb4bd;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15191b; --surface: #1e2427; --ink: #e8ecee; --muted: #9aa6ad;
+      --line: #333c41; --accent: #5cc3a6; --accent-soft: #1d3a33;
+      --warn: #f0905f; --warn-soft: #3e2a20; --bar: #55707b;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 920px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 2rem; margin: 0 0 4px; }
+  h2 { font-size: 1.25rem; margin: 40px 0 12px; }
+  .tag { display: inline-block; font-size: .75rem; font-weight: 600; letter-spacing: .04em;
+    text-transform: uppercase; color: var(--accent); background: var(--accent-soft);
+    padding: 2px 8px; border-radius: 999px; }
+  .lede { color: var(--muted); font-size: 1.1rem; margin: 8px 0 0; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+  .kernel { border-left: 4px solid var(--accent); }
+  .kernel strong { color: var(--accent); }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 640px) { .grid2 { grid-template-columns: 1fr; } }
+  .muted { color: var(--muted); }
+  svg text { fill: var(--ink); font-family: inherit; }
+
+  /* stepper */
+  .steps { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+  .steps button { flex: 1 1 140px; border: 1px solid var(--line); background: var(--surface);
+    color: var(--ink); border-radius: 8px; padding: 10px; font: inherit; font-size: .9rem; cursor: pointer; text-align: left; }
+  .steps button[aria-selected="true"] { border-color: var(--accent); background: var(--accent-soft); }
+  .steps b { display: block; font-size: .75rem; color: var(--muted); }
+  .screen { display: none; }
+  .screen.on { display: block; }
+  .window { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--surface); }
+  .chrome { background: var(--bg); border-bottom: 1px solid var(--line); padding: 8px 12px; font-size: .8rem; color: var(--muted); }
+  .chrome i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--line); margin-right: 4px; }
+  .win-body { padding: 20px; }
+  .drop { border: 2px dashed var(--line); border-radius: 10px; padding: 36px; text-align: center; color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+  th, td { border-bottom: 1px solid var(--line); padding: 6px 8px; text-align: left; }
+  th { color: var(--muted); font-weight: 600; }
+  .bad { background: var(--warn-soft); color: var(--warn); }
+  .fix { list-style: none; padding: 0; margin: 0 0 16px; }
+  .fix li { padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; margin-bottom: 6px; }
+  .fix li::before { content: "☑ "; color: var(--accent); }
+  .btn { display: inline-block; background: var(--accent); color: var(--surface); border-radius: 8px; padding: 8px 14px; font-weight: 600; font-size: .9rem; }
+  .kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 16px; }
+  .kpi { border: 1px solid var(--line); border-radius: 8px; padding: 10px; }
+  .kpi span { display: block; font-size: .75rem; color: var(--muted); }
+  .kpi b { font-size: 1.3rem; }
+  .finding { border-left: 3px solid var(--warn); background: var(--warn-soft); padding: 10px 12px; border-radius: 6px; margin-top: 12px; font-size: .92rem; }
+  .note { font-size: .8rem; color: var(--muted); margin-top: 8px; }
+
+  details { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; margin-bottom: 10px; }
+  summary { cursor: pointer; padding: 14px 16px; font-weight: 600; }
+  details > div { padding: 0 16px 14px; }
+  details ul { margin: 0; padding-left: 20px; }
+  .now summary { color: var(--accent); }
+  .cut summary { color: var(--warn); }
+</style>
+</head>
+<body>
+<main>
+  <span class="tag">Scope · approved</span>
+  <h1>Audit Lens <span class="muted" style="font-size:1rem;font-weight:400">(working name)</span></h1>
+  <p class="lede">Upload a messy spreadsheet, have it cleaned with your approval, and get a dashboard that looks at your data the way an internal or forensic auditor would.</p>
+
+  <h2>The unique kernel</h2>
+  <div class="card kernel">
+    <strong>An internal and forensic auditor's eye on your data.</strong>
+    Most "upload a file, get charts" tools stop at charts. This one also runs audit tests, starting with
+    <strong>Benford's Law</strong> and <strong>duplicate detection</strong>, and explains in plain English where the gaps and red flags are, so the data speaks for itself.
+  </div>
+
+  <h2>How it fits together</h2>
+  <div class="card">
+    <svg viewBox="0 0 860 190" width="100%" role="img" aria-label="Flow: small business owner uploads a file, the app proposes cleaning, user reviews and approves, dashboard shows charts and audit findings">
+      <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="var(--muted)"/></marker></defs>
+      <g font-size="13">
+        <rect x="10" y="60" width="140" height="70" rx="10" fill="var(--accent-soft)" stroke="var(--accent)"/>
+        <text x="80" y="90" text-anchor="middle" font-weight="600">Small business</text>
+        <text x="80" y="108" text-anchor="middle">owner + messy file</text>
+
+        <rect x="190" y="60" width="140" height="70" rx="10" fill="var(--surface)" stroke="var(--line)"/>
+        <text x="260" y="90" text-anchor="middle" font-weight="600">1 · Upload</text>
+        <text x="260" y="108" text-anchor="middle">CSV / Excel</text>
+
+        <rect x="370" y="60" width="140" height="70" rx="10" fill="var(--surface)" stroke="var(--line)"/>
+        <text x="440" y="90" text-anchor="middle" font-weight="600">2 · App proposes</text>
+        <text x="440" y="108" text-anchor="middle">cleaning steps</text>
+
+        <rect x="550" y="60" width="140" height="70" rx="10" fill="var(--surface)" stroke="var(--line)"/>
+        <text x="620" y="90" text-anchor="middle" font-weight="600">3 · You review</text>
+        <text x="620" y="108" text-anchor="middle">before / after</text>
+
+        <rect x="730" y="40" width="120" height="110" rx="10" fill="var(--warn-soft)" stroke="var(--warn)"/>
+        <text x="790" y="72" text-anchor="middle" font-weight="600">4 · Dashboard</text>
+        <text x="790" y="94" text-anchor="middle">charts</text>
+        <text x="790" y="112" text-anchor="middle">Benford's Law</text>
+        <text x="790" y="130" text-anchor="middle">duplicates</text>
+
+        <path d="M150 95H186M330 95H366M510 95H546M690 95H726" stroke="var(--muted)" stroke-width="1.5" marker-end="url(#ar)" fill="none"/>
+        <text x="790" y="175" text-anchor="middle" fill="var(--warn)" font-size="12">← the auditor's eye (kernel)</text>
+      </g>
+    </svg>
+  </div>
+
+  <h2>Preview: the one-minute demo</h2>
+  <p class="muted" style="margin-top:-4px">A rough sketch to picture the flow. The exact screens get designed in the PRD. All numbers are made up.</p>
+  <div class="steps" role="tablist">
+    <button role="tab" aria-selected="true" data-s="0"><b>Step 1</b>Upload</button>
+    <button role="tab" aria-selected="false" data-s="1"><b>Step 2</b>Spot the mess</button>
+    <button role="tab" aria-selected="false" data-s="2"><b>Step 3</b>Review & approve</button>
+    <button role="tab" aria-selected="false" data-s="3"><b>Step 4</b>Audit dashboard</button>
+  </div>
+
+  <div class="window">
+    <div class="chrome"><i></i><i></i><i></i> localhost:8501 · Audit Lens</div>
+    <div class="win-body">
+      <section class="screen on">
+        <h3 style="margin-top:0">Let your data speak for itself</h3>
+        <div class="drop">📄 Drag and drop a CSV or Excel file here<br><small>e.g. sales_returns_2025.xlsx</small></div>
+      </section>
+
+      <section class="screen">
+        <h3 style="margin-top:0">Here's what looks messy</h3>
+        <table>
+          <tr><th>Invoice</th><th>Date</th><th>Customer</th><th>Amount</th></tr>
+          <tr><td>INV-1042</td><td class="bad">03/14/25</td><td>Acme Ltd</td><td class="bad">$1,250</td></tr>
+          <tr><td>INV-1043</td><td>2025-03-15</td><td class="bad"> acme ltd </td><td>980</td></tr>
+          <tr><td>INV-1043</td><td>2025-03-15</td><td>Acme Ltd</td><td>980</td></tr>
+          <tr><td>INV-1044</td><td class="bad">(blank)</td><td>Birch Co</td><td>1,120</td></tr>
+        </table>
+        <p class="note">Highlighted cells: mixed date formats, stray spaces/capitals, text in number columns, blanks.</p>
+      </section>
+
+      <section class="screen">
+        <h3 style="margin-top:0">Suggested fixes. Approve or untick.</h3>
+        <ul class="fix">
+          <li>Convert all dates to one format (YYYY-MM-DD)</li>
+          <li>Remove "$" and "," so Amount is a number</li>
+          <li>Trim spaces and standardize customer names</li>
+          <li>Flag 1 row with a missing date</li>
+        </ul>
+        <span class="btn">Approve & build dashboard</span>
+        <p class="note">Duplicates are kept here on purpose. They're an audit finding, not something to silently delete.</p>
+      </section>
+
+      <section class="screen">
+        <div class="kpis">
+          <div class="kpi"><span>Total sales</span><b>$482k</b></div>
+          <div class="kpi"><span>Returns</span><b>6.8%</b></div>
+          <div class="kpi"><span>vs. last month</span><b>−4.2%</b></div>
+        </div>
+        <strong>Benford's Law: first-digit test</strong>
+        <svg viewBox="0 0 520 200" width="100%" role="img" aria-label="Bar chart of actual first-digit frequencies versus the expected Benford curve; digit 5 is noticeably above expected">
+          <g font-size="11">
+            <line x1="40" y1="170" x2="510" y2="170" stroke="var(--line)"/>
+            <g id="bars"></g>
+            <polyline id="curve" fill="none" stroke="var(--accent)" stroke-width="2"/>
+          </g>
+        </svg>
+        <p class="note"><span style="color:var(--bar)">■</span> actual &nbsp; <span style="color:var(--accent)">—</span> expected (Benford) &nbsp; <span style="color:var(--warn)">■</span> unusual</p>
+        <div class="finding"><b>Red flag:</b> amounts starting with "5" appear about twice as often as expected. In an audit, that can mean invoices kept just under an approval limit (e.g. $5,000). Worth reviewing.</div>
+        <div class="finding"><b>Duplicates:</b> 3 invoices appear twice with the same customer, date and amount (e.g. INV-1043, $980). Possible double payment.</div>
+      </section>
+    </div>
+  </div>
+
+  <h2>Who it's for &amp; why it matters</h2>
+  <div class="grid2">
+    <div class="card"><b>Who</b><p class="muted" style="margin-bottom:0">A small business owner (or whoever handles their numbers) with sales and returns data in Excel or CSV, who wants to find where they're losing margin or taking on risk without an audit team.</p></div>
+    <div class="card"><b>Why you</b><p class="muted" style="margin-bottom:0">Drawn from your internal audit work: finding gaps that "help company improve their margins and also help them be compliant." Plus a chance to learn Python, Streamlit, and pandas, and to understand the code.</p></div>
+  </div>
+
+  <h2>What's in, what waits, what's cut</h2>
+  <details class="now" open><summary>Now: the proof of concept</summary><div><ul>
+    <li>Python + Streamlit app, run locally</li>
+    <li>CSV and Excel uploads, one file at a time</li>
+    <li>Cleaning steps proposed behind the scenes (AI under the hood), applied by the app, with your review and approval</li>
+    <li>No mention of "AI" anywhere in the app: it feels like an auditor's tool</li>
+    <li>Dashboard with a few basic charts</li>
+    <li>Two audit checks: Benford's Law and duplicates, each with a plain-English explanation</li>
+  </ul></div></details>
+  <details><summary>Later: worth doing, not now</summary><div><ul>
+    <li>More audit tests: outliers, round numbers, weekend/after-hours entries, invoice-number gaps</li>
+    <li>Compliance rule checks</li>
+    <li>Downloadable audit report</li>
+    <li>Process-efficiency insights</li>
+  </ul></div></details>
+  <details class="cut"><summary>Cut, with reasons</summary><div><ul>
+    <li><b>"Any file" types (PDF, JSON…):</b> CSV/Excel covers the real use case; other formats add work without proving the kernel.</li>
+    <li><b>Accounts and saved history:</b> not needed for one upload → one review → one dashboard.</li>
+    <li><b>Deployment:</b> optional for the hackathon; running locally is enough for the demo.</li>
+  </ul></div></details>
+</main>
+<script>
+  const tabs = document.querySelectorAll('.steps button');
+  const screens = document.querySelectorAll('.screen');
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x => x.setAttribute('aria-selected', x === t));
+    screens.forEach((s, i) => s.classList.toggle('on', i == t.dataset.s));
+  }));
+  // Illustrative Benford chart (made-up "actual" data)
+  const expected = [30.1,17.6,12.5,9.7,7.9,6.7,5.8,5.1,4.6];
+  const actual   = [28.4,16.9,12.1,9.0,15.2,5.9,4.8,4.3,3.4];
+  const scale = 140 / 32, bw = 36, gap = 16;
+  let bars = '', pts = [];
+  actual.forEach((v, i) => {
+    const x = 50 + i * (bw + gap), h = v * scale;
+    const color = Math.abs(v - expected[i]) > 4 ? 'var(--warn)' : 'var(--bar)';
+    bars += `<rect x="${x}" y="${170-h}" width="${bw}" height="${h}" rx="3" fill="${color}"/>` +
+            `<text x="${x+bw/2}" y="186" text-anchor="middle">${i+1}</text>`;
+    pts.push(`${x+bw/2},${170 - expected[i]*scale}`);
+  });
+  document.getElementById('bars').innerHTML = bars;
+  document.getElementById('curve').setAttribute('points', pts.join(' '));
+</script>
+</body>
+</html>

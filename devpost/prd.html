@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audit Lens PRD</title>
+<style>
+  :root {
+    --bg: #0b1220; --bg2: #111a2c; --surface: #152036; --ink: #eef2f7; --muted: #93a0b4;
+    --line: #26324a; --accent: #4ade80; --accent-soft: #143a2a; --blue: #4f7cff;
+    --warn: #f59e5b; --warn-soft: #3a2616; --bar: #4a5b7a;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; color: var(--ink);
+    background: radial-gradient(1200px 600px at 80% -10%, #1b2a55 0%, transparent 60%), var(--bg);
+    font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif; }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 16px 72px; }
+  h1 { font-size: 2.2rem; margin: 8px 0 0; letter-spacing: -.02em; }
+  h1 span { color: var(--muted); display: block; }
+  h2 { font-size: 1.3rem; margin: 44px 0 12px; }
+  .tag { display: inline-block; font-size: .75rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
+    color: var(--muted); border: 1px solid var(--line); padding: 3px 10px; border-radius: 999px; }
+  .muted { color: var(--muted); }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+  .callout { border-left: 3px solid var(--accent); background: var(--bg2); padding: 12px 14px; border-radius: 8px; margin: 12px 0; }
+  svg text { fill: var(--ink); font-family: inherit; }
+
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 12px; }
+  @media (max-width: 640px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+  .steps button { border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 10px;
+    padding: 10px; font: inherit; font-size: .9rem; cursor: pointer; text-align: left; }
+  .steps button[aria-selected="true"] { border-color: var(--accent); background: var(--accent-soft); }
+  .steps b { display: block; font-size: .72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+  .screen { display: none; } .screen.on { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; }
+  @media (max-width: 760px) { .screen.on { grid-template-columns: 1fr; } }
+
+  .window { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--bg); }
+  .chrome { background: var(--bg2); border-bottom: 1px solid var(--line); padding: 8px 12px; font-size: .78rem; color: var(--muted); }
+  .chrome i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--line); margin-right: 4px; }
+  .win-body { padding: 18px; }
+  .hero { font-size: 1.6rem; font-weight: 800; line-height: 1.15; margin: 6px 0 4px; letter-spacing: -.02em; }
+  .hero span { color: var(--muted); display: block; }
+  .drop { border: 2px dashed var(--line); border-radius: 12px; padding: 28px; text-align: center; color: var(--muted); margin-top: 14px; }
+  table { width: 100%; border-collapse: collapse; font-size: .8rem; }
+  th, td { border-bottom: 1px solid var(--line); padding: 5px 6px; text-align: left; }
+  th { color: var(--muted); font-weight: 600; }
+  .bad { background: var(--warn-soft); color: var(--warn); }
+  .good { background: var(--accent-soft); color: var(--accent); }
+  .fix { list-style: none; padding: 0; margin: 12px 0; }
+  .fix label { display: flex; gap: 8px; align-items: center; padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px; margin-bottom: 6px; font-size: .88rem; cursor: pointer; }
+  .fix input { accent-color: var(--accent); }
+  .btn { display: inline-block; background: var(--ink); color: var(--bg); border-radius: 8px; padding: 8px 14px; font-weight: 700; font-size: .88rem; }
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 12px; }
+  @media (max-width: 520px) { .kpis { grid-template-columns: repeat(2, 1fr); } }
+  .kpi { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 9px; }
+  .kpi span { display: block; font-size: .64rem; color: var(--muted); letter-spacing: .05em; text-transform: uppercase; }
+  .kpi b { font-size: 1.1rem; }
+  .down { color: var(--warn); font-size: .8rem; }
+  .finding { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px; margin-top: 10px; }
+  .finding .lbl { font-size: .68rem; letter-spacing: .06em; text-transform: uppercase; color: var(--warn); font-weight: 700; }
+  .finding .q { border-top: 1px solid var(--line); margin-top: 8px; padding-top: 8px; font-size: .88rem; }
+  .finding .q::before { content: "Question to ask → "; color: var(--accent); font-weight: 600; }
+  .note { font-size: .78rem; color: var(--muted); margin-top: 6px; }
+  .side h3 { margin: 0 0 6px; font-size: 1rem; }
+  .side ul { margin: 0 0 12px; padding-left: 18px; font-size: .9rem; }
+  .side li { margin-bottom: 4px; }
+  .crit li { list-style: none; margin-left: -18px; }
+  .crit li::before { content: "☐ "; color: var(--accent); }
+
+  details { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; margin-bottom: 8px; }
+  summary { cursor: pointer; padding: 12px 16px; font-weight: 600; }
+  details > div { padding: 0 16px 14px; color: var(--muted); }
+  details ul { margin: 0; padding-left: 20px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 640px) { .grid2 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <span class="tag">PRD · approved</span>
+  <h1>Audit Lens<span>Product requirements</span></h1>
+  <p class="muted">Upload a messy spreadsheet, approve the suggested clean-up, and get a dashboard that looks at your data the way an auditor would. Built for anyone who has data and wants insights from it, without doing the reporting by hand.</p>
+
+  <div class="callout"><b>Scope → PRD:</b> scope said "the app shows a dashboard with audit findings." Now we know exactly what that means: 4 number cards, a monthly comparison, the top 5 transactions, Benford's and duplicates, each finding ending with a <b>question to ask</b>.</div>
+
+  <h2>The core journey</h2>
+  <div class="card">
+    <svg viewBox="0 0 900 150" width="100%" role="img" aria-label="Journey: Arrive, Upload, Spot the mess, Review with tick boxes, Dashboard, then start over with a new file">
+      <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#93a0b4"/></marker></defs>
+      <g font-size="13">
+        <g><rect x="5" y="40" width="130" height="60" rx="10" fill="#152036" stroke="#26324a"/><text x="70" y="66" text-anchor="middle" font-weight="700">1 Arrive</text><text x="70" y="84" text-anchor="middle" fill="#93a0b4">headline + upload</text></g>
+        <g><rect x="180" y="40" width="130" height="60" rx="10" fill="#152036" stroke="#26324a"/><text x="245" y="66" text-anchor="middle" font-weight="700">2 Upload</text><text x="245" y="84" text-anchor="middle" fill="#93a0b4">CSV / Excel</text></g>
+        <g><rect x="355" y="40" width="140" height="60" rx="10" fill="#152036" stroke="#26324a"/><text x="425" y="66" text-anchor="middle" font-weight="700">3 Spot the mess</text><text x="425" y="84" text-anchor="middle" fill="#93a0b4">highlighted cells</text></g>
+        <g><rect x="540" y="40" width="140" height="60" rx="10" fill="#152036" stroke="#26324a"/><text x="610" y="66" text-anchor="middle" font-weight="700">4 Review</text><text x="610" y="84" text-anchor="middle" fill="#93a0b4">tick boxes · before/after</text></g>
+        <g><rect x="725" y="30" width="170" height="80" rx="10" fill="#3a2616" stroke="#f59e5b"/><text x="810" y="58" text-anchor="middle" font-weight="700">5 Dashboard</text><text x="810" y="76" text-anchor="middle" fill="#93a0b4">cards · comparison</text><text x="810" y="94" text-anchor="middle" fill="#93a0b4">Benford · duplicates</text></g>
+        <path d="M135 70H176M310 70H351M495 70H536M680 70H721" stroke="#93a0b4" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+        <path d="M810 112 C810 140, 245 140, 245 104" stroke="#93a0b4" stroke-dasharray="4 4" fill="none" marker-end="url(#ar)"/>
+        <text x="530" y="146" text-anchor="middle" fill="#93a0b4" font-size="12">6 · upload a new file to start over (nothing is saved)</text>
+      </g>
+    </svg>
+  </div>
+
+  <h2>Screen by screen</h2>
+  <p class="muted" style="margin-top:-6px">Click each stage. On the left is a rough preview with made-up numbers; on the right are the behaviors and how we'll check them.</p>
+  <div class="steps" role="tablist">
+    <button role="tab" aria-selected="true" data-s="0"><b>Stage 1</b>Upload</button>
+    <button role="tab" aria-selected="false" data-s="1"><b>Stage 2</b>Spot the mess</button>
+    <button role="tab" aria-selected="false" data-s="2"><b>Stage 3</b>Review & approve</button>
+    <button role="tab" aria-selected="false" data-s="3"><b>Stage 4</b>Dashboard</button>
+  </div>
+
+  <section class="screen on">
+    <div class="window"><div class="chrome"><i></i><i></i><i></i> Audit Lens</div><div class="win-body">
+      <span class="tag">Audit Lens</span>
+      <div class="hero">Let your data speak.<span>Audit-grade insights in a minute.</span></div>
+      <p class="note">Headline wording is a placeholder; you'll pick the real words during the build.</p>
+      <div class="drop">📄 Drop a CSV or Excel file<br><small>.csv · .xlsx · .xls</small></div>
+    </div></div>
+    <div class="side">
+      <h3>Behaviors</h3>
+      <ul><li>Accepts one CSV or Excel file</li><li>Bold headline + grey second line, no "AI" wording</li></ul>
+      <h3>How we'll know</h3>
+      <ul class="crit"><li>A valid file moves on to clean-up</li><li>Another file type shows a friendly "CSV and Excel only" message</li></ul>
+    </div>
+  </section>
+
+  <section class="screen">
+    <div class="window"><div class="chrome"><i></i><i></i><i></i> Audit Lens · clean-up</div><div class="win-body">
+      <b>Here's what looks messy</b>
+      <table style="margin-top:8px">
+        <tr><th>Invoice</th><th>Date</th><th>Customer</th><th>Amount</th></tr>
+        <tr><td>INV-1042</td><td class="bad">03/14/25</td><td>Acme Ltd</td><td class="bad">$1,250</td></tr>
+        <tr><td>INV-1043</td><td>2025-03-15</td><td class="bad"> acme ltd </td><td>980</td></tr>
+        <tr><td>INV-1043</td><td>2025-03-15</td><td>Acme Ltd</td><td>980</td></tr>
+        <tr><td>INV-1044</td><td class="bad">(blank)</td><td>Birch Co</td><td>1,120</td></tr>
+      </table>
+      <p class="note">Highlighted = cells a suggested fix would change.</p>
+    </div></div>
+    <div class="side">
+      <h3>Behaviors</h3>
+      <ul><li>Lists plain-English fixes: dates, number formats, spaces/capitals, missing values</li><li>Suggestions made behind the scenes, shown as the app's own</li><li><b>Duplicates are never removed</b>; they're evidence for the findings</li></ul>
+      <h3>How we'll know</h3>
+      <ul class="crit"><li>A messy sample gives at least 3 relevant fixes</li><li>Problem cells are visibly highlighted</li><li>No fix deletes duplicate rows</li></ul>
+    </div>
+  </section>
+
+  <section class="screen">
+    <div class="window"><div class="chrome"><i></i><i></i><i></i> Audit Lens · review</div><div class="win-body">
+      <b>Suggested fixes</b>
+      <div class="fix">
+        <label><input type="checkbox" checked data-f="date"> Make all dates one format (YYYY-MM-DD)</label>
+        <label><input type="checkbox" checked data-f="amt"> Turn "$1,250" into the number 1250</label>
+        <label><input type="checkbox" checked data-f="name"> Trim spaces and fix capitals in names</label>
+        <label><input type="checkbox" checked> Flag 1 row with a missing date</label>
+      </div>
+      <table>
+        <tr><th></th><th>Date</th><th>Customer</th><th>Amount</th></tr>
+        <tr><td class="muted">Before</td><td>03/14/25</td><td> acme ltd </td><td>$1,250</td></tr>
+        <tr><td class="muted">After</td><td id="a-date" class="good">2025-03-14</td><td id="a-name" class="good">Acme Ltd</td><td id="a-amt" class="good">1250</td></tr>
+      </table>
+      <p class="note">Try unticking a fix: the "after" row updates.</p>
+      <div style="margin-top:10px"><span class="btn">Approve & build dashboard</span></div>
+    </div></div>
+    <div class="side">
+      <h3>Behaviors</h3>
+      <ul><li>Every fix has its own tick box, ticked by default</li><li>Before/after preview follows the tick boxes</li><li>One button applies only the ticked fixes</li><li>App picks the amount and date columns itself</li></ul>
+      <h3>How we'll know</h3>
+      <ul class="crit"><li>An unticked fix doesn't appear in the after view or the dashboard</li><li>A clean file says "Your data looks clean" and lets you continue</li><li>Correct amount/date columns picked for the sample, with no input</li></ul>
+    </div>
+  </section>
+
+  <section class="screen">
+    <div class="window"><div class="chrome"><i></i><i></i><i></i> Audit Lens · dashboard</div><div class="win-body">
+      <div class="kpis">
+        <div class="kpi"><span>Total amount</span><b>$482k</b></div>
+        <div class="kpi"><span>Transactions</span><b>1,204</b></div>
+        <div class="kpi"><span>Biggest</span><b>$9,870</b></div>
+        <div class="kpi"><span>vs last month</span><b class="down">▼ 4.2%</b></div>
+      </div>
+      <div class="finding">
+        <div class="lbl">Benford's Law · unusual pattern</div>
+        <svg viewBox="0 0 460 150" width="100%" role="img" aria-label="Actual first-digit frequencies versus expected Benford curve; digit 4 is far above expected">
+          <g font-size="10"><line x1="20" y1="128" x2="455" y2="128" stroke="#26324a"/><g id="bars"></g><polyline id="curve" fill="none" stroke="#4ade80" stroke-width="2"/></g>
+        </svg>
+        <div>Amounts starting with <b>4</b> appear about twice as often as expected.</div>
+        <div class="q">Are payments being kept just under a $5,000 approval limit?</div>
+      </div>
+      <div class="finding">
+        <div class="lbl">Duplicates · 3 found</div>
+        <div>INV-1043 · Acme Ltd · 2025-03-15 · $980 <span class="muted">(×2)</span></div>
+        <div class="q">Were any of these paid twice?</div>
+      </div>
+      <p class="note">Also on the real dashboard: monthly comparison chart and the top 5 biggest transactions.</p>
+    </div></div>
+    <div class="side">
+      <h3>Behaviors</h3>
+      <ul><li>4 number cards: total, count, biggest, change vs last month</li><li>Monthly comparison chart</li><li>Top 5 biggest transactions</li><li>Benford's: actual vs expected, odd digits highlighted, verdict</li><li>Duplicates listed with counts, caught even if they differed only by messy spacing</li><li>Every finding ends with a <b>question to ask</b></li></ul>
+      <h3>How we'll know</h3>
+      <ul class="crit"><li>Card values match totals worked out by hand</li><li>A planted digit spike gets flagged; natural data says "looks normal"</li><li>All planted duplicates are listed; none says "No duplicates found"</li></ul>
+    </div>
+  </section>
+
+  <h2>What if…</h2>
+  <details><summary>Wrong file type or unreadable file</summary><div>Friendly message; stays on the upload stage.</div></details>
+  <details><summary>No date column</summary><div>Everything else shows. The monthly comparison and month-change card are replaced by: "No date column found, so the monthly comparison isn't available."</div></details>
+  <details><summary>No amount column</summary><div>Shows what it can (e.g. duplicates) and explains that number cards, comparison and Benford's need amounts. If nothing can be analysed, it says so plainly.</div></details>
+  <details><summary>Too few amounts for Benford's</summary><div>Shows a note instead of a misleading verdict. <i>Assumption: under ~50 amounts is too few; we'll confirm in the spec.</i></div></details>
+  <details><summary>Nothing to clean</summary><div>"Your data looks clean," then continue.</div></details>
+  <details><summary>Closing the app</summary><div>Nothing is saved. A new upload starts fresh.</div></details>
+
+  <h2>Look and feel</h2>
+  <div class="grid2">
+    <div class="card"><b>Borrowing from PandasAI</b><ul class="muted"><li>Dark navy background</li><li>Big bold headline, grey second line</li><li>Rounded number cards with small uppercase labels</li><li>"Insight"-style finding cards with a coloured accent</li></ul></div>
+    <div class="card"><b>Avoiding</b><ul class="muted"><li>Any "AI" wording on screen</li><li>Chat boxes / "ask a question" inputs</li><li>Robot or assistant imagery</li></ul></div>
+  </div>
+
+  <h2>Building now vs. later</h2>
+  <details open><summary style="color:var(--accent)">Building now</summary><div><ul>
+    <li>One page: upload → spot the mess → review with tick boxes and before/after → dashboard</li>
+    <li>CSV and Excel, one at a time; automatic column detection</li>
+    <li>Number cards, monthly comparison, top 5 transactions</li>
+    <li>Benford's and Duplicates findings with a verdict and a question to ask</li>
+    <li>Friendly handling of missing columns, wrong files, clean files</li>
+  </ul></div></details>
+  <details><summary>Deferred</summary><div><ul>
+    <li>Changing the detected columns by hand</li><li>Downloading the cleaned file or a report</li><li>Saving past uploads</li>
+  </ul></div></details>
+  <details><summary style="color:var(--warn)">Not doing</summary><div><ul>
+    <li>Chat / "ask your data": not part of the core loop</li><li>Live dashboards, decision trees, shared metrics: enterprise features</li><li>Other file types, accounts, deployment: cut in scope</li>
+  </ul></div></details>
+
+  <h2>Open questions (for the spec)</h2>
+  <div class="card muted">
+    <div>• How strict is "duplicate": all columns identical, or key fields like invoice + date + amount?</div>
+    <div>• Minimum number of amounts for a meaningful Benford's check</div>
+    <div>• Exact headline wording (during the build)</div>
+  </div>
+</main>
+<script>
+  const tabs = document.querySelectorAll('.steps button'), screens = document.querySelectorAll('.screen');
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x => x.setAttribute('aria-selected', x === t));
+    screens.forEach((s, i) => s.classList.toggle('on', i == t.dataset.s));
+  }));
+  const before = { date: '03/14/25', name: ' acme ltd ', amt: '$1,250' }, after = { date: '2025-03-14', name: 'Acme Ltd', amt: '1250' };
+  document.querySelectorAll('.fix input[data-f]').forEach(cb => cb.addEventListener('change', () => {
+    const cell = document.getElementById('a-' + cb.dataset.f);
+    cell.textContent = cb.checked ? after[cb.dataset.f] : before[cb.dataset.f];
+    cell.className = cb.checked ? 'good' : '';
+  }));
+  const expected = [30.1,17.6,12.5,9.7,7.9,6.7,5.8,5.1,4.6], actual = [28.4,16.9,12.1,17.5,6.9,5.9,4.8,4.3,3.4];
+  const sc = 105 / 32, bw = 34, gap = 14; let bars = '', pts = [];
+  actual.forEach((v, i) => {
+    const x = 30 + i * (bw + gap), h = v * sc, odd = Math.abs(v - expected[i]) > 4;
+    bars += `<rect x="${x}" y="${128-h}" width="${bw}" height="${h}" rx="3" fill="${odd ? '#f59e5b' : '#4a5b7a'}"/><text x="${x+bw/2}" y="142" text-anchor="middle">${i+1}</text>`;
+    pts.push(`${x+bw/2},${128 - expected[i]*sc}`);
+  });
+  document.getElementById('bars').innerHTML = bars;
+  document.getElementById('curve').setAttribute('points', pts.join(' '));
+</script>
+</body>
+</html>

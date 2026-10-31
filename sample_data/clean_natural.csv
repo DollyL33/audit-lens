@@ -1,0 +1,1501 @@
+Invoice No,Invoice Date,Customer,Product,Amount
+INV-5000,2025-01-01,Evergreen Retail,Shipping,9372.91
+INV-5001,2025-01-01,Juniper Tech,Maintenance,203.74
+INV-5002,2025-01-01,Lotus Imports,Shipping,53.84
+INV-5003,2025-01-02,Harbor Traders,Shipping,1689.3
+INV-5004,2025-01-02,Lotus Imports,Software licence,641.87
+INV-5005,2025-01-02,Juniper Tech,Maintenance,208.18
+INV-5006,2025-01-02,Granite Builders,Training,27.52
+INV-5007,2025-01-02,Birch Co,Training,55.05
+INV-5008,2025-01-02,Evergreen Retail,Training,144.58
+INV-5009,2025-01-03,Delta Foods,Maintenance,958.75
+INV-5010,2025-01-03,Ivy Wellness,Training,338.82
+INV-5011,2025-01-04,Falcon Logistics,Maintenance,941.19
+INV-5012,2025-01-04,Birch Co,Software licence,48.16
+INV-5013,2025-01-04,Delta Foods,Shipping,2821.37
+INV-5014,2025-01-04,Harbor Traders,Maintenance,1461.29
+INV-5015,2025-01-05,Birch Co,Shipping,11.76
+INV-5016,2025-01-05,Lotus Imports,Software licence,67.67
+INV-5017,2025-01-05,Granite Builders,Hardware,163.77
+INV-5018,2025-01-05,Granite Builders,Shipping,30.92
+INV-5019,2025-01-05,Harbor Traders,Hardware,63.87
+INV-5020,2025-01-05,Birch Co,Maintenance,4838.98
+INV-5021,2025-01-06,Falcon Logistics,Shipping,10.41
+INV-5022,2025-01-06,Kestrel Media,Training,16.75
+INV-5023,2025-01-06,Granite Builders,Maintenance,45.55
+INV-5024,2025-01-06,Ivy Wellness,Hardware,2591.09
+INV-5025,2025-01-06,Acme Ltd,Shipping,455.25
+INV-5026,2025-01-06,Delta Foods,Shipping,34.62
+INV-5027,2025-01-06,Evergreen Retail,Training,13.7
+INV-5028,2025-01-06,Harbor Traders,Maintenance,13.19
+INV-5029,2025-01-07,Granite Builders,Software licence,1738.5
+INV-5030,2025-01-07,Kestrel Media,Software licence,86.41
+INV-5031,2025-01-07,Harbor Traders,Shipping,5520.95
+INV-5032,2025-01-07,Delta Foods,Consulting,30.02
+INV-5033,2025-01-07,Acme Ltd,Hardware,2865.74
+INV-5034,2025-01-07,Acme Ltd,Maintenance,832.18
+INV-5035,2025-01-08,Evergreen Retail,Training,48.23
+INV-5036,2025-01-08,Ivy Wellness,Hardware,127.6
+INV-5037,2025-01-08,Harbor Traders,Training,118.91
+INV-5038,2025-01-08,Lotus Imports,Shipping,393.52
+INV-5039,2025-01-08,Falcon Logistics,Maintenance,316.31
+INV-5040,2025-01-09,Acme Ltd,Maintenance,433.43
+INV-5041,2025-01-09,Delta Foods,Hardware,29.28
+INV-5042,2025-01-09,Acme Ltd,Hardware,161.63
+INV-5043,2025-01-10,Lotus Imports,Training,20.62
+INV-5044,2025-01-10,Harbor Traders,Training,5407.01
+INV-5045,2025-01-10,Lotus Imports,Maintenance,176.52
+INV-5046,2025-01-10,Evergreen Retail,Consulting,287.02
+INV-5047,2025-01-10,Evergreen Retail,Hardware,632.36
+INV-5048,2025-01-10,Lotus Imports,Shipping,107.01
+INV-5049,2025-01-10,Delta Foods,Hardware,33.39
+INV-5050,2025-01-10,Acme Ltd,Maintenance,24.26
+INV-5051,2025-01-10,Ivy Wellness,Consulting,1029.83
+INV-5052,2025-01-10,Evergreen Retail,Training,361.52
+INV-5053,2025-01-11,Falcon Logistics,Software licence,193.85
+INV-5054,2025-01-11,Granite Builders,Training,384.68
+INV-5055,2025-01-12,Juniper Tech,Maintenance,73.52
+INV-5056,2025-01-12,Ivy Wellness,Hardware,459.26
+INV-5057,2025-01-12,Lotus Imports,Hardware,54.99
+INV-5058,2025-01-13,Evergreen Retail,Shipping,1516.01
+INV-5059,2025-01-13,Delta Foods,Shipping,1372.28
+INV-5060,2025-01-13,Lotus Imports,Consulting,2315.57
+INV-5061,2025-01-13,Ivy Wellness,Training,15.36
+INV-5062,2025-01-13,Falcon Logistics,Training,1357.26
+INV-5063,2025-01-14,Harbor Traders,Maintenance,8776.79
+INV-5064,2025-01-15,Harbor Traders,Hardware,70.0
+INV-5065,2025-01-15,Granite Builders,Hardware,508.14
+INV-5066,2025-01-15,Kestrel Media,Shipping,3649.78
+INV-5067,2025-01-15,Acme Ltd,Training,98.96
+INV-5068,2025-01-15,Birch Co,Hardware,16.75
+INV-5069,2025-01-16,Harbor Traders,Hardware,1799.61
+INV-5070,2025-01-16,Falcon Logistics,Shipping,2279.82
+INV-5071,2025-01-16,Ivy Wellness,Training,3483.79
+INV-5072,2025-01-16,Kestrel Media,Training,14.72
+INV-5073,2025-01-16,Granite Builders,Software licence,2247.91
+INV-5074,2025-01-17,Birch Co,Shipping,3236.26
+INV-5075,2025-01-17,Acme Ltd,Shipping,238.52
+INV-5076,2025-01-17,Ivy Wellness,Maintenance,5907.81
+INV-5077,2025-01-17,Falcon Logistics,Shipping,7764.94
+INV-5078,2025-01-17,Harbor Traders,Software licence,128.87
+INV-5079,2025-01-18,Granite Builders,Maintenance,29.46
+INV-5080,2025-01-18,Kestrel Media,Training,13.82
+INV-5081,2025-01-19,Acme Ltd,Consulting,73.36
+INV-5082,2025-01-19,Birch Co,Hardware,212.25
+INV-5083,2025-01-19,Acme Ltd,Hardware,59.48
+INV-5084,2025-01-20,Acme Ltd,Hardware,192.46
+INV-5085,2025-01-20,Falcon Logistics,Consulting,61.71
+INV-5086,2025-01-20,Evergreen Retail,Training,32.05
+INV-5087,2025-01-20,Falcon Logistics,Hardware,3090.01
+INV-5088,2025-01-20,Delta Foods,Shipping,5147.38
+INV-5089,2025-01-21,Ivy Wellness,Shipping,8892.35
+INV-5090,2025-01-21,Birch Co,Training,78.55
+INV-5091,2025-01-22,Falcon Logistics,Training,37.29
+INV-5092,2025-01-22,Juniper Tech,Shipping,445.54
+INV-5093,2025-01-22,Birch Co,Training,6284.03
+INV-5094,2025-01-23,Acme Ltd,Maintenance,4412.55
+INV-5095,2025-01-23,Delta Foods,Hardware,481.05
+INV-5096,2025-01-23,Granite Builders,Software licence,75.63
+INV-5097,2025-01-23,Evergreen Retail,Shipping,293.96
+INV-5098,2025-01-23,Falcon Logistics,Hardware,489.52
+INV-5099,2025-01-23,Juniper Tech,Shipping,133.87
+INV-5100,2025-01-24,Delta Foods,Software licence,2807.67
+INV-5101,2025-01-24,Delta Foods,Maintenance,1819.4
+INV-5102,2025-01-25,Granite Builders,Training,926.37
+INV-5103,2025-01-25,Granite Builders,Consulting,9410.23
+INV-5104,2025-01-25,Evergreen Retail,Shipping,4265.52
+INV-5105,2025-01-25,Juniper Tech,Consulting,1950.57
+INV-5106,2025-01-26,Juniper Tech,Consulting,440.74
+INV-5107,2025-01-26,Harbor Traders,Training,20.36
+INV-5108,2025-01-26,Ivy Wellness,Shipping,147.45
+INV-5109,2025-01-27,Juniper Tech,Maintenance,36.98
+INV-5110,2025-01-27,Evergreen Retail,Software licence,209.58
+INV-5111,2025-01-27,Falcon Logistics,Training,2081.56
+INV-5112,2025-01-27,Evergreen Retail,Hardware,196.06
+INV-5113,2025-01-27,Evergreen Retail,Hardware,528.92
+INV-5114,2025-01-27,Falcon Logistics,Hardware,13.43
+INV-5115,2025-01-28,Ivy Wellness,Training,12.94
+INV-5116,2025-01-28,Cedar Supplies,Consulting,2308.12
+INV-5117,2025-01-28,Ivy Wellness,Shipping,3813.19
+INV-5118,2025-01-29,Birch Co,Hardware,248.31
+INV-5119,2025-01-29,Granite Builders,Training,11.78
+INV-5120,2025-01-29,Falcon Logistics,Training,14.1
+INV-5121,2025-01-29,Kestrel Media,Software licence,3052.64
+INV-5122,2025-01-29,Delta Foods,Hardware,97.18
+INV-5123,2025-01-30,Ivy Wellness,Hardware,3139.43
+INV-5124,2025-01-30,Falcon Logistics,Hardware,139.95
+INV-5125,2025-01-30,Delta Foods,Hardware,612.23
+INV-5126,2025-01-30,Harbor Traders,Training,1412.99
+INV-5127,2025-01-30,Evergreen Retail,Shipping,896.06
+INV-5128,2025-01-30,Kestrel Media,Maintenance,2269.93
+INV-5129,2025-01-31,Ivy Wellness,Maintenance,12.99
+INV-5130,2025-01-31,Kestrel Media,Software licence,50.93
+INV-5131,2025-01-31,Birch Co,Shipping,29.15
+INV-5132,2025-02-01,Evergreen Retail,Software licence,300.26
+INV-5133,2025-02-01,Ivy Wellness,Training,592.0
+INV-5134,2025-02-01,Ivy Wellness,Maintenance,5235.28
+INV-5135,2025-02-01,Cedar Supplies,Hardware,2371.73
+INV-5136,2025-02-01,Ivy Wellness,Software licence,7576.03
+INV-5137,2025-02-02,Granite Builders,Software licence,53.51
+INV-5138,2025-02-02,Ivy Wellness,Consulting,4818.01
+INV-5139,2025-02-02,Falcon Logistics,Hardware,519.86
+INV-5140,2025-02-02,Granite Builders,Software licence,2958.17
+INV-5141,2025-02-02,Juniper Tech,Shipping,1169.53
+INV-5142,2025-02-03,Evergreen Retail,Hardware,291.02
+INV-5143,2025-02-03,Juniper Tech,Training,79.57
+INV-5144,2025-02-03,Granite Builders,Training,66.8
+INV-5145,2025-02-03,Ivy Wellness,Software licence,68.64
+INV-5146,2025-02-04,Delta Foods,Software licence,6094.27
+INV-5147,2025-02-04,Harbor Traders,Consulting,67.07
+INV-5148,2025-02-04,Lotus Imports,Maintenance,409.45
+INV-5149,2025-02-04,Kestrel Media,Shipping,17.53
+INV-5150,2025-02-04,Harbor Traders,Shipping,483.59
+INV-5151,2025-02-04,Lotus Imports,Software licence,64.89
+INV-5152,2025-02-05,Evergreen Retail,Training,10.49
+INV-5153,2025-02-05,Delta Foods,Shipping,2023.9
+INV-5154,2025-02-05,Birch Co,Consulting,737.72
+INV-5155,2025-02-05,Ivy Wellness,Hardware,35.33
+INV-5156,2025-02-05,Delta Foods,Maintenance,53.03
+INV-5157,2025-02-06,Kestrel Media,Software licence,14.33
+INV-5158,2025-02-06,Lotus Imports,Hardware,33.74
+INV-5159,2025-02-06,Kestrel Media,Shipping,6496.61
+INV-5160,2025-02-06,Acme Ltd,Software licence,228.17
+INV-5161,2025-02-06,Kestrel Media,Maintenance,217.17
+INV-5162,2025-02-06,Ivy Wellness,Consulting,74.08
+INV-5163,2025-02-07,Birch Co,Consulting,127.38
+INV-5164,2025-02-07,Birch Co,Training,361.36
+INV-5165,2025-02-07,Ivy Wellness,Consulting,294.99
+INV-5166,2025-02-07,Acme Ltd,Hardware,53.79
+INV-5167,2025-02-07,Juniper Tech,Hardware,65.21
+INV-5168,2025-02-08,Acme Ltd,Training,287.79
+INV-5169,2025-02-08,Evergreen Retail,Consulting,88.53
+INV-5170,2025-02-08,Falcon Logistics,Hardware,1631.92
+INV-5171,2025-02-09,Kestrel Media,Software licence,2145.55
+INV-5172,2025-02-09,Cedar Supplies,Maintenance,22.99
+INV-5173,2025-02-09,Birch Co,Hardware,9088.33
+INV-5174,2025-02-09,Ivy Wellness,Consulting,773.66
+INV-5175,2025-02-09,Delta Foods,Maintenance,1110.12
+INV-5176,2025-02-10,Kestrel Media,Shipping,89.36
+INV-5177,2025-02-10,Juniper Tech,Training,2174.26
+INV-5178,2025-02-10,Delta Foods,Shipping,12.32
+INV-5179,2025-02-11,Birch Co,Hardware,17.05
+INV-5180,2025-02-11,Falcon Logistics,Consulting,5440.2
+INV-5181,2025-02-11,Kestrel Media,Consulting,33.82
+INV-5182,2025-02-11,Evergreen Retail,Consulting,3269.65
+INV-5183,2025-02-11,Delta Foods,Shipping,18.1
+INV-5184,2025-02-11,Birch Co,Shipping,642.57
+INV-5185,2025-02-11,Harbor Traders,Training,73.16
+INV-5186,2025-02-11,Birch Co,Hardware,393.86
+INV-5187,2025-02-12,Juniper Tech,Maintenance,329.23
+INV-5188,2025-02-12,Evergreen Retail,Maintenance,1733.09
+INV-5189,2025-02-13,Granite Builders,Consulting,160.05
+INV-5190,2025-02-13,Cedar Supplies,Maintenance,114.7
+INV-5191,2025-02-13,Falcon Logistics,Training,611.64
+INV-5192,2025-02-13,Granite Builders,Maintenance,150.18
+INV-5193,2025-02-13,Birch Co,Software licence,12.4
+INV-5194,2025-02-13,Evergreen Retail,Maintenance,136.5
+INV-5195,2025-02-14,Delta Foods,Training,45.99
+INV-5196,2025-02-14,Granite Builders,Maintenance,213.18
+INV-5197,2025-02-14,Juniper Tech,Software licence,5575.9
+INV-5198,2025-02-14,Lotus Imports,Consulting,10.53
+INV-5199,2025-02-14,Evergreen Retail,Hardware,33.75
+INV-5200,2025-02-14,Granite Builders,Shipping,1454.64
+INV-5201,2025-02-14,Harbor Traders,Maintenance,55.13
+INV-5202,2025-02-15,Cedar Supplies,Shipping,21.89
+INV-5203,2025-02-15,Birch Co,Training,2069.03
+INV-5204,2025-02-15,Birch Co,Shipping,6173.7
+INV-5205,2025-02-15,Granite Builders,Software licence,100.81
+INV-5206,2025-02-15,Cedar Supplies,Training,2530.63
+INV-5207,2025-02-15,Kestrel Media,Hardware,752.3
+INV-5208,2025-02-15,Delta Foods,Maintenance,903.95
+INV-5209,2025-02-15,Ivy Wellness,Shipping,248.09
+INV-5210,2025-02-16,Granite Builders,Hardware,216.32
+INV-5211,2025-02-16,Cedar Supplies,Hardware,56.59
+INV-5212,2025-02-17,Cedar Supplies,Consulting,34.15
+INV-5213,2025-02-17,Falcon Logistics,Shipping,467.38
+INV-5214,2025-02-17,Granite Builders,Software licence,3438.54
+INV-5215,2025-02-17,Lotus Imports,Hardware,38.99
+INV-5216,2025-02-17,Birch Co,Consulting,248.49
+INV-5217,2025-02-18,Birch Co,Consulting,2523.57
+INV-5218,2025-02-18,Acme Ltd,Hardware,790.16
+INV-5219,2025-02-19,Falcon Logistics,Consulting,149.4
+INV-5220,2025-02-19,Delta Foods,Training,288.49
+INV-5221,2025-02-19,Falcon Logistics,Maintenance,36.61
+INV-5222,2025-02-19,Granite Builders,Shipping,28.13
+INV-5223,2025-02-19,Birch Co,Hardware,125.45
+INV-5224,2025-02-20,Cedar Supplies,Shipping,594.93
+INV-5225,2025-02-20,Kestrel Media,Maintenance,1401.63
+INV-5226,2025-02-20,Falcon Logistics,Software licence,147.58
+INV-5227,2025-02-20,Juniper Tech,Consulting,5634.69
+INV-5228,2025-02-21,Evergreen Retail,Shipping,183.58
+INV-5229,2025-02-21,Granite Builders,Maintenance,2707.83
+INV-5230,2025-02-21,Evergreen Retail,Training,11.95
+INV-5231,2025-02-21,Granite Builders,Shipping,214.29
+INV-5232,2025-02-21,Lotus Imports,Hardware,805.91
+INV-5233,2025-02-21,Acme Ltd,Shipping,243.68
+INV-5234,2025-02-22,Falcon Logistics,Software licence,35.43
+INV-5235,2025-02-22,Juniper Tech,Hardware,3794.29
+INV-5236,2025-02-22,Falcon Logistics,Software licence,2305.09
+INV-5237,2025-02-22,Cedar Supplies,Training,16.55
+INV-5238,2025-02-22,Evergreen Retail,Consulting,760.99
+INV-5239,2025-02-22,Harbor Traders,Hardware,3280.12
+INV-5240,2025-02-24,Juniper Tech,Training,142.8
+INV-5241,2025-02-24,Granite Builders,Consulting,390.32
+INV-5242,2025-02-25,Kestrel Media,Maintenance,129.23
+INV-5243,2025-02-25,Lotus Imports,Hardware,8724.37
+INV-5244,2025-02-25,Granite Builders,Training,3565.1
+INV-5245,2025-02-25,Ivy Wellness,Maintenance,5692.08
+INV-5246,2025-02-26,Juniper Tech,Consulting,8748.24
+INV-5247,2025-02-26,Acme Ltd,Shipping,3160.23
+INV-5248,2025-02-26,Falcon Logistics,Software licence,1804.74
+INV-5249,2025-02-26,Ivy Wellness,Consulting,1005.28
+INV-5250,2025-02-26,Birch Co,Maintenance,82.76
+INV-5251,2025-02-27,Harbor Traders,Shipping,1072.05
+INV-5252,2025-02-27,Acme Ltd,Software licence,301.74
+INV-5253,2025-02-27,Falcon Logistics,Shipping,20.38
+INV-5254,2025-02-28,Lotus Imports,Hardware,33.37
+INV-5255,2025-02-28,Granite Builders,Software licence,1392.9
+INV-5256,2025-02-28,Granite Builders,Shipping,4069.77
+INV-5257,2025-02-28,Granite Builders,Training,7169.64
+INV-5258,2025-02-28,Juniper Tech,Shipping,3197.67
+INV-5259,2025-03-01,Evergreen Retail,Training,2374.05
+INV-5260,2025-03-02,Evergreen Retail,Consulting,51.76
+INV-5261,2025-03-02,Delta Foods,Consulting,232.5
+INV-5262,2025-03-02,Evergreen Retail,Training,86.06
+INV-5263,2025-03-02,Ivy Wellness,Software licence,11.38
+INV-5264,2025-03-03,Kestrel Media,Shipping,18.32
+INV-5265,2025-03-03,Delta Foods,Software licence,204.43
+INV-5266,2025-03-03,Granite Builders,Maintenance,3730.11
+INV-5267,2025-03-04,Birch Co,Hardware,15.07
+INV-5268,2025-03-04,Kestrel Media,Shipping,51.01
+INV-5269,2025-03-05,Delta Foods,Consulting,285.02
+INV-5270,2025-03-05,Cedar Supplies,Shipping,34.26
+INV-5271,2025-03-05,Juniper Tech,Maintenance,662.09
+INV-5272,2025-03-06,Harbor Traders,Maintenance,27.49
+INV-5273,2025-03-06,Juniper Tech,Maintenance,12.57
+INV-5274,2025-03-07,Birch Co,Training,22.82
+INV-5275,2025-03-07,Granite Builders,Training,1051.17
+INV-5276,2025-03-07,Falcon Logistics,Training,5294.19
+INV-5277,2025-03-08,Kestrel Media,Training,8612.13
+INV-5278,2025-03-08,Falcon Logistics,Shipping,18.11
+INV-5279,2025-03-08,Ivy Wellness,Software licence,137.13
+INV-5280,2025-03-09,Cedar Supplies,Consulting,26.07
+INV-5281,2025-03-09,Kestrel Media,Hardware,15.43
+INV-5282,2025-03-10,Acme Ltd,Maintenance,25.11
+INV-5283,2025-03-10,Falcon Logistics,Maintenance,1412.52
+INV-5284,2025-03-10,Acme Ltd,Training,225.72
+INV-5285,2025-03-11,Acme Ltd,Hardware,1814.08
+INV-5286,2025-03-11,Harbor Traders,Shipping,22.01
+INV-5287,2025-03-11,Harbor Traders,Shipping,4728.54
+INV-5288,2025-03-12,Granite Builders,Maintenance,72.86
+INV-5289,2025-03-12,Kestrel Media,Maintenance,244.95
+INV-5290,2025-03-12,Falcon Logistics,Hardware,56.43
+INV-5291,2025-03-12,Kestrel Media,Consulting,624.16
+INV-5292,2025-03-13,Juniper Tech,Shipping,90.11
+INV-5293,2025-03-13,Delta Foods,Software licence,7180.43
+INV-5294,2025-03-14,Kestrel Media,Training,8052.88
+INV-5295,2025-03-14,Harbor Traders,Consulting,23.57
+INV-5296,2025-03-14,Birch Co,Training,188.91
+INV-5297,2025-03-14,Evergreen Retail,Training,393.11
+INV-5298,2025-03-14,Granite Builders,Consulting,34.03
+INV-5299,2025-03-15,Falcon Logistics,Maintenance,254.47
+INV-5300,2025-03-15,Harbor Traders,Consulting,47.81
+INV-5301,2025-03-15,Evergreen Retail,Consulting,2899.6
+INV-5302,2025-03-15,Ivy Wellness,Training,20.53
+INV-5303,2025-03-15,Birch Co,Maintenance,1489.64
+INV-5304,2025-03-16,Lotus Imports,Consulting,44.68
+INV-5305,2025-03-16,Juniper Tech,Hardware,11.69
+INV-5306,2025-03-16,Cedar Supplies,Consulting,116.43
+INV-5307,2025-03-17,Cedar Supplies,Hardware,1645.43
+INV-5308,2025-03-17,Ivy Wellness,Maintenance,30.01
+INV-5309,2025-03-17,Ivy Wellness,Hardware,63.99
+INV-5310,2025-03-17,Ivy Wellness,Consulting,35.72
+INV-5311,2025-03-17,Cedar Supplies,Consulting,14.55
+INV-5312,2025-03-18,Cedar Supplies,Hardware,10.74
+INV-5313,2025-03-18,Lotus Imports,Training,4153.52
+INV-5314,2025-03-18,Kestrel Media,Hardware,8368.79
+INV-5315,2025-03-18,Ivy Wellness,Training,62.03
+INV-5316,2025-03-18,Granite Builders,Hardware,27.4
+INV-5317,2025-03-19,Birch Co,Software licence,42.15
+INV-5318,2025-03-19,Kestrel Media,Consulting,12.42
+INV-5319,2025-03-19,Delta Foods,Hardware,337.0
+INV-5320,2025-03-20,Delta Foods,Shipping,271.25
+INV-5321,2025-03-21,Granite Builders,Shipping,315.3
+INV-5322,2025-03-21,Juniper Tech,Hardware,69.67
+INV-5323,2025-03-21,Falcon Logistics,Maintenance,21.86
+INV-5324,2025-03-22,Juniper Tech,Maintenance,26.01
+INV-5325,2025-03-22,Cedar Supplies,Software licence,11.46
+INV-5326,2025-03-22,Delta Foods,Maintenance,3897.63
+INV-5327,2025-03-22,Juniper Tech,Consulting,663.98
+INV-5328,2025-03-22,Birch Co,Shipping,619.45
+INV-5329,2025-03-22,Lotus Imports,Consulting,182.91
+INV-5330,2025-03-23,Acme Ltd,Software licence,39.31
+INV-5331,2025-03-23,Acme Ltd,Hardware,2231.04
+INV-5332,2025-03-23,Ivy Wellness,Software licence,14.83
+INV-5333,2025-03-23,Granite Builders,Training,7111.26
+INV-5334,2025-03-24,Falcon Logistics,Maintenance,742.31
+INV-5335,2025-03-24,Juniper Tech,Maintenance,3103.88
+INV-5336,2025-03-24,Granite Builders,Consulting,1418.84
+INV-5337,2025-03-25,Granite Builders,Consulting,35.63
+INV-5338,2025-03-25,Evergreen Retail,Shipping,1442.29
+INV-5339,2025-03-25,Acme Ltd,Consulting,15.81
+INV-5340,2025-03-25,Juniper Tech,Consulting,3450.22
+INV-5341,2025-03-25,Delta Foods,Consulting,44.46
+INV-5342,2025-03-26,Kestrel Media,Training,41.03
+INV-5343,2025-03-26,Evergreen Retail,Shipping,18.77
+INV-5344,2025-03-26,Falcon Logistics,Shipping,133.46
+INV-5345,2025-03-27,Lotus Imports,Maintenance,94.24
+INV-5346,2025-03-27,Juniper Tech,Training,73.83
+INV-5347,2025-03-27,Falcon Logistics,Shipping,211.99
+INV-5348,2025-03-27,Harbor Traders,Software licence,99.68
+INV-5349,2025-03-27,Cedar Supplies,Consulting,28.04
+INV-5350,2025-03-28,Cedar Supplies,Consulting,318.13
+INV-5351,2025-03-29,Harbor Traders,Training,569.12
+INV-5352,2025-03-29,Delta Foods,Maintenance,27.28
+INV-5353,2025-03-30,Harbor Traders,Software licence,61.32
+INV-5354,2025-03-30,Cedar Supplies,Training,689.01
+INV-5355,2025-03-30,Evergreen Retail,Training,754.28
+INV-5356,2025-03-30,Lotus Imports,Consulting,7019.68
+INV-5357,2025-03-30,Harbor Traders,Maintenance,59.14
+INV-5358,2025-03-30,Harbor Traders,Maintenance,542.23
+INV-5359,2025-03-31,Kestrel Media,Software licence,171.76
+INV-5360,2025-03-31,Granite Builders,Consulting,4866.23
+INV-5361,2025-03-31,Granite Builders,Training,32.63
+INV-5362,2025-03-31,Evergreen Retail,Consulting,1817.5
+INV-5363,2025-04-01,Acme Ltd,Software licence,3202.47
+INV-5364,2025-04-01,Kestrel Media,Shipping,142.11
+INV-5365,2025-04-01,Delta Foods,Software licence,75.83
+INV-5366,2025-04-01,Cedar Supplies,Shipping,6014.16
+INV-5367,2025-04-02,Ivy Wellness,Maintenance,1890.57
+INV-5368,2025-04-02,Kestrel Media,Training,625.26
+INV-5369,2025-04-02,Granite Builders,Hardware,42.54
+INV-5370,2025-04-02,Falcon Logistics,Consulting,72.56
+INV-5371,2025-04-02,Harbor Traders,Training,47.49
+INV-5372,2025-04-02,Granite Builders,Software licence,1200.31
+INV-5373,2025-04-02,Evergreen Retail,Hardware,3248.11
+INV-5374,2025-04-02,Harbor Traders,Consulting,685.88
+INV-5375,2025-04-03,Evergreen Retail,Shipping,33.54
+INV-5376,2025-04-03,Falcon Logistics,Consulting,49.28
+INV-5377,2025-04-03,Granite Builders,Software licence,67.83
+INV-5378,2025-04-03,Acme Ltd,Software licence,264.12
+INV-5379,2025-04-03,Kestrel Media,Consulting,93.74
+INV-5380,2025-04-03,Delta Foods,Hardware,189.07
+INV-5381,2025-04-04,Birch Co,Consulting,33.26
+INV-5382,2025-04-04,Cedar Supplies,Maintenance,6668.56
+INV-5383,2025-04-04,Harbor Traders,Software licence,26.89
+INV-5384,2025-04-04,Juniper Tech,Hardware,1230.6
+INV-5385,2025-04-04,Kestrel Media,Training,107.5
+INV-5386,2025-04-05,Kestrel Media,Consulting,2099.29
+INV-5387,2025-04-05,Cedar Supplies,Maintenance,1820.14
+INV-5388,2025-04-05,Falcon Logistics,Shipping,29.52
+INV-5389,2025-04-05,Harbor Traders,Shipping,40.21
+INV-5390,2025-04-06,Ivy Wellness,Training,113.83
+INV-5391,2025-04-06,Acme Ltd,Training,45.74
+INV-5392,2025-04-06,Juniper Tech,Software licence,635.33
+INV-5393,2025-04-06,Delta Foods,Training,1287.41
+INV-5394,2025-04-06,Acme Ltd,Hardware,1029.95
+INV-5395,2025-04-06,Granite Builders,Maintenance,3375.31
+INV-5396,2025-04-07,Kestrel Media,Maintenance,742.55
+INV-5397,2025-04-07,Cedar Supplies,Hardware,5698.44
+INV-5398,2025-04-07,Lotus Imports,Maintenance,55.98
+INV-5399,2025-04-07,Delta Foods,Shipping,23.82
+INV-5400,2025-04-08,Harbor Traders,Training,174.1
+INV-5401,2025-04-08,Cedar Supplies,Hardware,143.44
+INV-5402,2025-04-08,Ivy Wellness,Consulting,4006.31
+INV-5403,2025-04-08,Lotus Imports,Training,94.86
+INV-5404,2025-04-08,Evergreen Retail,Shipping,495.62
+INV-5405,2025-04-08,Harbor Traders,Training,23.53
+INV-5406,2025-04-08,Falcon Logistics,Maintenance,897.08
+INV-5407,2025-04-08,Lotus Imports,Software licence,10.88
+INV-5408,2025-04-09,Evergreen Retail,Hardware,1148.61
+INV-5409,2025-04-09,Evergreen Retail,Hardware,71.4
+INV-5410,2025-04-09,Evergreen Retail,Shipping,7728.26
+INV-5411,2025-04-09,Ivy Wellness,Consulting,11.12
+INV-5412,2025-04-09,Evergreen Retail,Software licence,14.66
+INV-5413,2025-04-09,Granite Builders,Software licence,3280.28
+INV-5414,2025-04-10,Ivy Wellness,Shipping,18.19
+INV-5415,2025-04-10,Lotus Imports,Training,5018.31
+INV-5416,2025-04-10,Lotus Imports,Consulting,345.83
+INV-5417,2025-04-10,Kestrel Media,Maintenance,40.14
+INV-5418,2025-04-10,Delta Foods,Hardware,51.71
+INV-5419,2025-04-10,Ivy Wellness,Software licence,256.13
+INV-5420,2025-04-10,Cedar Supplies,Maintenance,205.51
+INV-5421,2025-04-10,Falcon Logistics,Consulting,12.5
+INV-5422,2025-04-11,Birch Co,Hardware,775.11
+INV-5423,2025-04-11,Kestrel Media,Training,113.42
+INV-5424,2025-04-11,Ivy Wellness,Maintenance,23.34
+INV-5425,2025-04-11,Delta Foods,Consulting,901.81
+INV-5426,2025-04-11,Evergreen Retail,Training,105.95
+INV-5427,2025-04-12,Birch Co,Consulting,926.45
+INV-5428,2025-04-12,Harbor Traders,Maintenance,231.41
+INV-5429,2025-04-12,Ivy Wellness,Maintenance,19.73
+INV-5430,2025-04-12,Harbor Traders,Shipping,313.68
+INV-5431,2025-04-13,Harbor Traders,Software licence,134.54
+INV-5432,2025-04-13,Harbor Traders,Training,185.66
+INV-5433,2025-04-14,Delta Foods,Maintenance,23.18
+INV-5434,2025-04-14,Evergreen Retail,Hardware,50.68
+INV-5435,2025-04-14,Evergreen Retail,Shipping,7932.84
+INV-5436,2025-04-14,Granite Builders,Consulting,393.1
+INV-5437,2025-04-14,Ivy Wellness,Consulting,928.42
+INV-5438,2025-04-14,Evergreen Retail,Maintenance,30.45
+INV-5439,2025-04-14,Ivy Wellness,Maintenance,352.92
+INV-5440,2025-04-15,Delta Foods,Hardware,9617.13
+INV-5441,2025-04-16,Cedar Supplies,Shipping,13.94
+INV-5442,2025-04-16,Cedar Supplies,Shipping,14.16
+INV-5443,2025-04-17,Cedar Supplies,Hardware,2445.94
+INV-5444,2025-04-17,Birch Co,Consulting,75.6
+INV-5445,2025-04-17,Kestrel Media,Shipping,2784.24
+INV-5446,2025-04-17,Lotus Imports,Software licence,385.54
+INV-5447,2025-04-17,Delta Foods,Maintenance,21.49
+INV-5448,2025-04-17,Acme Ltd,Consulting,16.07
+INV-5449,2025-04-17,Ivy Wellness,Maintenance,121.63
+INV-5450,2025-04-18,Juniper Tech,Consulting,8696.04
+INV-5451,2025-04-18,Evergreen Retail,Maintenance,14.67
+INV-5452,2025-04-18,Ivy Wellness,Consulting,2519.7
+INV-5453,2025-04-18,Ivy Wellness,Shipping,1713.71
+INV-5454,2025-04-18,Cedar Supplies,Consulting,61.22
+INV-5455,2025-04-18,Cedar Supplies,Shipping,190.5
+INV-5456,2025-04-19,Delta Foods,Maintenance,249.36
+INV-5457,2025-04-20,Lotus Imports,Hardware,484.88
+INV-5458,2025-04-20,Harbor Traders,Shipping,1747.9
+INV-5459,2025-04-20,Harbor Traders,Consulting,6142.03
+INV-5460,2025-04-21,Evergreen Retail,Maintenance,108.02
+INV-5461,2025-04-21,Evergreen Retail,Software licence,54.36
+INV-5462,2025-04-21,Delta Foods,Training,30.58
+INV-5463,2025-04-22,Delta Foods,Software licence,58.46
+INV-5464,2025-04-22,Delta Foods,Hardware,2248.3
+INV-5465,2025-04-22,Lotus Imports,Shipping,42.71
+INV-5466,2025-04-22,Kestrel Media,Shipping,3375.1
+INV-5467,2025-04-23,Ivy Wellness,Consulting,19.78
+INV-5468,2025-04-23,Cedar Supplies,Shipping,78.41
+INV-5469,2025-04-23,Kestrel Media,Shipping,15.0
+INV-5470,2025-04-24,Delta Foods,Shipping,34.65
+INV-5471,2025-04-24,Juniper Tech,Consulting,866.65
+INV-5472,2025-04-24,Acme Ltd,Training,1415.39
+INV-5473,2025-04-25,Delta Foods,Hardware,375.31
+INV-5474,2025-04-25,Acme Ltd,Training,29.94
+INV-5475,2025-04-26,Granite Builders,Software licence,242.07
+INV-5476,2025-04-26,Acme Ltd,Shipping,52.72
+INV-5477,2025-04-26,Juniper Tech,Training,10.38
+INV-5478,2025-04-26,Evergreen Retail,Training,4338.51
+INV-5479,2025-04-26,Ivy Wellness,Maintenance,38.53
+INV-5480,2025-04-27,Granite Builders,Consulting,17.38
+INV-5481,2025-04-27,Falcon Logistics,Hardware,26.01
+INV-5482,2025-04-27,Juniper Tech,Consulting,8942.55
+INV-5483,2025-04-27,Acme Ltd,Training,13.85
+INV-5484,2025-04-27,Harbor Traders,Maintenance,1292.14
+INV-5485,2025-04-27,Falcon Logistics,Consulting,7306.4
+INV-5486,2025-04-28,Cedar Supplies,Training,331.5
+INV-5487,2025-04-28,Kestrel Media,Software licence,606.69
+INV-5488,2025-04-28,Granite Builders,Shipping,1350.52
+INV-5489,2025-04-28,Harbor Traders,Shipping,1909.09
+INV-5490,2025-04-29,Acme Ltd,Maintenance,4872.04
+INV-5491,2025-04-29,Evergreen Retail,Software licence,13.37
+INV-5492,2025-04-29,Kestrel Media,Maintenance,117.77
+INV-5493,2025-04-29,Evergreen Retail,Hardware,14.88
+INV-5494,2025-04-30,Ivy Wellness,Hardware,112.49
+INV-5495,2025-04-30,Granite Builders,Shipping,6585.29
+INV-5496,2025-04-30,Kestrel Media,Shipping,65.72
+INV-5497,2025-04-30,Falcon Logistics,Software licence,1566.82
+INV-5498,2025-04-30,Ivy Wellness,Hardware,1216.72
+INV-5499,2025-04-30,Acme Ltd,Consulting,29.17
+INV-5500,2025-04-30,Harbor Traders,Hardware,54.15
+INV-5501,2025-04-30,Kestrel Media,Shipping,194.17
+INV-5502,2025-04-30,Evergreen Retail,Shipping,833.72
+INV-5503,2025-04-30,Delta Foods,Maintenance,102.53
+INV-5504,2025-05-01,Harbor Traders,Software licence,4515.93
+INV-5505,2025-05-01,Falcon Logistics,Maintenance,3011.54
+INV-5506,2025-05-02,Falcon Logistics,Hardware,90.55
+INV-5507,2025-05-02,Falcon Logistics,Software licence,152.94
+INV-5508,2025-05-02,Acme Ltd,Software licence,1362.13
+INV-5509,2025-05-02,Juniper Tech,Software licence,9921.78
+INV-5510,2025-05-02,Falcon Logistics,Training,1372.43
+INV-5511,2025-05-02,Lotus Imports,Hardware,177.87
+INV-5512,2025-05-02,Falcon Logistics,Software licence,3651.25
+INV-5513,2025-05-02,Evergreen Retail,Software licence,37.64
+INV-5514,2025-05-03,Lotus Imports,Training,38.5
+INV-5515,2025-05-04,Birch Co,Consulting,3964.39
+INV-5516,2025-05-04,Acme Ltd,Shipping,1110.33
+INV-5517,2025-05-04,Ivy Wellness,Software licence,64.81
+INV-5518,2025-05-04,Birch Co,Shipping,36.14
+INV-5519,2025-05-04,Juniper Tech,Software licence,4651.5
+INV-5520,2025-05-05,Granite Builders,Maintenance,700.96
+INV-5521,2025-05-05,Delta Foods,Maintenance,1906.37
+INV-5522,2025-05-05,Ivy Wellness,Shipping,970.08
+INV-5523,2025-05-05,Ivy Wellness,Maintenance,213.38
+INV-5524,2025-05-05,Ivy Wellness,Hardware,6161.03
+INV-5525,2025-05-05,Ivy Wellness,Training,20.11
+INV-5526,2025-05-06,Granite Builders,Training,640.95
+INV-5527,2025-05-06,Harbor Traders,Maintenance,15.6
+INV-5528,2025-05-07,Lotus Imports,Software licence,1995.74
+INV-5529,2025-05-07,Acme Ltd,Training,460.63
+INV-5530,2025-05-08,Birch Co,Software licence,4407.23
+INV-5531,2025-05-08,Falcon Logistics,Shipping,5523.09
+INV-5532,2025-05-08,Acme Ltd,Software licence,14.49
+INV-5533,2025-05-08,Granite Builders,Shipping,40.86
+INV-5534,2025-05-08,Evergreen Retail,Training,24.83
+INV-5535,2025-05-08,Lotus Imports,Hardware,199.65
+INV-5536,2025-05-08,Ivy Wellness,Consulting,445.04
+INV-5537,2025-05-08,Lotus Imports,Maintenance,123.14
+INV-5538,2025-05-08,Juniper Tech,Shipping,1157.39
+INV-5539,2025-05-09,Falcon Logistics,Shipping,2701.98
+INV-5540,2025-05-09,Delta Foods,Hardware,80.91
+INV-5541,2025-05-09,Harbor Traders,Maintenance,166.21
+INV-5542,2025-05-10,Birch Co,Software licence,3302.44
+INV-5543,2025-05-10,Evergreen Retail,Shipping,39.35
+INV-5544,2025-05-10,Juniper Tech,Shipping,17.97
+INV-5545,2025-05-11,Ivy Wellness,Software licence,201.29
+INV-5546,2025-05-11,Kestrel Media,Training,172.46
+INV-5547,2025-05-11,Evergreen Retail,Hardware,32.41
+INV-5548,2025-05-11,Falcon Logistics,Shipping,3702.32
+INV-5549,2025-05-11,Juniper Tech,Software licence,896.18
+INV-5550,2025-05-11,Juniper Tech,Training,9910.29
+INV-5551,2025-05-12,Kestrel Media,Software licence,9980.32
+INV-5552,2025-05-12,Juniper Tech,Maintenance,84.45
+INV-5553,2025-05-12,Delta Foods,Training,5569.08
+INV-5554,2025-05-12,Falcon Logistics,Shipping,401.1
+INV-5555,2025-05-12,Kestrel Media,Training,39.2
+INV-5556,2025-05-13,Lotus Imports,Hardware,48.1
+INV-5557,2025-05-13,Juniper Tech,Software licence,444.44
+INV-5558,2025-05-13,Kestrel Media,Consulting,23.0
+INV-5559,2025-05-13,Evergreen Retail,Maintenance,700.76
+INV-5560,2025-05-13,Lotus Imports,Shipping,2459.88
+INV-5561,2025-05-14,Lotus Imports,Consulting,67.19
+INV-5562,2025-05-14,Lotus Imports,Software licence,4468.31
+INV-5563,2025-05-14,Evergreen Retail,Maintenance,371.88
+INV-5564,2025-05-15,Evergreen Retail,Training,1298.04
+INV-5565,2025-05-15,Birch Co,Shipping,58.17
+INV-5566,2025-05-15,Birch Co,Shipping,952.29
+INV-5567,2025-05-15,Ivy Wellness,Shipping,8217.29
+INV-5568,2025-05-16,Birch Co,Software licence,2267.87
+INV-5569,2025-05-16,Lotus Imports,Training,15.4
+INV-5570,2025-05-16,Falcon Logistics,Hardware,1520.29
+INV-5571,2025-05-16,Lotus Imports,Shipping,12.36
+INV-5572,2025-05-16,Granite Builders,Training,108.36
+INV-5573,2025-05-17,Lotus Imports,Training,138.76
+INV-5574,2025-05-17,Juniper Tech,Hardware,10.26
+INV-5575,2025-05-18,Juniper Tech,Shipping,610.3
+INV-5576,2025-05-18,Evergreen Retail,Shipping,12.41
+INV-5577,2025-05-18,Acme Ltd,Shipping,19.49
+INV-5578,2025-05-18,Granite Builders,Software licence,8047.56
+INV-5579,2025-05-19,Ivy Wellness,Consulting,4502.92
+INV-5580,2025-05-19,Cedar Supplies,Software licence,173.73
+INV-5581,2025-05-19,Juniper Tech,Training,15.92
+INV-5582,2025-05-19,Birch Co,Software licence,20.0
+INV-5583,2025-05-19,Delta Foods,Software licence,3160.35
+INV-5584,2025-05-19,Lotus Imports,Shipping,29.08
+INV-5585,2025-05-20,Evergreen Retail,Consulting,294.16
+INV-5586,2025-05-20,Ivy Wellness,Consulting,12.14
+INV-5587,2025-05-20,Falcon Logistics,Maintenance,295.93
+INV-5588,2025-05-20,Ivy Wellness,Shipping,25.6
+INV-5589,2025-05-20,Cedar Supplies,Shipping,19.42
+INV-5590,2025-05-20,Juniper Tech,Maintenance,326.58
+INV-5591,2025-05-20,Cedar Supplies,Training,41.13
+INV-5592,2025-05-21,Kestrel Media,Shipping,1191.19
+INV-5593,2025-05-21,Cedar Supplies,Software licence,705.12
+INV-5594,2025-05-21,Cedar Supplies,Hardware,40.98
+INV-5595,2025-05-21,Birch Co,Maintenance,15.6
+INV-5596,2025-05-22,Harbor Traders,Training,15.81
+INV-5597,2025-05-22,Evergreen Retail,Hardware,11.93
+INV-5598,2025-05-22,Lotus Imports,Consulting,28.36
+INV-5599,2025-05-23,Harbor Traders,Shipping,70.65
+INV-5600,2025-05-23,Granite Builders,Consulting,1340.08
+INV-5601,2025-05-23,Evergreen Retail,Consulting,554.91
+INV-5602,2025-05-24,Evergreen Retail,Hardware,3942.04
+INV-5603,2025-05-24,Acme Ltd,Software licence,5035.53
+INV-5604,2025-05-24,Cedar Supplies,Hardware,266.07
+INV-5605,2025-05-24,Birch Co,Shipping,177.83
+INV-5606,2025-05-24,Birch Co,Training,61.34
+INV-5607,2025-05-24,Juniper Tech,Software licence,123.42
+INV-5608,2025-05-24,Evergreen Retail,Software licence,4918.71
+INV-5609,2025-05-24,Kestrel Media,Shipping,969.7
+INV-5610,2025-05-25,Harbor Traders,Hardware,111.74
+INV-5611,2025-05-25,Juniper Tech,Software licence,448.2
+INV-5612,2025-05-25,Ivy Wellness,Hardware,39.38
+INV-5613,2025-05-25,Evergreen Retail,Consulting,5395.01
+INV-5614,2025-05-25,Cedar Supplies,Shipping,2518.44
+INV-5615,2025-05-25,Lotus Imports,Software licence,1508.99
+INV-5616,2025-05-26,Falcon Logistics,Shipping,10.28
+INV-5617,2025-05-26,Kestrel Media,Consulting,80.73
+INV-5618,2025-05-26,Falcon Logistics,Maintenance,1470.91
+INV-5619,2025-05-26,Evergreen Retail,Hardware,1190.09
+INV-5620,2025-05-26,Lotus Imports,Maintenance,2724.72
+INV-5621,2025-05-27,Cedar Supplies,Maintenance,3850.13
+INV-5622,2025-05-27,Granite Builders,Hardware,55.53
+INV-5623,2025-05-28,Kestrel Media,Hardware,12.93
+INV-5624,2025-05-28,Granite Builders,Software licence,5165.03
+INV-5625,2025-05-29,Acme Ltd,Shipping,931.65
+INV-5626,2025-05-29,Kestrel Media,Training,14.44
+INV-5627,2025-05-29,Kestrel Media,Consulting,6487.55
+INV-5628,2025-05-29,Acme Ltd,Consulting,567.34
+INV-5629,2025-05-29,Harbor Traders,Consulting,4038.66
+INV-5630,2025-05-29,Granite Builders,Hardware,99.16
+INV-5631,2025-05-30,Ivy Wellness,Software licence,1009.64
+INV-5632,2025-05-31,Kestrel Media,Training,25.92
+INV-5633,2025-05-31,Harbor Traders,Training,5144.84
+INV-5634,2025-05-31,Cedar Supplies,Maintenance,145.56
+INV-5635,2025-05-31,Ivy Wellness,Maintenance,45.43
+INV-5636,2025-05-31,Delta Foods,Hardware,205.27
+INV-5637,2025-05-31,Cedar Supplies,Shipping,13.54
+INV-5638,2025-06-01,Birch Co,Maintenance,108.41
+INV-5639,2025-06-01,Harbor Traders,Hardware,8648.26
+INV-5640,2025-06-02,Juniper Tech,Training,523.95
+INV-5641,2025-06-02,Ivy Wellness,Consulting,56.73
+INV-5642,2025-06-02,Evergreen Retail,Hardware,5385.64
+INV-5643,2025-06-02,Harbor Traders,Consulting,785.24
+INV-5644,2025-06-02,Acme Ltd,Shipping,5471.42
+INV-5645,2025-06-03,Lotus Imports,Shipping,2726.74
+INV-5646,2025-06-03,Lotus Imports,Hardware,1223.59
+INV-5647,2025-06-03,Delta Foods,Shipping,2610.71
+INV-5648,2025-06-03,Lotus Imports,Maintenance,29.46
+INV-5649,2025-06-03,Evergreen Retail,Maintenance,75.28
+INV-5650,2025-06-03,Ivy Wellness,Maintenance,1002.96
+INV-5651,2025-06-04,Ivy Wellness,Shipping,2239.96
+INV-5652,2025-06-04,Delta Foods,Shipping,6428.99
+INV-5653,2025-06-04,Kestrel Media,Software licence,12.96
+INV-5654,2025-06-04,Evergreen Retail,Hardware,622.09
+INV-5655,2025-06-04,Cedar Supplies,Software licence,225.35
+INV-5656,2025-06-04,Acme Ltd,Training,20.28
+INV-5657,2025-06-04,Juniper Tech,Software licence,637.39
+INV-5658,2025-06-05,Falcon Logistics,Shipping,55.38
+INV-5659,2025-06-05,Lotus Imports,Training,2443.71
+INV-5660,2025-06-06,Falcon Logistics,Training,3274.12
+INV-5661,2025-06-06,Juniper Tech,Hardware,1541.88
+INV-5662,2025-06-06,Acme Ltd,Maintenance,288.51
+INV-5663,2025-06-06,Evergreen Retail,Hardware,8844.89
+INV-5664,2025-06-07,Lotus Imports,Training,264.94
+INV-5665,2025-06-07,Acme Ltd,Shipping,3797.96
+INV-5666,2025-06-07,Evergreen Retail,Consulting,69.43
+INV-5667,2025-06-08,Ivy Wellness,Shipping,76.5
+INV-5668,2025-06-08,Harbor Traders,Training,318.93
+INV-5669,2025-06-08,Acme Ltd,Software licence,22.17
+INV-5670,2025-06-08,Kestrel Media,Hardware,558.84
+INV-5671,2025-06-08,Granite Builders,Software licence,30.33
+INV-5672,2025-06-08,Falcon Logistics,Maintenance,122.34
+INV-5673,2025-06-09,Acme Ltd,Consulting,7396.39
+INV-5674,2025-06-09,Delta Foods,Software licence,19.38
+INV-5675,2025-06-09,Granite Builders,Training,4738.76
+INV-5676,2025-06-09,Granite Builders,Consulting,180.13
+INV-5677,2025-06-09,Birch Co,Hardware,2474.42
+INV-5678,2025-06-09,Granite Builders,Training,27.8
+INV-5679,2025-06-09,Lotus Imports,Maintenance,408.85
+INV-5680,2025-06-09,Juniper Tech,Shipping,30.26
+INV-5681,2025-06-09,Delta Foods,Shipping,461.82
+INV-5682,2025-06-10,Falcon Logistics,Maintenance,52.41
+INV-5683,2025-06-10,Granite Builders,Consulting,5831.28
+INV-5684,2025-06-11,Lotus Imports,Consulting,56.59
+INV-5685,2025-06-11,Kestrel Media,Consulting,18.36
+INV-5686,2025-06-11,Falcon Logistics,Maintenance,3309.8
+INV-5687,2025-06-11,Juniper Tech,Shipping,1777.32
+INV-5688,2025-06-13,Lotus Imports,Hardware,32.85
+INV-5689,2025-06-13,Lotus Imports,Consulting,10.31
+INV-5690,2025-06-14,Cedar Supplies,Consulting,6074.56
+INV-5691,2025-06-14,Kestrel Media,Training,10.07
+INV-5692,2025-06-14,Juniper Tech,Maintenance,80.24
+INV-5693,2025-06-14,Ivy Wellness,Shipping,3671.43
+INV-5694,2025-06-14,Harbor Traders,Training,174.25
+INV-5695,2025-06-15,Granite Builders,Software licence,4562.48
+INV-5696,2025-06-15,Evergreen Retail,Maintenance,1563.8
+INV-5697,2025-06-15,Falcon Logistics,Maintenance,7179.51
+INV-5698,2025-06-15,Kestrel Media,Hardware,1246.35
+INV-5699,2025-06-16,Kestrel Media,Shipping,338.26
+INV-5700,2025-06-16,Juniper Tech,Shipping,31.7
+INV-5701,2025-06-16,Harbor Traders,Software licence,40.62
+INV-5702,2025-06-16,Falcon Logistics,Consulting,557.83
+INV-5703,2025-06-16,Lotus Imports,Software licence,37.86
+INV-5704,2025-06-16,Acme Ltd,Shipping,732.83
+INV-5705,2025-06-17,Lotus Imports,Hardware,29.41
+INV-5706,2025-06-17,Falcon Logistics,Software licence,78.28
+INV-5707,2025-06-17,Birch Co,Software licence,48.24
+INV-5708,2025-06-17,Juniper Tech,Shipping,4202.59
+INV-5709,2025-06-17,Juniper Tech,Shipping,4638.35
+INV-5710,2025-06-18,Delta Foods,Shipping,1008.72
+INV-5711,2025-06-18,Cedar Supplies,Maintenance,1343.58
+INV-5712,2025-06-18,Evergreen Retail,Shipping,1601.58
+INV-5713,2025-06-19,Evergreen Retail,Training,2516.2
+INV-5714,2025-06-19,Falcon Logistics,Shipping,1887.13
+INV-5715,2025-06-19,Evergreen Retail,Hardware,51.73
+INV-5716,2025-06-19,Cedar Supplies,Training,335.96
+INV-5717,2025-06-19,Cedar Supplies,Shipping,83.27
+INV-5718,2025-06-19,Delta Foods,Software licence,60.49
+INV-5719,2025-06-19,Falcon Logistics,Training,1044.91
+INV-5720,2025-06-19,Harbor Traders,Maintenance,15.24
+INV-5721,2025-06-20,Lotus Imports,Consulting,74.78
+INV-5722,2025-06-21,Acme Ltd,Hardware,521.76
+INV-5723,2025-06-21,Kestrel Media,Software licence,22.95
+INV-5724,2025-06-22,Granite Builders,Consulting,7460.66
+INV-5725,2025-06-22,Birch Co,Training,1099.75
+INV-5726,2025-06-22,Cedar Supplies,Software licence,44.87
+INV-5727,2025-06-22,Granite Builders,Software licence,107.38
+INV-5728,2025-06-23,Kestrel Media,Training,660.75
+INV-5729,2025-06-23,Ivy Wellness,Hardware,3688.22
+INV-5730,2025-06-23,Ivy Wellness,Consulting,1197.36
+INV-5731,2025-06-24,Kestrel Media,Shipping,93.38
+INV-5732,2025-06-24,Cedar Supplies,Shipping,72.35
+INV-5733,2025-06-24,Cedar Supplies,Maintenance,12.1
+INV-5734,2025-06-24,Evergreen Retail,Consulting,5803.52
+INV-5735,2025-06-24,Granite Builders,Consulting,25.67
+INV-5736,2025-06-25,Evergreen Retail,Training,112.38
+INV-5737,2025-06-25,Lotus Imports,Hardware,1740.09
+INV-5738,2025-06-25,Kestrel Media,Maintenance,1384.93
+INV-5739,2025-06-25,Lotus Imports,Consulting,59.08
+INV-5740,2025-06-25,Ivy Wellness,Hardware,4214.03
+INV-5741,2025-06-25,Delta Foods,Shipping,20.12
+INV-5742,2025-06-26,Lotus Imports,Software licence,1076.62
+INV-5743,2025-06-26,Kestrel Media,Software licence,22.39
+INV-5744,2025-06-27,Birch Co,Training,896.72
+INV-5745,2025-06-27,Kestrel Media,Maintenance,1771.87
+INV-5746,2025-06-27,Delta Foods,Shipping,52.37
+INV-5747,2025-06-28,Falcon Logistics,Software licence,83.48
+INV-5748,2025-06-28,Falcon Logistics,Hardware,118.01
+INV-5749,2025-06-28,Acme Ltd,Consulting,493.24
+INV-5750,2025-06-29,Delta Foods,Hardware,6244.13
+INV-5751,2025-06-29,Acme Ltd,Shipping,27.21
+INV-5752,2025-06-30,Ivy Wellness,Shipping,194.21
+INV-5753,2025-06-30,Granite Builders,Hardware,1945.23
+INV-5754,2025-06-30,Cedar Supplies,Hardware,7058.6
+INV-5755,2025-06-30,Granite Builders,Software licence,4342.25
+INV-5756,2025-06-30,Falcon Logistics,Hardware,10.39
+INV-5757,2025-06-30,Delta Foods,Hardware,169.88
+INV-5758,2025-07-01,Harbor Traders,Software licence,968.87
+INV-5759,2025-07-02,Kestrel Media,Maintenance,227.37
+INV-5760,2025-07-02,Granite Builders,Maintenance,44.59
+INV-5761,2025-07-02,Acme Ltd,Maintenance,25.18
+INV-5762,2025-07-02,Acme Ltd,Training,805.38
+INV-5763,2025-07-02,Birch Co,Software licence,25.88
+INV-5764,2025-07-03,Ivy Wellness,Maintenance,14.64
+INV-5765,2025-07-03,Lotus Imports,Software licence,1010.41
+INV-5766,2025-07-03,Kestrel Media,Training,3011.18
+INV-5767,2025-07-03,Acme Ltd,Software licence,18.21
+INV-5768,2025-07-03,Delta Foods,Hardware,2779.71
+INV-5769,2025-07-04,Granite Builders,Consulting,759.92
+INV-5770,2025-07-04,Lotus Imports,Hardware,78.74
+INV-5771,2025-07-05,Evergreen Retail,Shipping,460.53
+INV-5772,2025-07-05,Kestrel Media,Maintenance,3306.46
+INV-5773,2025-07-05,Cedar Supplies,Training,37.92
+INV-5774,2025-07-05,Evergreen Retail,Shipping,313.33
+INV-5775,2025-07-05,Granite Builders,Consulting,2176.5
+INV-5776,2025-07-05,Falcon Logistics,Shipping,12.89
+INV-5777,2025-07-05,Delta Foods,Hardware,3588.6
+INV-5778,2025-07-05,Kestrel Media,Shipping,36.88
+INV-5779,2025-07-05,Cedar Supplies,Hardware,329.43
+INV-5780,2025-07-06,Harbor Traders,Hardware,135.2
+INV-5781,2025-07-06,Evergreen Retail,Training,5745.56
+INV-5782,2025-07-06,Falcon Logistics,Software licence,239.8
+INV-5783,2025-07-06,Cedar Supplies,Consulting,46.77
+INV-5784,2025-07-06,Delta Foods,Maintenance,755.35
+INV-5785,2025-07-06,Evergreen Retail,Consulting,473.91
+INV-5786,2025-07-07,Lotus Imports,Consulting,5770.34
+INV-5787,2025-07-07,Kestrel Media,Consulting,994.4
+INV-5788,2025-07-07,Harbor Traders,Shipping,221.92
+INV-5789,2025-07-08,Cedar Supplies,Training,105.51
+INV-5790,2025-07-08,Cedar Supplies,Hardware,3295.42
+INV-5791,2025-07-08,Delta Foods,Consulting,582.83
+INV-5792,2025-07-08,Granite Builders,Maintenance,10.73
+INV-5793,2025-07-09,Granite Builders,Training,1875.64
+INV-5794,2025-07-09,Granite Builders,Software licence,225.86
+INV-5795,2025-07-09,Acme Ltd,Shipping,793.08
+INV-5796,2025-07-09,Birch Co,Software licence,910.31
+INV-5797,2025-07-09,Kestrel Media,Shipping,892.25
+INV-5798,2025-07-09,Ivy Wellness,Consulting,104.93
+INV-5799,2025-07-10,Evergreen Retail,Shipping,5289.4
+INV-5800,2025-07-10,Falcon Logistics,Shipping,3452.64
+INV-5801,2025-07-10,Lotus Imports,Training,98.54
+INV-5802,2025-07-10,Lotus Imports,Shipping,434.67
+INV-5803,2025-07-10,Cedar Supplies,Hardware,201.68
+INV-5804,2025-07-10,Granite Builders,Maintenance,26.56
+INV-5805,2025-07-11,Delta Foods,Shipping,13.57
+INV-5806,2025-07-11,Granite Builders,Consulting,120.54
+INV-5807,2025-07-11,Juniper Tech,Training,8267.74
+INV-5808,2025-07-11,Granite Builders,Maintenance,10.66
+INV-5809,2025-07-11,Granite Builders,Hardware,386.84
+INV-5810,2025-07-11,Lotus Imports,Consulting,512.29
+INV-5811,2025-07-11,Granite Builders,Shipping,2687.25
+INV-5812,2025-07-12,Cedar Supplies,Training,85.55
+INV-5813,2025-07-12,Birch Co,Maintenance,14.89
+INV-5814,2025-07-12,Granite Builders,Software licence,974.5
+INV-5815,2025-07-12,Birch Co,Hardware,38.42
+INV-5816,2025-07-12,Delta Foods,Training,4241.64
+INV-5817,2025-07-12,Cedar Supplies,Hardware,29.29
+INV-5818,2025-07-12,Kestrel Media,Maintenance,906.03
+INV-5819,2025-07-12,Evergreen Retail,Maintenance,29.8
+INV-5820,2025-07-12,Granite Builders,Shipping,119.55
+INV-5821,2025-07-12,Kestrel Media,Consulting,118.95
+INV-5822,2025-07-13,Ivy Wellness,Maintenance,39.73
+INV-5823,2025-07-13,Delta Foods,Software licence,18.48
+INV-5824,2025-07-14,Juniper Tech,Software licence,3874.19
+INV-5825,2025-07-14,Delta Foods,Consulting,286.17
+INV-5826,2025-07-14,Kestrel Media,Hardware,14.55
+INV-5827,2025-07-14,Evergreen Retail,Software licence,884.18
+INV-5828,2025-07-14,Acme Ltd,Maintenance,691.95
+INV-5829,2025-07-15,Lotus Imports,Shipping,37.06
+INV-5830,2025-07-16,Kestrel Media,Hardware,130.17
+INV-5831,2025-07-16,Granite Builders,Software licence,22.36
+INV-5832,2025-07-16,Delta Foods,Shipping,3767.21
+INV-5833,2025-07-17,Kestrel Media,Training,1118.62
+INV-5834,2025-07-18,Kestrel Media,Hardware,86.16
+INV-5835,2025-07-18,Kestrel Media,Maintenance,82.99
+INV-5836,2025-07-19,Juniper Tech,Training,1143.25
+INV-5837,2025-07-19,Delta Foods,Maintenance,213.17
+INV-5838,2025-07-19,Acme Ltd,Hardware,892.56
+INV-5839,2025-07-20,Evergreen Retail,Hardware,9772.4
+INV-5840,2025-07-20,Acme Ltd,Training,123.37
+INV-5841,2025-07-20,Falcon Logistics,Shipping,35.4
+INV-5842,2025-07-20,Evergreen Retail,Consulting,924.95
+INV-5843,2025-07-20,Evergreen Retail,Software licence,3758.62
+INV-5844,2025-07-21,Ivy Wellness,Consulting,27.93
+INV-5845,2025-07-21,Cedar Supplies,Maintenance,277.16
+INV-5846,2025-07-22,Delta Foods,Software licence,7984.36
+INV-5847,2025-07-22,Juniper Tech,Consulting,177.39
+INV-5848,2025-07-22,Birch Co,Consulting,673.7
+INV-5849,2025-07-23,Cedar Supplies,Maintenance,1805.07
+INV-5850,2025-07-23,Ivy Wellness,Shipping,51.29
+INV-5851,2025-07-23,Falcon Logistics,Hardware,99.69
+INV-5852,2025-07-23,Lotus Imports,Hardware,1840.16
+INV-5853,2025-07-24,Acme Ltd,Shipping,2582.86
+INV-5854,2025-07-24,Kestrel Media,Hardware,24.42
+INV-5855,2025-07-25,Ivy Wellness,Training,11.53
+INV-5856,2025-07-25,Kestrel Media,Consulting,3329.16
+INV-5857,2025-07-26,Lotus Imports,Training,145.38
+INV-5858,2025-07-26,Cedar Supplies,Shipping,1983.91
+INV-5859,2025-07-26,Acme Ltd,Maintenance,1540.72
+INV-5860,2025-07-27,Ivy Wellness,Maintenance,12.08
+INV-5861,2025-07-27,Birch Co,Consulting,224.71
+INV-5862,2025-07-27,Falcon Logistics,Software licence,409.84
+INV-5863,2025-07-28,Acme Ltd,Consulting,7424.48
+INV-5864,2025-07-28,Evergreen Retail,Shipping,80.96
+INV-5865,2025-07-28,Birch Co,Maintenance,1149.99
+INV-5866,2025-07-29,Falcon Logistics,Maintenance,1319.27
+INV-5867,2025-07-29,Kestrel Media,Software licence,3035.13
+INV-5868,2025-07-29,Acme Ltd,Shipping,3097.71
+INV-5869,2025-07-29,Falcon Logistics,Shipping,4316.66
+INV-5870,2025-07-29,Delta Foods,Consulting,5209.28
+INV-5871,2025-07-29,Harbor Traders,Maintenance,37.18
+INV-5872,2025-07-29,Kestrel Media,Consulting,221.35
+INV-5873,2025-07-30,Acme Ltd,Maintenance,10.3
+INV-5874,2025-07-30,Granite Builders,Hardware,31.2
+INV-5875,2025-07-30,Falcon Logistics,Maintenance,17.78
+INV-5876,2025-07-30,Kestrel Media,Maintenance,3212.92
+INV-5877,2025-07-30,Delta Foods,Maintenance,894.42
+INV-5878,2025-07-30,Acme Ltd,Training,867.03
+INV-5879,2025-07-31,Kestrel Media,Hardware,175.92
+INV-5880,2025-07-31,Acme Ltd,Training,866.9
+INV-5881,2025-07-31,Cedar Supplies,Software licence,16.06
+INV-5882,2025-07-31,Ivy Wellness,Software licence,98.52
+INV-5883,2025-08-01,Falcon Logistics,Software licence,1157.47
+INV-5884,2025-08-01,Evergreen Retail,Hardware,1137.49
+INV-5885,2025-08-01,Lotus Imports,Consulting,15.96
+INV-5886,2025-08-01,Lotus Imports,Training,36.83
+INV-5887,2025-08-01,Ivy Wellness,Consulting,1224.05
+INV-5888,2025-08-01,Evergreen Retail,Consulting,19.57
+INV-5889,2025-08-01,Granite Builders,Hardware,13.49
+INV-5890,2025-08-02,Harbor Traders,Consulting,24.97
+INV-5891,2025-08-02,Evergreen Retail,Training,236.53
+INV-5892,2025-08-02,Lotus Imports,Hardware,1518.61
+INV-5893,2025-08-02,Juniper Tech,Shipping,139.84
+INV-5894,2025-08-02,Kestrel Media,Shipping,95.05
+INV-5895,2025-08-03,Lotus Imports,Shipping,27.34
+INV-5896,2025-08-03,Juniper Tech,Maintenance,509.94
+INV-5897,2025-08-03,Harbor Traders,Shipping,586.94
+INV-5898,2025-08-03,Birch Co,Software licence,164.09
+INV-5899,2025-08-03,Evergreen Retail,Hardware,128.28
+INV-5900,2025-08-03,Ivy Wellness,Shipping,13.98
+INV-5901,2025-08-04,Ivy Wellness,Training,2717.33
+INV-5902,2025-08-04,Granite Builders,Consulting,131.54
+INV-5903,2025-08-05,Delta Foods,Training,33.11
+INV-5904,2025-08-05,Birch Co,Software licence,2858.28
+INV-5905,2025-08-05,Ivy Wellness,Maintenance,1048.49
+INV-5906,2025-08-05,Evergreen Retail,Training,803.57
+INV-5907,2025-08-05,Kestrel Media,Consulting,5733.5
+INV-5908,2025-08-06,Birch Co,Shipping,4575.28
+INV-5909,2025-08-06,Acme Ltd,Maintenance,16.35
+INV-5910,2025-08-06,Delta Foods,Software licence,153.92
+INV-5911,2025-08-06,Granite Builders,Consulting,2804.1
+INV-5912,2025-08-06,Cedar Supplies,Software licence,146.14
+INV-5913,2025-08-07,Acme Ltd,Maintenance,92.54
+INV-5914,2025-08-07,Kestrel Media,Consulting,514.77
+INV-5915,2025-08-07,Cedar Supplies,Training,1778.07
+INV-5916,2025-08-07,Juniper Tech,Maintenance,132.94
+INV-5917,2025-08-07,Evergreen Retail,Maintenance,42.64
+INV-5918,2025-08-07,Lotus Imports,Consulting,487.65
+INV-5919,2025-08-07,Evergreen Retail,Software licence,31.39
+INV-5920,2025-08-07,Lotus Imports,Shipping,15.45
+INV-5921,2025-08-07,Delta Foods,Software licence,2264.05
+INV-5922,2025-08-07,Ivy Wellness,Shipping,838.63
+INV-5923,2025-08-08,Kestrel Media,Software licence,2234.94
+INV-5924,2025-08-08,Cedar Supplies,Software licence,215.76
+INV-5925,2025-08-08,Harbor Traders,Training,45.54
+INV-5926,2025-08-08,Kestrel Media,Maintenance,799.01
+INV-5927,2025-08-08,Delta Foods,Shipping,837.9
+INV-5928,2025-08-08,Harbor Traders,Hardware,9651.26
+INV-5929,2025-08-09,Lotus Imports,Maintenance,414.66
+INV-5930,2025-08-10,Granite Builders,Hardware,3834.53
+INV-5931,2025-08-10,Lotus Imports,Software licence,788.29
+INV-5932,2025-08-10,Birch Co,Maintenance,24.24
+INV-5933,2025-08-10,Cedar Supplies,Consulting,76.5
+INV-5934,2025-08-11,Harbor Traders,Shipping,142.69
+INV-5935,2025-08-11,Falcon Logistics,Hardware,3903.69
+INV-5936,2025-08-11,Delta Foods,Consulting,216.12
+INV-5937,2025-08-11,Juniper Tech,Training,27.29
+INV-5938,2025-08-11,Granite Builders,Software licence,454.97
+INV-5939,2025-08-12,Lotus Imports,Shipping,366.83
+INV-5940,2025-08-12,Acme Ltd,Consulting,15.03
+INV-5941,2025-08-12,Cedar Supplies,Training,29.25
+INV-5942,2025-08-12,Acme Ltd,Consulting,44.5
+INV-5943,2025-08-13,Falcon Logistics,Hardware,32.0
+INV-5944,2025-08-14,Evergreen Retail,Software licence,4639.27
+INV-5945,2025-08-14,Lotus Imports,Training,9648.72
+INV-5946,2025-08-14,Kestrel Media,Maintenance,3440.01
+INV-5947,2025-08-14,Delta Foods,Shipping,115.87
+INV-5948,2025-08-14,Cedar Supplies,Consulting,1243.73
+INV-5949,2025-08-14,Falcon Logistics,Consulting,562.96
+INV-5950,2025-08-15,Delta Foods,Training,45.13
+INV-5951,2025-08-15,Acme Ltd,Training,2406.56
+INV-5952,2025-08-16,Juniper Tech,Training,328.24
+INV-5953,2025-08-16,Acme Ltd,Training,3221.65
+INV-5954,2025-08-16,Delta Foods,Shipping,123.46
+INV-5955,2025-08-16,Acme Ltd,Shipping,1937.34
+INV-5956,2025-08-17,Juniper Tech,Software licence,795.81
+INV-5957,2025-08-17,Juniper Tech,Consulting,3885.57
+INV-5958,2025-08-17,Harbor Traders,Hardware,47.32
+INV-5959,2025-08-17,Evergreen Retail,Software licence,70.03
+INV-5960,2025-08-17,Ivy Wellness,Shipping,14.46
+INV-5961,2025-08-17,Ivy Wellness,Consulting,88.86
+INV-5962,2025-08-17,Lotus Imports,Hardware,200.1
+INV-5963,2025-08-17,Lotus Imports,Hardware,76.54
+INV-5964,2025-08-17,Ivy Wellness,Training,190.63
+INV-5965,2025-08-17,Harbor Traders,Consulting,2271.6
+INV-5966,2025-08-18,Kestrel Media,Maintenance,113.79
+INV-5967,2025-08-18,Evergreen Retail,Shipping,22.38
+INV-5968,2025-08-18,Evergreen Retail,Maintenance,151.81
+INV-5969,2025-08-18,Cedar Supplies,Training,20.83
+INV-5970,2025-08-19,Harbor Traders,Shipping,4074.53
+INV-5971,2025-08-19,Kestrel Media,Maintenance,7108.29
+INV-5972,2025-08-19,Acme Ltd,Hardware,9695.69
+INV-5973,2025-08-19,Harbor Traders,Shipping,545.92
+INV-5974,2025-08-19,Granite Builders,Training,7276.7
+INV-5975,2025-08-20,Acme Ltd,Shipping,1180.63
+INV-5976,2025-08-21,Evergreen Retail,Software licence,758.52
+INV-5977,2025-08-21,Delta Foods,Hardware,2119.69
+INV-5978,2025-08-21,Lotus Imports,Maintenance,668.73
+INV-5979,2025-08-21,Lotus Imports,Consulting,912.21
+INV-5980,2025-08-22,Evergreen Retail,Software licence,1102.73
+INV-5981,2025-08-22,Harbor Traders,Consulting,617.32
+INV-5982,2025-08-22,Birch Co,Hardware,21.78
+INV-5983,2025-08-23,Acme Ltd,Software licence,2109.15
+INV-5984,2025-08-23,Granite Builders,Shipping,4743.71
+INV-5985,2025-08-23,Lotus Imports,Shipping,1115.5
+INV-5986,2025-08-23,Birch Co,Hardware,32.02
+INV-5987,2025-08-23,Acme Ltd,Consulting,597.05
+INV-5988,2025-08-24,Evergreen Retail,Hardware,101.47
+INV-5989,2025-08-24,Acme Ltd,Training,22.41
+INV-5990,2025-08-24,Harbor Traders,Consulting,1089.01
+INV-5991,2025-08-24,Harbor Traders,Software licence,9600.0
+INV-5992,2025-08-25,Delta Foods,Training,21.4
+INV-5993,2025-08-25,Ivy Wellness,Software licence,2145.15
+INV-5994,2025-08-25,Cedar Supplies,Shipping,728.77
+INV-5995,2025-08-25,Cedar Supplies,Maintenance,172.16
+INV-5996,2025-08-25,Cedar Supplies,Hardware,6272.15
+INV-5997,2025-08-26,Harbor Traders,Training,1058.72
+INV-5998,2025-08-26,Kestrel Media,Consulting,6789.58
+INV-5999,2025-08-27,Evergreen Retail,Shipping,5294.63
+INV-6000,2025-08-27,Ivy Wellness,Maintenance,10.67
+INV-6001,2025-08-27,Birch Co,Training,731.88
+INV-6002,2025-08-28,Evergreen Retail,Consulting,92.81
+INV-6003,2025-08-28,Birch Co,Software licence,944.71
+INV-6004,2025-08-29,Birch Co,Hardware,4358.42
+INV-6005,2025-08-29,Harbor Traders,Consulting,154.33
+INV-6006,2025-08-29,Harbor Traders,Shipping,271.18
+INV-6007,2025-08-29,Ivy Wellness,Hardware,498.59
+INV-6008,2025-08-29,Falcon Logistics,Shipping,16.2
+INV-6009,2025-08-30,Falcon Logistics,Training,1849.65
+INV-6010,2025-08-30,Delta Foods,Training,1096.94
+INV-6011,2025-08-30,Granite Builders,Shipping,27.75
+INV-6012,2025-08-30,Cedar Supplies,Maintenance,539.53
+INV-6013,2025-08-30,Juniper Tech,Hardware,513.55
+INV-6014,2025-08-30,Granite Builders,Maintenance,15.51
+INV-6015,2025-08-31,Harbor Traders,Shipping,55.34
+INV-6016,2025-08-31,Ivy Wellness,Software licence,5403.55
+INV-6017,2025-08-31,Delta Foods,Shipping,488.51
+INV-6018,2025-08-31,Harbor Traders,Maintenance,7860.4
+INV-6019,2025-08-31,Granite Builders,Consulting,655.81
+INV-6020,2025-09-01,Cedar Supplies,Hardware,298.42
+INV-6021,2025-09-01,Harbor Traders,Maintenance,102.24
+INV-6022,2025-09-01,Granite Builders,Software licence,337.42
+INV-6023,2025-09-01,Harbor Traders,Shipping,118.16
+INV-6024,2025-09-02,Delta Foods,Maintenance,1658.94
+INV-6025,2025-09-02,Ivy Wellness,Training,31.62
+INV-6026,2025-09-03,Juniper Tech,Consulting,145.27
+INV-6027,2025-09-03,Lotus Imports,Hardware,22.38
+INV-6028,2025-09-03,Harbor Traders,Shipping,232.11
+INV-6029,2025-09-04,Birch Co,Consulting,3078.12
+INV-6030,2025-09-05,Evergreen Retail,Maintenance,114.87
+INV-6031,2025-09-05,Acme Ltd,Software licence,607.8
+INV-6032,2025-09-05,Ivy Wellness,Shipping,11.11
+INV-6033,2025-09-06,Delta Foods,Software licence,15.25
+INV-6034,2025-09-06,Juniper Tech,Training,2995.07
+INV-6035,2025-09-06,Kestrel Media,Software licence,33.36
+INV-6036,2025-09-06,Harbor Traders,Maintenance,46.81
+INV-6037,2025-09-07,Ivy Wellness,Hardware,66.69
+INV-6038,2025-09-07,Ivy Wellness,Consulting,158.52
+INV-6039,2025-09-08,Juniper Tech,Shipping,28.51
+INV-6040,2025-09-09,Birch Co,Shipping,184.11
+INV-6041,2025-09-09,Cedar Supplies,Consulting,668.88
+INV-6042,2025-09-09,Acme Ltd,Training,777.51
+INV-6043,2025-09-10,Acme Ltd,Software licence,259.09
+INV-6044,2025-09-10,Delta Foods,Consulting,13.4
+INV-6045,2025-09-10,Acme Ltd,Consulting,2502.63
+INV-6046,2025-09-11,Granite Builders,Maintenance,85.35
+INV-6047,2025-09-11,Lotus Imports,Training,14.5
+INV-6048,2025-09-11,Birch Co,Shipping,1997.95
+INV-6049,2025-09-12,Kestrel Media,Maintenance,4104.47
+INV-6050,2025-09-12,Granite Builders,Hardware,357.45
+INV-6051,2025-09-13,Juniper Tech,Software licence,2990.14
+INV-6052,2025-09-13,Acme Ltd,Software licence,18.95
+INV-6053,2025-09-13,Evergreen Retail,Hardware,1704.31
+INV-6054,2025-09-13,Evergreen Retail,Software licence,7582.76
+INV-6055,2025-09-13,Falcon Logistics,Training,52.75
+INV-6056,2025-09-14,Lotus Imports,Shipping,6298.33
+INV-6057,2025-09-14,Juniper Tech,Hardware,84.78
+INV-6058,2025-09-14,Evergreen Retail,Consulting,39.38
+INV-6059,2025-09-14,Harbor Traders,Consulting,552.12
+INV-6060,2025-09-14,Delta Foods,Training,3421.29
+INV-6061,2025-09-14,Kestrel Media,Consulting,520.58
+INV-6062,2025-09-14,Birch Co,Consulting,190.9
+INV-6063,2025-09-14,Harbor Traders,Training,330.46
+INV-6064,2025-09-15,Kestrel Media,Maintenance,17.97
+INV-6065,2025-09-15,Birch Co,Maintenance,20.36
+INV-6066,2025-09-15,Birch Co,Training,24.86
+INV-6067,2025-09-15,Falcon Logistics,Hardware,167.41
+INV-6068,2025-09-15,Kestrel Media,Training,33.23
+INV-6069,2025-09-16,Granite Builders,Training,1596.99
+INV-6070,2025-09-16,Cedar Supplies,Hardware,24.41
+INV-6071,2025-09-16,Acme Ltd,Training,189.5
+INV-6072,2025-09-16,Falcon Logistics,Training,857.28
+INV-6073,2025-09-17,Acme Ltd,Maintenance,804.15
+INV-6074,2025-09-18,Birch Co,Consulting,29.36
+INV-6075,2025-09-18,Harbor Traders,Software licence,4907.14
+INV-6076,2025-09-18,Evergreen Retail,Maintenance,4159.99
+INV-6077,2025-09-18,Harbor Traders,Shipping,28.09
+INV-6078,2025-09-18,Juniper Tech,Training,47.39
+INV-6079,2025-09-19,Falcon Logistics,Training,310.94
+INV-6080,2025-09-19,Birch Co,Consulting,13.02
+INV-6081,2025-09-19,Kestrel Media,Training,1728.44
+INV-6082,2025-09-19,Delta Foods,Maintenance,11.96
+INV-6083,2025-09-19,Juniper Tech,Shipping,241.15
+INV-6084,2025-09-19,Falcon Logistics,Hardware,47.71
+INV-6085,2025-09-19,Falcon Logistics,Hardware,3069.83
+INV-6086,2025-09-19,Harbor Traders,Training,14.28
+INV-6087,2025-09-20,Granite Builders,Shipping,6103.58
+INV-6088,2025-09-20,Kestrel Media,Consulting,99.15
+INV-6089,2025-09-20,Delta Foods,Shipping,1527.93
+INV-6090,2025-09-20,Juniper Tech,Shipping,4864.25
+INV-6091,2025-09-20,Evergreen Retail,Software licence,172.31
+INV-6092,2025-09-21,Ivy Wellness,Consulting,4784.67
+INV-6093,2025-09-21,Juniper Tech,Training,503.76
+INV-6094,2025-09-21,Birch Co,Training,232.59
+INV-6095,2025-09-21,Cedar Supplies,Hardware,9778.45
+INV-6096,2025-09-21,Kestrel Media,Maintenance,4240.82
+INV-6097,2025-09-21,Falcon Logistics,Software licence,4335.23
+INV-6098,2025-09-22,Ivy Wellness,Hardware,730.63
+INV-6099,2025-09-22,Delta Foods,Software licence,431.62
+INV-6100,2025-09-22,Acme Ltd,Hardware,329.0
+INV-6101,2025-09-22,Lotus Imports,Software licence,62.0
+INV-6102,2025-09-23,Ivy Wellness,Maintenance,372.29
+INV-6103,2025-09-23,Evergreen Retail,Hardware,23.77
+INV-6104,2025-09-23,Birch Co,Shipping,4341.88
+INV-6105,2025-09-23,Acme Ltd,Software licence,263.08
+INV-6106,2025-09-23,Juniper Tech,Training,73.04
+INV-6107,2025-09-23,Evergreen Retail,Maintenance,2872.09
+INV-6108,2025-09-24,Falcon Logistics,Maintenance,161.86
+INV-6109,2025-09-24,Ivy Wellness,Software licence,4289.03
+INV-6110,2025-09-25,Delta Foods,Training,1108.75
+INV-6111,2025-09-25,Falcon Logistics,Training,2250.0
+INV-6112,2025-09-26,Falcon Logistics,Hardware,822.32
+INV-6113,2025-09-26,Ivy Wellness,Shipping,123.9
+INV-6114,2025-09-26,Kestrel Media,Training,3019.58
+INV-6115,2025-09-26,Granite Builders,Consulting,1455.08
+INV-6116,2025-09-26,Harbor Traders,Training,5624.52
+INV-6117,2025-09-26,Evergreen Retail,Shipping,13.35
+INV-6118,2025-09-26,Granite Builders,Shipping,347.76
+INV-6119,2025-09-27,Kestrel Media,Shipping,47.53
+INV-6120,2025-09-27,Juniper Tech,Consulting,244.99
+INV-6121,2025-09-27,Harbor Traders,Software licence,76.38
+INV-6122,2025-09-27,Juniper Tech,Hardware,554.69
+INV-6123,2025-09-28,Lotus Imports,Hardware,125.48
+INV-6124,2025-09-28,Juniper Tech,Consulting,13.47
+INV-6125,2025-09-28,Cedar Supplies,Shipping,2362.65
+INV-6126,2025-09-28,Lotus Imports,Maintenance,37.65
+INV-6127,2025-09-29,Kestrel Media,Consulting,6230.13
+INV-6128,2025-09-29,Lotus Imports,Maintenance,205.73
+INV-6129,2025-09-29,Cedar Supplies,Shipping,21.04
+INV-6130,2025-09-29,Evergreen Retail,Software licence,40.34
+INV-6131,2025-09-29,Falcon Logistics,Training,104.48
+INV-6132,2025-09-30,Evergreen Retail,Training,323.24
+INV-6133,2025-09-30,Falcon Logistics,Training,994.82
+INV-6134,2025-09-30,Evergreen Retail,Shipping,4503.45
+INV-6135,2025-09-30,Delta Foods,Consulting,7461.69
+INV-6136,2025-09-30,Juniper Tech,Hardware,13.82
+INV-6137,2025-10-01,Cedar Supplies,Training,7613.62
+INV-6138,2025-10-01,Acme Ltd,Software licence,108.92
+INV-6139,2025-10-01,Birch Co,Consulting,136.16
+INV-6140,2025-10-01,Evergreen Retail,Consulting,13.29
+INV-6141,2025-10-01,Birch Co,Hardware,112.77
+INV-6142,2025-10-01,Falcon Logistics,Maintenance,1440.04
+INV-6143,2025-10-02,Lotus Imports,Hardware,2861.09
+INV-6144,2025-10-02,Falcon Logistics,Shipping,47.92
+INV-6145,2025-10-02,Falcon Logistics,Training,105.7
+INV-6146,2025-10-02,Acme Ltd,Software licence,3967.45
+INV-6147,2025-10-02,Ivy Wellness,Hardware,9423.11
+INV-6148,2025-10-04,Falcon Logistics,Consulting,46.97
+INV-6149,2025-10-04,Birch Co,Software licence,7192.67
+INV-6150,2025-10-04,Falcon Logistics,Hardware,821.52
+INV-6151,2025-10-04,Lotus Imports,Consulting,171.69
+INV-6152,2025-10-04,Evergreen Retail,Hardware,4375.87
+INV-6153,2025-10-04,Harbor Traders,Consulting,12.94
+INV-6154,2025-10-04,Delta Foods,Software licence,329.95
+INV-6155,2025-10-04,Evergreen Retail,Software licence,56.17
+INV-6156,2025-10-05,Kestrel Media,Training,1485.19
+INV-6157,2025-10-05,Acme Ltd,Maintenance,841.27
+INV-6158,2025-10-05,Ivy Wellness,Shipping,445.56
+INV-6159,2025-10-05,Ivy Wellness,Maintenance,1184.12
+INV-6160,2025-10-05,Birch Co,Software licence,292.56
+INV-6161,2025-10-05,Juniper Tech,Hardware,325.56
+INV-6162,2025-10-06,Acme Ltd,Software licence,3872.51
+INV-6163,2025-10-06,Acme Ltd,Software licence,2534.85
+INV-6164,2025-10-06,Birch Co,Hardware,738.15
+INV-6165,2025-10-06,Granite Builders,Maintenance,2116.28
+INV-6166,2025-10-06,Harbor Traders,Shipping,19.39
+INV-6167,2025-10-07,Cedar Supplies,Maintenance,89.85
+INV-6168,2025-10-07,Birch Co,Software licence,11.71
+INV-6169,2025-10-08,Juniper Tech,Training,276.4
+INV-6170,2025-10-08,Acme Ltd,Software licence,1305.55
+INV-6171,2025-10-09,Lotus Imports,Software licence,2883.83
+INV-6172,2025-10-09,Granite Builders,Software licence,73.49
+INV-6173,2025-10-09,Ivy Wellness,Consulting,996.63
+INV-6174,2025-10-09,Evergreen Retail,Maintenance,68.57
+INV-6175,2025-10-10,Delta Foods,Training,62.88
+INV-6176,2025-10-10,Lotus Imports,Consulting,1733.08
+INV-6177,2025-10-10,Ivy Wellness,Shipping,7681.52
+INV-6178,2025-10-10,Cedar Supplies,Shipping,2088.82
+INV-6179,2025-10-10,Cedar Supplies,Software licence,26.23
+INV-6180,2025-10-10,Harbor Traders,Consulting,320.92
+INV-6181,2025-10-10,Granite Builders,Training,1733.19
+INV-6182,2025-10-10,Granite Builders,Training,140.39
+INV-6183,2025-10-11,Cedar Supplies,Training,24.55
+INV-6184,2025-10-12,Kestrel Media,Maintenance,11.05
+INV-6185,2025-10-12,Lotus Imports,Consulting,10.22
+INV-6186,2025-10-12,Ivy Wellness,Maintenance,522.53
+INV-6187,2025-10-13,Cedar Supplies,Software licence,1169.88
+INV-6188,2025-10-13,Acme Ltd,Software licence,5490.96
+INV-6189,2025-10-13,Harbor Traders,Training,41.05
+INV-6190,2025-10-13,Juniper Tech,Consulting,75.88
+INV-6191,2025-10-13,Harbor Traders,Maintenance,208.33
+INV-6192,2025-10-14,Ivy Wellness,Maintenance,6814.63
+INV-6193,2025-10-14,Harbor Traders,Hardware,1940.94
+INV-6194,2025-10-15,Harbor Traders,Shipping,1441.2
+INV-6195,2025-10-15,Lotus Imports,Hardware,19.97
+INV-6196,2025-10-15,Kestrel Media,Shipping,384.54
+INV-6197,2025-10-15,Harbor Traders,Hardware,24.26
+INV-6198,2025-10-15,Kestrel Media,Shipping,443.55
+INV-6199,2025-10-16,Acme Ltd,Shipping,686.2
+INV-6200,2025-10-16,Falcon Logistics,Training,86.66
+INV-6201,2025-10-16,Cedar Supplies,Shipping,22.73
+INV-6202,2025-10-17,Evergreen Retail,Maintenance,1680.59
+INV-6203,2025-10-17,Birch Co,Training,1014.11
+INV-6204,2025-10-17,Acme Ltd,Training,18.86
+INV-6205,2025-10-17,Birch Co,Hardware,2832.49
+INV-6206,2025-10-17,Harbor Traders,Software licence,454.62
+INV-6207,2025-10-17,Kestrel Media,Training,125.5
+INV-6208,2025-10-18,Juniper Tech,Maintenance,665.41
+INV-6209,2025-10-18,Ivy Wellness,Consulting,815.31
+INV-6210,2025-10-18,Lotus Imports,Shipping,3514.36
+INV-6211,2025-10-18,Birch Co,Maintenance,21.37
+INV-6212,2025-10-18,Juniper Tech,Maintenance,95.3
+INV-6213,2025-10-18,Granite Builders,Maintenance,63.47
+INV-6214,2025-10-19,Delta Foods,Software licence,3046.3
+INV-6215,2025-10-19,Lotus Imports,Training,4041.56
+INV-6216,2025-10-20,Acme Ltd,Training,1497.43
+INV-6217,2025-10-20,Granite Builders,Hardware,32.2
+INV-6218,2025-10-20,Acme Ltd,Hardware,54.62
+INV-6219,2025-10-21,Falcon Logistics,Training,360.12
+INV-6220,2025-10-21,Evergreen Retail,Training,96.3
+INV-6221,2025-10-21,Acme Ltd,Shipping,16.15
+INV-6222,2025-10-22,Lotus Imports,Hardware,2854.28
+INV-6223,2025-10-22,Cedar Supplies,Training,976.59
+INV-6224,2025-10-22,Cedar Supplies,Shipping,8071.9
+INV-6225,2025-10-22,Granite Builders,Hardware,16.08
+INV-6226,2025-10-22,Juniper Tech,Maintenance,2032.31
+INV-6227,2025-10-22,Juniper Tech,Training,474.66
+INV-6228,2025-10-23,Kestrel Media,Software licence,8973.09
+INV-6229,2025-10-23,Acme Ltd,Maintenance,38.59
+INV-6230,2025-10-23,Delta Foods,Software licence,13.26
+INV-6231,2025-10-23,Lotus Imports,Maintenance,632.38
+INV-6232,2025-10-23,Falcon Logistics,Training,15.68
+INV-6233,2025-10-23,Delta Foods,Software licence,4702.6
+INV-6234,2025-10-23,Juniper Tech,Training,9687.85
+INV-6235,2025-10-24,Harbor Traders,Hardware,7081.14
+INV-6236,2025-10-24,Birch Co,Maintenance,188.05
+INV-6237,2025-10-24,Harbor Traders,Hardware,53.57
+INV-6238,2025-10-24,Falcon Logistics,Maintenance,9923.72
+INV-6239,2025-10-25,Lotus Imports,Training,29.53
+INV-6240,2025-10-26,Juniper Tech,Training,2498.33
+INV-6241,2025-10-26,Acme Ltd,Hardware,2726.64
+INV-6242,2025-10-26,Birch Co,Shipping,74.16
+INV-6243,2025-10-27,Falcon Logistics,Maintenance,1763.93
+INV-6244,2025-10-27,Evergreen Retail,Training,74.7
+INV-6245,2025-10-27,Cedar Supplies,Hardware,96.48
+INV-6246,2025-10-27,Birch Co,Training,140.59
+INV-6247,2025-10-28,Birch Co,Hardware,192.11
+INV-6248,2025-10-28,Birch Co,Consulting,5568.49
+INV-6249,2025-10-28,Lotus Imports,Software licence,126.81
+INV-6250,2025-10-28,Delta Foods,Consulting,738.97
+INV-6251,2025-10-29,Birch Co,Hardware,4482.41
+INV-6252,2025-10-31,Falcon Logistics,Maintenance,109.92
+INV-6253,2025-10-31,Granite Builders,Shipping,2073.97
+INV-6254,2025-10-31,Kestrel Media,Shipping,20.73
+INV-6255,2025-10-31,Acme Ltd,Training,86.03
+INV-6256,2025-10-31,Lotus Imports,Hardware,403.96
+INV-6257,2025-11-01,Falcon Logistics,Consulting,46.31
+INV-6258,2025-11-01,Birch Co,Software licence,638.14
+INV-6259,2025-11-02,Granite Builders,Training,156.26
+INV-6260,2025-11-02,Harbor Traders,Hardware,8768.85
+INV-6261,2025-11-02,Granite Builders,Maintenance,1583.48
+INV-6262,2025-11-02,Cedar Supplies,Hardware,25.26
+INV-6263,2025-11-03,Lotus Imports,Maintenance,1211.01
+INV-6264,2025-11-03,Cedar Supplies,Maintenance,10.67
+INV-6265,2025-11-03,Evergreen Retail,Shipping,528.94
+INV-6266,2025-11-03,Ivy Wellness,Software licence,136.62
+INV-6267,2025-11-03,Kestrel Media,Shipping,4539.3
+INV-6268,2025-11-03,Acme Ltd,Consulting,693.65
+INV-6269,2025-11-04,Harbor Traders,Training,936.5
+INV-6270,2025-11-04,Cedar Supplies,Software licence,4348.14
+INV-6271,2025-11-05,Lotus Imports,Hardware,2921.54
+INV-6272,2025-11-05,Harbor Traders,Maintenance,257.02
+INV-6273,2025-11-05,Harbor Traders,Training,858.65
+INV-6274,2025-11-05,Delta Foods,Hardware,1009.5
+INV-6275,2025-11-05,Granite Builders,Training,194.49
+INV-6276,2025-11-05,Birch Co,Software licence,82.94
+INV-6277,2025-11-06,Ivy Wellness,Consulting,6141.52
+INV-6278,2025-11-06,Falcon Logistics,Consulting,281.84
+INV-6279,2025-11-07,Acme Ltd,Maintenance,118.42
+INV-6280,2025-11-07,Delta Foods,Consulting,197.49
+INV-6281,2025-11-07,Juniper Tech,Software licence,246.11
+INV-6282,2025-11-07,Cedar Supplies,Consulting,705.97
+INV-6283,2025-11-07,Harbor Traders,Hardware,5466.98
+INV-6284,2025-11-08,Evergreen Retail,Maintenance,48.86
+INV-6285,2025-11-08,Delta Foods,Consulting,1328.85
+INV-6286,2025-11-08,Acme Ltd,Maintenance,4224.01
+INV-6287,2025-11-08,Granite Builders,Shipping,697.74
+INV-6288,2025-11-08,Birch Co,Hardware,39.31
+INV-6289,2025-11-09,Juniper Tech,Training,46.12
+INV-6290,2025-11-09,Acme Ltd,Training,74.37
+INV-6291,2025-11-09,Granite Builders,Shipping,142.46
+INV-6292,2025-11-10,Kestrel Media,Maintenance,107.4
+INV-6293,2025-11-11,Acme Ltd,Maintenance,1411.3
+INV-6294,2025-11-12,Falcon Logistics,Software licence,38.19
+INV-6295,2025-11-12,Delta Foods,Maintenance,19.55
+INV-6296,2025-11-12,Lotus Imports,Shipping,195.29
+INV-6297,2025-11-12,Birch Co,Software licence,2122.32
+INV-6298,2025-11-13,Kestrel Media,Software licence,2038.27
+INV-6299,2025-11-13,Cedar Supplies,Consulting,851.9
+INV-6300,2025-11-13,Acme Ltd,Consulting,2594.93
+INV-6301,2025-11-13,Ivy Wellness,Hardware,9796.68
+INV-6302,2025-11-14,Cedar Supplies,Shipping,460.14
+INV-6303,2025-11-14,Evergreen Retail,Software licence,60.75
+INV-6304,2025-11-14,Harbor Traders,Training,13.78
+INV-6305,2025-11-14,Juniper Tech,Training,1216.51
+INV-6306,2025-11-15,Harbor Traders,Consulting,30.4
+INV-6307,2025-11-15,Delta Foods,Consulting,699.78
+INV-6308,2025-11-16,Birch Co,Training,1859.55
+INV-6309,2025-11-16,Falcon Logistics,Training,6660.71
+INV-6310,2025-11-16,Evergreen Retail,Hardware,5457.75
+INV-6311,2025-11-17,Ivy Wellness,Software licence,72.46
+INV-6312,2025-11-17,Acme Ltd,Consulting,25.69
+INV-6313,2025-11-17,Cedar Supplies,Software licence,120.98
+INV-6314,2025-11-17,Granite Builders,Shipping,46.84
+INV-6315,2025-11-17,Harbor Traders,Consulting,1586.62
+INV-6316,2025-11-17,Granite Builders,Consulting,249.61
+INV-6317,2025-11-18,Evergreen Retail,Hardware,620.48
+INV-6318,2025-11-18,Lotus Imports,Training,10.43
+INV-6319,2025-11-18,Evergreen Retail,Consulting,2383.35
+INV-6320,2025-11-18,Kestrel Media,Consulting,193.74
+INV-6321,2025-11-18,Evergreen Retail,Software licence,23.62
+INV-6322,2025-11-19,Evergreen Retail,Training,212.61
+INV-6323,2025-11-19,Ivy Wellness,Maintenance,448.67
+INV-6324,2025-11-19,Lotus Imports,Hardware,99.37
+INV-6325,2025-11-19,Ivy Wellness,Maintenance,10.02
+INV-6326,2025-11-19,Ivy Wellness,Training,93.98
+INV-6327,2025-11-19,Acme Ltd,Training,1442.33
+INV-6328,2025-11-20,Cedar Supplies,Consulting,7815.78
+INV-6329,2025-11-20,Ivy Wellness,Consulting,9492.4
+INV-6330,2025-11-20,Granite Builders,Consulting,16.8
+INV-6331,2025-11-20,Evergreen Retail,Software licence,109.71
+INV-6332,2025-11-20,Falcon Logistics,Training,281.7
+INV-6333,2025-11-20,Ivy Wellness,Training,706.19
+INV-6334,2025-11-20,Kestrel Media,Hardware,444.04
+INV-6335,2025-11-21,Acme Ltd,Consulting,185.16
+INV-6336,2025-11-21,Evergreen Retail,Consulting,37.7
+INV-6337,2025-11-21,Granite Builders,Training,514.58
+INV-6338,2025-11-21,Falcon Logistics,Training,240.22
+INV-6339,2025-11-21,Juniper Tech,Hardware,8506.29
+INV-6340,2025-11-21,Harbor Traders,Training,56.06
+INV-6341,2025-11-22,Ivy Wellness,Shipping,604.17
+INV-6342,2025-11-22,Evergreen Retail,Hardware,494.86
+INV-6343,2025-11-22,Ivy Wellness,Consulting,630.48
+INV-6344,2025-11-22,Granite Builders,Hardware,455.6
+INV-6345,2025-11-22,Delta Foods,Software licence,4187.69
+INV-6346,2025-11-22,Birch Co,Maintenance,95.79
+INV-6347,2025-11-22,Delta Foods,Shipping,38.22
+INV-6348,2025-11-23,Falcon Logistics,Training,345.02
+INV-6349,2025-11-23,Acme Ltd,Hardware,15.48
+INV-6350,2025-11-24,Delta Foods,Shipping,52.99
+INV-6351,2025-11-24,Granite Builders,Hardware,386.4
+INV-6352,2025-11-24,Ivy Wellness,Shipping,940.31
+INV-6353,2025-11-24,Acme Ltd,Consulting,31.24
+INV-6354,2025-11-25,Falcon Logistics,Shipping,1506.21
+INV-6355,2025-11-25,Delta Foods,Software licence,1410.26
+INV-6356,2025-11-25,Ivy Wellness,Hardware,1221.39
+INV-6357,2025-11-26,Harbor Traders,Training,151.88
+INV-6358,2025-11-26,Delta Foods,Training,484.78
+INV-6359,2025-11-26,Kestrel Media,Consulting,32.39
+INV-6360,2025-11-27,Ivy Wellness,Shipping,46.83
+INV-6361,2025-11-27,Falcon Logistics,Software licence,233.32
+INV-6362,2025-11-27,Delta Foods,Hardware,23.29
+INV-6363,2025-11-27,Ivy Wellness,Training,32.75
+INV-6364,2025-11-28,Harbor Traders,Maintenance,118.36
+INV-6365,2025-11-28,Lotus Imports,Training,79.24
+INV-6366,2025-11-28,Juniper Tech,Software licence,832.75
+INV-6367,2025-11-29,Delta Foods,Software licence,28.33
+INV-6368,2025-11-29,Lotus Imports,Training,406.38
+INV-6369,2025-11-29,Birch Co,Software licence,2846.68
+INV-6370,2025-11-29,Falcon Logistics,Shipping,1224.96
+INV-6371,2025-11-29,Acme Ltd,Training,565.13
+INV-6372,2025-11-29,Lotus Imports,Hardware,755.63
+INV-6373,2025-11-29,Kestrel Media,Hardware,11.74
+INV-6374,2025-11-30,Granite Builders,Maintenance,80.41
+INV-6375,2025-11-30,Granite Builders,Hardware,1025.87
+INV-6376,2025-11-30,Birch Co,Consulting,1275.4
+INV-6377,2025-12-01,Lotus Imports,Training,390.12
+INV-6378,2025-12-01,Evergreen Retail,Hardware,672.35
+INV-6379,2025-12-01,Lotus Imports,Hardware,376.84
+INV-6380,2025-12-01,Kestrel Media,Hardware,182.89
+INV-6381,2025-12-02,Delta Foods,Shipping,4556.75
+INV-6382,2025-12-02,Juniper Tech,Hardware,359.04
+INV-6383,2025-12-02,Delta Foods,Hardware,781.78
+INV-6384,2025-12-02,Ivy Wellness,Training,642.68
+INV-6385,2025-12-02,Ivy Wellness,Hardware,12.89
+INV-6386,2025-12-02,Ivy Wellness,Training,125.64
+INV-6387,2025-12-03,Granite Builders,Training,112.2
+INV-6388,2025-12-03,Juniper Tech,Maintenance,21.12
+INV-6389,2025-12-03,Ivy Wellness,Maintenance,3525.31
+INV-6390,2025-12-03,Juniper Tech,Shipping,60.8
+INV-6391,2025-12-04,Kestrel Media,Hardware,80.57
+INV-6392,2025-12-04,Lotus Imports,Training,127.47
+INV-6393,2025-12-05,Juniper Tech,Consulting,942.1
+INV-6394,2025-12-05,Kestrel Media,Hardware,35.68
+INV-6395,2025-12-05,Cedar Supplies,Hardware,1014.14
+INV-6396,2025-12-05,Acme Ltd,Maintenance,232.93
+INV-6397,2025-12-05,Ivy Wellness,Software licence,27.64
+INV-6398,2025-12-05,Harbor Traders,Hardware,330.85
+INV-6399,2025-12-05,Falcon Logistics,Training,634.67
+INV-6400,2025-12-06,Acme Ltd,Training,5730.48
+INV-6401,2025-12-06,Harbor Traders,Software licence,83.44
+INV-6402,2025-12-07,Granite Builders,Software licence,35.44
+INV-6403,2025-12-07,Juniper Tech,Maintenance,111.14
+INV-6404,2025-12-08,Harbor Traders,Shipping,4381.02
+INV-6405,2025-12-08,Lotus Imports,Maintenance,654.23
+INV-6406,2025-12-09,Evergreen Retail,Maintenance,3464.33
+INV-6407,2025-12-09,Evergreen Retail,Training,109.87
+INV-6408,2025-12-09,Birch Co,Hardware,2830.2
+INV-6409,2025-12-09,Harbor Traders,Consulting,6236.88
+INV-6410,2025-12-09,Acme Ltd,Training,229.06
+INV-6411,2025-12-10,Cedar Supplies,Hardware,7647.46
+INV-6412,2025-12-10,Falcon Logistics,Hardware,200.08
+INV-6413,2025-12-10,Birch Co,Software licence,3344.23
+INV-6414,2025-12-11,Harbor Traders,Training,21.72
+INV-6415,2025-12-11,Juniper Tech,Consulting,21.24
+INV-6416,2025-12-11,Granite Builders,Hardware,566.78
+INV-6417,2025-12-11,Delta Foods,Software licence,12.77
+INV-6418,2025-12-11,Falcon Logistics,Maintenance,753.44
+INV-6419,2025-12-12,Evergreen Retail,Software licence,640.12
+INV-6420,2025-12-12,Acme Ltd,Training,18.17
+INV-6421,2025-12-12,Harbor Traders,Software licence,9399.17
+INV-6422,2025-12-12,Juniper Tech,Shipping,99.64
+INV-6423,2025-12-12,Lotus Imports,Consulting,165.13
+INV-6424,2025-12-12,Ivy Wellness,Training,16.82
+INV-6425,2025-12-13,Delta Foods,Training,381.12
+INV-6426,2025-12-14,Birch Co,Maintenance,51.46
+INV-6427,2025-12-14,Evergreen Retail,Consulting,7947.48
+INV-6428,2025-12-14,Ivy Wellness,Consulting,26.83
+INV-6429,2025-12-15,Delta Foods,Consulting,464.35
+INV-6430,2025-12-15,Falcon Logistics,Maintenance,1563.56
+INV-6431,2025-12-15,Cedar Supplies,Consulting,1316.65
+INV-6432,2025-12-15,Harbor Traders,Consulting,347.66
+INV-6433,2025-12-16,Granite Builders,Hardware,41.99
+INV-6434,2025-12-16,Acme Ltd,Software licence,13.73
+INV-6435,2025-12-16,Granite Builders,Software licence,25.05
+INV-6436,2025-12-17,Acme Ltd,Consulting,551.09
+INV-6437,2025-12-17,Falcon Logistics,Shipping,5673.19
+INV-6438,2025-12-17,Evergreen Retail,Shipping,150.75
+INV-6439,2025-12-17,Ivy Wellness,Software licence,182.69
+INV-6440,2025-12-18,Harbor Traders,Training,274.1
+INV-6441,2025-12-18,Ivy Wellness,Maintenance,136.75
+INV-6442,2025-12-18,Kestrel Media,Maintenance,16.31
+INV-6443,2025-12-18,Harbor Traders,Software licence,7772.56
+INV-6444,2025-12-19,Harbor Traders,Consulting,40.28
+INV-6445,2025-12-19,Falcon Logistics,Hardware,30.37
+INV-6446,2025-12-19,Falcon Logistics,Hardware,123.92
+INV-6447,2025-12-19,Granite Builders,Consulting,161.97
+INV-6448,2025-12-20,Falcon Logistics,Maintenance,4040.22
+INV-6449,2025-12-20,Kestrel Media,Hardware,425.23
+INV-6450,2025-12-20,Harbor Traders,Hardware,10.93
+INV-6451,2025-12-20,Birch Co,Maintenance,1833.55
+INV-6452,2025-12-20,Harbor Traders,Consulting,10.03
+INV-6453,2025-12-20,Delta Foods,Shipping,154.23
+INV-6454,2025-12-20,Lotus Imports,Software licence,5269.69
+INV-6455,2025-12-20,Acme Ltd,Maintenance,680.53
+INV-6456,2025-12-21,Evergreen Retail,Software licence,2476.29
+INV-6457,2025-12-22,Lotus Imports,Maintenance,2950.37
+INV-6458,2025-12-22,Lotus Imports,Hardware,4316.67
+INV-6459,2025-12-22,Harbor Traders,Training,43.8
+INV-6460,2025-12-22,Juniper Tech,Maintenance,29.87
+INV-6461,2025-12-23,Acme Ltd,Software licence,27.75
+INV-6462,2025-12-23,Cedar Supplies,Training,175.24
+INV-6463,2025-12-23,Delta Foods,Consulting,1901.16
+INV-6464,2025-12-23,Cedar Supplies,Hardware,12.11
+INV-6465,2025-12-23,Ivy Wellness,Training,28.92
+INV-6466,2025-12-23,Lotus Imports,Maintenance,383.22
+INV-6467,2025-12-23,Juniper Tech,Consulting,81.47
+INV-6468,2025-12-24,Delta Foods,Shipping,191.55
+INV-6469,2025-12-24,Falcon Logistics,Hardware,33.42
+INV-6470,2025-12-24,Birch Co,Software licence,312.59
+INV-6471,2025-12-24,Lotus Imports,Software licence,279.63
+INV-6472,2025-12-24,Cedar Supplies,Maintenance,54.45
+INV-6473,2025-12-25,Lotus Imports,Shipping,2658.0
+INV-6474,2025-12-25,Birch Co,Maintenance,705.95
+INV-6475,2025-12-25,Harbor Traders,Software licence,19.46
+INV-6476,2025-12-25,Birch Co,Consulting,174.5
+INV-6477,2025-12-26,Lotus Imports,Training,67.41
+INV-6478,2025-12-26,Cedar Supplies,Consulting,37.35
+INV-6479,2025-12-26,Cedar Supplies,Software licence,610.45
+INV-6480,2025-12-26,Granite Builders,Training,398.26
+INV-6481,2025-12-26,Granite Builders,Training,402.17
+INV-6482,2025-12-27,Evergreen Retail,Software licence,1479.89
+INV-6483,2025-12-27,Birch Co,Shipping,46.03
+INV-6484,2025-12-27,Ivy Wellness,Maintenance,229.01
+INV-6485,2025-12-27,Acme Ltd,Maintenance,9317.68
+INV-6486,2025-12-28,Kestrel Media,Maintenance,99.65
+INV-6487,2025-12-28,Granite Builders,Maintenance,696.96
+INV-6488,2025-12-28,Kestrel Media,Shipping,13.17
+INV-6489,2025-12-28,Juniper Tech,Software licence,197.22
+INV-6490,2025-12-28,Acme Ltd,Software licence,63.53
+INV-6491,2025-12-28,Delta Foods,Maintenance,21.48
+INV-6492,2025-12-29,Birch Co,Software licence,481.49
+INV-6493,2025-12-29,Birch Co,Hardware,28.71
+INV-6494,2025-12-30,Lotus Imports,Shipping,57.19
+INV-6495,2025-12-30,Granite Builders,Hardware,253.66
+INV-6496,2025-12-30,Acme Ltd,Software licence,54.32
+INV-6497,2025-12-31,Granite Builders,Software licence,26.7
+INV-6498,2025-12-31,Delta Foods,Consulting,1762.84
+INV-6499,2025-12-31,Juniper Tech,Software licence,16.58

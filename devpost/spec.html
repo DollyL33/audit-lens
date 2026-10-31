@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audit Lens Spec</title>
+<style>
+  :root {
+    --bg: #0b1220; --bg2: #111a2c; --surface: #152036; --ink: #eef2f7; --muted: #93a0b4;
+    --line: #26324a; --accent: #4ade80; --accent-soft: #143a2a; --blue: #4f7cff; --blue-soft: #18264a;
+    --warn: #f59e5b; --warn-soft: #3a2616; --yellow: #facc15;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; color: var(--ink);
+    background: radial-gradient(1200px 600px at 80% -10%, #1b2a55 0%, transparent 60%), var(--bg);
+    font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif; }
+  main { max-width: 980px; margin: 0 auto; padding: 32px 16px 72px; }
+  h1 { font-size: 2.2rem; margin: 8px 0 0; letter-spacing: -.02em; }
+  h1 span { color: var(--muted); display: block; }
+  h2 { font-size: 1.3rem; margin: 44px 0 12px; }
+  .tag { display: inline-block; font-size: .75rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
+    color: var(--muted); border: 1px solid var(--line); padding: 3px 10px; border-radius: 999px; }
+  .muted { color: var(--muted); }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+  code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .85em; background: var(--bg2); padding: 1px 5px; border-radius: 4px; }
+  svg text { fill: var(--ink); font-family: inherit; }
+  .plain p { margin: 0 0 10px; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  @media (max-width: 720px) { .grid3 { grid-template-columns: 1fr; } }
+  .mini { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px; font-size: .9rem; }
+  .mini b { display: block; margin-bottom: 2px; }
+
+  .steps { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; margin-bottom: 12px; }
+  @media (max-width: 720px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+  .steps button { border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 10px;
+    padding: 8px; font: inherit; font-size: .85rem; cursor: pointer; text-align: left; }
+  .steps button[aria-selected="true"] { border-color: var(--accent); background: var(--accent-soft); }
+  .steps b { display: block; font-size: .7rem; color: var(--muted); }
+  .jpanel { display: none; } .jpanel.on { display: block; }
+  .flow { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 10px 0; }
+  .chip { background: var(--bg2); border: 1px solid var(--line); border-radius: 8px; padding: 5px 9px; font-size: .85rem; }
+  .chip.file { border-color: var(--blue); background: var(--blue-soft); }
+  .arrow { color: var(--muted); }
+  .ref { font-size: .8rem; color: var(--muted); }
+
+  details { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; margin-bottom: 8px; }
+  summary { cursor: pointer; padding: 12px 16px; font-weight: 600; }
+  summary .mono { margin-left: 6px; }
+  details > div { padding: 0 16px 14px; color: var(--muted); font-size: .93rem; }
+  details ul { margin: 6px 0; padding-left: 20px; }
+  table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+  th, td { border-bottom: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; }
+
+  .mad { margin-top: 10px; }
+  .mad input { width: 100%; accent-color: var(--accent); }
+  .bands { display: flex; height: 10px; border-radius: 6px; overflow: hidden; margin: 6px 0; }
+  .bands div { height: 100%; }
+  .verdict { font-weight: 700; font-size: 1.1rem; }
+  pre { background: var(--bg2); border: 1px solid var(--line); border-radius: 10px; padding: 12px; overflow-x: auto; font-size: .8rem; line-height: 1.45; color: var(--ink); }
+  .tree .c { color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <span class="tag">Spec · approved</span>
+  <h1>Audit Lens<span>Technical blueprint</span></h1>
+
+  <h2>How this works, in plain language</h2>
+  <div class="card plain">
+    <p>Audit Lens is <b>one Python program</b> built with <b>Streamlit</b>, which turns a Python script into a web page. Every click makes Streamlit <b>run the script again</b>. A small memory box called <b>session state</b> remembers the file, the fixes and the current stage between re-runs, until the tab closes.</p>
+    <p>The <b>AI only chooses</b> fixes from a fixed menu; <b>pandas makes the changes</b>. If there's no NVIDIA key or the AI misbehaves, <b>built-in rules</b> take over. The user never sees the word "AI." The audit checks follow <b>Mark Nigrini's</b> forensic analytics methods.</p>
+  </div>
+
+  <h2>The pieces and how they connect</h2>
+  <div class="card">
+    <svg viewBox="0 0 940 330" width="100%" role="img" aria-label="Architecture: Browser talks to app.py, which uses loader, suggester (NVIDIA API or rules), fix menu, column finder, metrics, Benford and duplicates, questions and UI; data kept in session state">
+      <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#93a0b4"/></marker></defs>
+      <g font-size="12.5">
+        <rect x="10" y="130" width="120" height="60" rx="10" fill="#152036" stroke="#26324a"/>
+        <text x="70" y="156" text-anchor="middle" font-weight="700">Browser</text><text x="70" y="174" text-anchor="middle" fill="#93a0b4">user + file</text>
+
+        <rect x="175" y="110" width="150" height="100" rx="10" fill="#143a2a" stroke="#4ade80"/>
+        <text x="250" y="140" text-anchor="middle" font-weight="700">app.py</text>
+        <text x="250" y="158" text-anchor="middle" fill="#93a0b4">stages: upload →</text>
+        <text x="250" y="174" text-anchor="middle" fill="#93a0b4">review → dashboard</text>
+        <rect x="185" y="250" width="130" height="52" rx="8" fill="#111a2c" stroke="#26324a" stroke-dasharray="4 3"/>
+        <text x="250" y="272" text-anchor="middle" font-weight="600">session state</text><text x="250" y="290" text-anchor="middle" fill="#93a0b4">memory for this tab</text>
+
+        <text x="380" y="30" fill="#93a0b4" font-size="11" letter-spacing="1">CLEAN-UP</text>
+        <rect x="380" y="40" width="130" height="44" rx="8" fill="#18264a" stroke="#4f7cff"/><text x="445" y="67" text-anchor="middle">loader.py</text>
+        <rect x="380" y="96" width="130" height="44" rx="8" fill="#18264a" stroke="#4f7cff"/><text x="445" y="123" text-anchor="middle">suggest.py</text>
+        <rect x="380" y="152" width="130" height="44" rx="8" fill="#18264a" stroke="#4f7cff"/><text x="445" y="179" text-anchor="middle">fixes.py</text>
+
+        <rect x="560" y="70" width="140" height="44" rx="8" fill="#152036" stroke="#26324a"/><text x="630" y="91" text-anchor="middle" font-weight="600">NVIDIA API</text><text x="630" y="106" text-anchor="middle" fill="#93a0b4" font-size="11">picks from the menu</text>
+        <rect x="560" y="124" width="140" height="44" rx="8" fill="#152036" stroke="#26324a"/><text x="630" y="145" text-anchor="middle" font-weight="600">built-in rules</text><text x="630" y="160" text-anchor="middle" fill="#93a0b4" font-size="11">fallback</text>
+
+        <text x="380" y="226" fill="#93a0b4" font-size="11" letter-spacing="1">DASHBOARD</text>
+        <rect x="380" y="236" width="110" height="38" rx="8" fill="#18264a" stroke="#4f7cff"/><text x="435" y="260" text-anchor="middle">detect.py</text>
+        <rect x="500" y="236" width="110" height="38" rx="8" fill="#18264a" stroke="#4f7cff"/><text x="555" y="260" text-anchor="middle">metrics.py</text>
+        <rect x="620" y="236" width="110" height="38" rx="8" fill="#3a2616" stroke="#f59e5b"/><text x="675" y="260" text-anchor="middle">benford.py</text>
+        <rect x="740" y="236" width="120" height="38" rx="8" fill="#3a2616" stroke="#f59e5b"/><text x="800" y="260" text-anchor="middle">duplicates.py</text>
+        <rect x="620" y="284" width="110" height="38" rx="8" fill="#18264a" stroke="#4f7cff"/><text x="675" y="308" text-anchor="middle">questions.py</text>
+        <rect x="740" y="284" width="120" height="38" rx="8" fill="#18264a" stroke="#4f7cff"/><text x="800" y="308" text-anchor="middle">ui.py</text>
+        <text x="800" y="226" text-anchor="middle" fill="#f59e5b" font-size="11">Nigrini methods</text>
+
+        <path d="M130 160H171" stroke="#93a0b4" stroke-width="1.5" marker-end="url(#ar)"/>
+        <path d="M250 210V246" stroke="#93a0b4" stroke-width="1.5" marker-end="url(#ar)"/>
+        <path d="M325 140L376 62M325 150L376 118M325 165L376 174M325 190L376 255" stroke="#93a0b4" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+        <path d="M510 112L556 94M510 122L556 144" stroke="#93a0b4" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+        <path d="M490 255H496M610 255H616M730 255H736" stroke="#93a0b4" stroke-width="1.5" marker-end="url(#ar)"/>
+      </g>
+    </svg>
+    <p class="ref">Blue = your Python files · orange = audit checks · green = the main script · dashed = memory, nothing saved to disk.</p>
+  </div>
+
+  <h2>Follow one upload through the system</h2>
+  <div class="steps" role="tablist">
+    <button role="tab" aria-selected="true" data-s="0"><b>1</b>Arrive</button>
+    <button role="tab" aria-selected="false" data-s="1"><b>2</b>Upload</button>
+    <button role="tab" aria-selected="false" data-s="2"><b>3</b>Spot the mess</button>
+    <button role="tab" aria-selected="false" data-s="3"><b>4</b>Review</button>
+    <button role="tab" aria-selected="false" data-s="4"><b>5</b>Dashboard</button>
+    <button role="tab" aria-selected="false" data-s="5"><b>6</b>Start over</button>
+  </div>
+  <div class="card">
+    <div class="jpanel on"><b>Arrive.</b> The browser opens the app. <code>app.py</code> sees <code>stage = "upload"</code> and draws the hero headline and upload box.
+      <div class="flow"><span class="chip">browser</span><span class="arrow">→</span><span class="chip file">app.py</span><span class="arrow">→</span><span class="chip file">ui.py hero()</span></div>
+      <div class="ref">PRD: Upload · Look and Feel</div></div>
+    <div class="jpanel"><b>Upload.</b> The file goes to the loader, which turns it into a table (a <b>DataFrame</b>). It's saved as <code>raw_df</code> and the stage becomes <code>"review"</code>.
+      <div class="flow"><span class="chip">sales.xlsx</span><span class="arrow">→</span><span class="chip file">loader.py</span><span class="arrow">→</span><span class="chip">session: raw_df</span></div>
+      <div class="ref">PRD: Upload · wrong type → friendly message</div></div>
+    <div class="jpanel"><b>Spot the mess.</b> The suggester sends headers plus 20 rows to NVIDIA and gets back JSON choices from the fix menu. Anything invalid is dropped. No key or an error → built-in rules. The result is saved as <code>fixes</code>; affected cells are highlighted.
+      <div class="flow"><span class="chip file">suggest.py</span><span class="arrow">→</span><span class="chip">NVIDIA <span class="muted">or</span> rules</span><span class="arrow">→</span><span class="chip">session: fixes</span><span class="arrow">→</span><span class="chip file">fixes.py cells_changed()</span></div>
+      <pre>[{"operation": "to_number", "column": "Amount",
+  "description": "Remove $ and commas so Amount is a number"}]</pre>
+      <div class="ref">PRD: Spot the Mess and Suggested Fixes</div></div>
+    <div class="jpanel"><b>Review.</b> Each fix is a tick box (<code>ticked</code>). Every click re-runs the script and re-applies only the ticked fixes to a preview, so before/after stays in sync. <b>Approve</b> applies them to the whole table → <code>clean_df</code> → stage <code>"dashboard"</code>.
+      <div class="flow"><span class="chip">tick boxes</span><span class="arrow">→</span><span class="chip file">fixes.py apply_fixes()</span><span class="arrow">→</span><span class="chip">session: clean_df</span></div>
+      <div class="ref">PRD: Review and Approve · duplicates never removed</div></div>
+    <div class="jpanel"><b>Dashboard.</b> The column finder picks the amount/date/party/invoice columns. Metrics, Benford's and duplicates run on <code>clean_df</code>, the questions get filled in, and ui.py draws the cards and charts.
+      <div class="flow"><span class="chip file">detect.py</span><span class="arrow">→</span><span class="chip file">metrics.py</span><span class="chip file">benford.py</span><span class="chip file">duplicates.py</span><span class="arrow">→</span><span class="chip file">questions.py</span><span class="arrow">→</span><span class="chip file">ui.py</span></div>
+      <div class="ref">PRD: Automatic Column Detection · Number Cards and Comparison · Benford's Law · Duplicates · Questions to Ask</div></div>
+    <div class="jpanel"><b>Start over.</b> "Analyse another file" clears session state, back to upload. Nothing was ever written to disk.
+      <div class="flow"><span class="chip">button</span><span class="arrow">→</span><span class="chip">session cleared</span><span class="arrow">→</span><span class="chip">stage "upload"</span></div>
+      <div class="ref">PRD: States and Boundaries · Persistence</div></div>
+  </div>
+
+  <h2>The audit maths (Nigrini)</h2>
+  <div class="card">
+    <b>Benford's first-digit test: how the verdict is chosen</b>
+    <p class="muted" style="margin:4px 0 0">MAD = the average gap between actual and expected digit percentages. Drag to see which verdict each MAD value gets, using Nigrini's first-digit bands.</p>
+    <div class="mad">
+      <input type="range" id="mad" min="0" max="0.025" step="0.0005" value="0.004" aria-label="MAD value">
+      <div class="bands"><div style="width:24%;background:#4ade80"></div><div style="width:24%;background:#86efac"></div><div style="width:12%;background:#facc15"></div><div style="width:40%;background:#f59e5b"></div></div>
+      <div class="ref">0 · 0.006 · 0.012 · 0.015 · 0.025+</div>
+      <div style="margin-top:8px">MAD <span class="mono" id="madv">0.0040</span> → <span class="verdict" id="madt">Close conformity</span> <span class="muted" id="madc">(looks normal)</span></div>
+    </div>
+    <div class="grid3" style="margin-top:14px">
+      <div class="mini"><b>Which bars light up</b>Z-test per digit with continuity correction; z &gt; 1.96 and above expected = spike.</div>
+      <div class="mini"><b>Sample size</b>Amounts ≥ 10 only. Under 100 → skipped. 100–999 → "small sample, read with caution."</div>
+      <div class="mini"><b>Duplicates: same-same-same</b>Same amount + same date + same customer/vendor (or invoice). Run after clean-up.</div>
+    </div>
+  </div>
+
+  <h2>Components</h2>
+  <details><summary>App shell <span class="mono">app.py</span></summary><div>Draws the page, injects CSS, shows one stage at a time; "Analyse another file" resets. <span class="ref">PRD: Screens and Layout</span></div></details>
+  <details><summary>Loader <span class="mono">loader.py</span></summary><div>Reads .csv (UTF-8, then Latin-1), .xlsx, .xls into a DataFrame; friendly error otherwise. <span class="ref">PRD: Upload</span></div></details>
+  <details><summary>Fix menu <span class="mono">fixes.py</span></summary><div>
+    <table><tr><th>operation</th><th>does</th></tr>
+      <tr><td class="mono">clean_headers</td><td>trim spaces in column names</td></tr>
+      <tr><td class="mono">standardize_dates</td><td>mixed formats → YYYY-MM-DD</td></tr>
+      <tr><td class="mono">to_number</td><td>"$1,250" → 1250; "(120)" → −120</td></tr>
+      <tr><td class="mono">tidy_text</td><td>trim / collapse spaces, Title Case</td></tr>
+      <tr><td class="mono">drop_empty_rows</td><td>remove fully blank rows</td></tr>
+      <tr><td class="mono">flag_missing</td><td>changes nothing; highlights blanks</td></tr></table>
+    Plus <code>suggest_by_rules()</code>, <code>apply_fixes()</code>, <code>cells_changed()</code>. <b>Nothing deletes duplicates.</b> <span class="ref">PRD: Spot the Mess · Review and Approve</span></div></details>
+  <details><summary>Suggester <span class="mono">suggest.py</span></summary><div>NVIDIA call (15 s timeout) → validate → fallback to rules. Same output either way. <span class="ref">PRD: Spot the Mess</span></div></details>
+  <details><summary>Column finder <span class="mono">detect.py</span></summary><div>Name hints + data checks for amount / date / party / invoice; no user input. <span class="ref">PRD: Automatic Column Detection</span></div></details>
+  <details><summary>Metrics <span class="mono">metrics.py</span></summary><div>Total, count, biggest, latest month vs previous; monthly totals; top 5. Missing column → "not available." <span class="ref">PRD: Number Cards and Comparison</span></div></details>
+  <details><summary>Benford <span class="mono">benford.py</span> · Duplicates <span class="mono">duplicates.py</span></summary><div>As in the maths section above. <span class="ref">PRD: Audit Finding: Benford's Law · Duplicates</span></div></details>
+  <details><summary>Questions <span class="mono">questions.py</span></summary><div>Fixed templates, e.g. digit-4 spike → "Are payments being kept just under a $5,000 approval limit?" <span class="ref">PRD: Questions to Ask</span></div></details>
+  <details><summary>Screen pieces <span class="mono">ui.py</span> + <span class="mono">.streamlit/config.toml</span></summary><div>Dark theme (#0b1220 / #152036 / green #4ade80 / orange #f59e5b), bold hero, rounded KPI and finding cards, Plotly dark charts. Never the word "AI," not even in spinners. <span class="ref">PRD: Look and Feel</span></div></details>
+
+  <h2>File structure</h2>
+<pre class="tree">AI business project/
+├── app.py                  <span class="c"># entry: theme, stages, reset</span>
+├── auditlens/
+│   ├── loader.py           <span class="c"># read CSV / Excel</span>
+│   ├── fixes.py            <span class="c"># fix menu, rules, apply, highlight</span>
+│   ├── suggest.py          <span class="c"># NVIDIA call → fallback to rules</span>
+│   ├── detect.py           <span class="c"># find amount / date / party / invoice</span>
+│   ├── metrics.py          <span class="c"># cards, monthly, top 5</span>
+│   ├── benford.py          <span class="c"># Nigrini first-digit test</span>
+│   ├── duplicates.py       <span class="c"># Nigrini same-same-same</span>
+│   ├── questions.py        <span class="c"># question templates</span>
+│   └── ui.py               <span class="c"># CSS, cards, charts</span>
+├── sample_data/            <span class="c"># MADE-UP demo files (digit-4 spike + duplicates; natural)</span>
+├── scripts/make_sample_data.py
+├── tests/                  <span class="c"># pytest: benford, duplicates, fixes</span>
+├── .streamlit/config.toml  <span class="c"># dark theme</span>
+├── requirements.txt · .env.example · README.md
+└── devpost/                <span class="c"># planning docs</span></pre>
+
+  <h2>Where it runs</h2>
+  <div class="grid3">
+    <div class="mini"><b>On your laptop</b><code>pip install -r requirements.txt</code><br><code>streamlit run app.py</code><br>→ localhost:8501</div>
+    <div class="mini"><b>Shareable link (LinkedIn)</b>Streamlit Community Cloud (free): public GitHub repo → share.streamlit.io → app.py, Python 3.12, NVIDIA key in Secrets.</div>
+    <div class="mini"><b>Submission</b>Short demo video + public GitHub repo. The link is a bonus.</div>
+  </div>
+
+  <h2>What could break, and what happens</h2>
+  <details><summary>NVIDIA key missing, quota used up, slow, or a weird reply</summary><div>Built-in rules are used silently. Same review screen.</div></details>
+  <details><summary>Wrong or unreadable file</summary><div>"Audit Lens reads CSV and Excel files…" and stays on upload.</div></details>
+  <details><summary>Columns not found</summary><div>Each section that needs a missing column shows a "not available" note.</div></details>
+  <details><summary>Fewer than 100 amounts</summary><div>Benford's shows "Too few amounts for a reliable test" instead of a verdict.</div></details>
+
+  <h2>Decisions</h2>
+  <div class="card">
+    <table>
+      <tr><th>Your choices</th><th>Details I filled in</th></tr>
+      <tr><td>
+        • Python + Streamlit<br>• NVIDIA free API; a small sample is OK<br>• Nigrini: MAD bands, sample caution, same-same-same<br>• Shareable Streamlit link for LinkedIn
+      </td><td>
+        • 6-item fix menu and rule thresholds<br>• Column-name hints; z &gt; 1.96 highlight<br>• Model <code>meta/llama-3.3-70b-instruct</code> (verify)<br>• <b>Correction:</b> under-$5,000 amounts start with <b>4</b>, so the demo plants a digit-4 spike
+      </td></tr>
+    </table>
+    <p class="ref" style="margin-top:10px"><b>Your useful unknown:</b> "Is there a free API key?" Answer: NVIDIA's developer tier is free with limits, and the app works with no key thanks to the rules. Check the allowance when you sign up. <b>Verify first in the build:</b> libraries install on Python 3.14 (else use 3.12).</p>
+  </div>
+</main>
+<script>
+  const tabs = document.querySelectorAll('.steps button'), panels = document.querySelectorAll('.jpanel');
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x => x.setAttribute('aria-selected', x === t));
+    panels.forEach((p, i) => p.classList.toggle('on', i == t.dataset.s));
+  }));
+  const mad = document.getElementById('mad');
+  function upd() {
+    const v = +mad.value; let t, c, col;
+    if (v <= 0.006) { t = 'Close conformity'; c = '(looks normal)'; col = '#4ade80'; }
+    else if (v <= 0.012) { t = 'Acceptable conformity'; c = '(looks normal)'; col = '#86efac'; }
+    else if (v <= 0.015) { t = 'Marginally acceptable'; c = '(red flag: worth a look)'; col = '#facc15'; }
+    else { t = 'Nonconformity'; c = '(red flag)'; col = '#f59e5b'; }
+    document.getElementById('madv').textContent = v.toFixed(4);
+    const el = document.getElementById('madt'); el.textContent = t; el.style.color = col;
+    document.getElementById('madc').textContent = c;
+  }
+  mad.addEventListener('input', upd); upd();
+</script>
+</body>
+</html>
