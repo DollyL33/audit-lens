@@ -9,6 +9,7 @@ import streamlit as st
 from auditlens import benford, detect, duplicates, metrics, questions, ui
 from auditlens import fixes as fixes_mod
 from auditlens.loader import LoadError, load_file
+from auditlens.suggest import suggest_fixes
 
 st.set_page_config(page_title="Audit Lens", page_icon="🔎", layout="wide")
 ui.inject_css()
@@ -44,7 +45,7 @@ def show_upload():
     state.file_name = uploaded.name
     state.raw_df = df
     with st.spinner("Checking your data…"):
-        state.fixes = fixes_mod.suggest_by_rules(df)
+        state.fixes = suggest_fixes(df)
     state.stage = "review"
     st.rerun()
 
