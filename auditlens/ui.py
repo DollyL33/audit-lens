@@ -7,14 +7,15 @@ import streamlit as st
 
 LOGO_PATH = Path(__file__).resolve().parent.parent / "assets" / "logo.svg"
 
-# Colours from spec.md > Look and Feel
-INK = "#eef2f7"
-MUTED = "#93a0b4"
-LINE = "#26324a"
-SURFACE = "#152036"
-GREEN = "#4ade80"
-ORANGE = "#f59e5b"
-BAR = "#4a5b7a"
+# Colours from spec.md > Look and Feel: navy, deep green, grey and burgundy
+INK = "#eef1f5"
+MUTED = "#9fb0c6"
+LINE = "#2b4163"
+SURFACE = "#1b2e4a"
+GREEN = "#5fbf8f"
+FLAG = "#c4475c"      # burgundy, for red flags
+FLAG_BG = "#3b2032"   # dark burgundy, behind highlighted cells
+BAR = "#5b6f8c"
 
 CSS = f"""
 <style>
@@ -86,7 +87,7 @@ def kpi_cards(cards):
     for column, (label, value, change, up) in zip(st.columns(len(cards)), cards):
         change_html = ""
         if change:
-            colour, arrow = {True: (GREEN, "▲ "), False: (ORANGE, "▼ "), None: (MUTED, "")}[up]
+            colour, arrow = {True: (GREEN, "▲ "), False: (FLAG, "▼ "), None: (MUTED, "")}[up]
             change_html = f'<div class="al-kpi-change" style="color:{colour}">{arrow}{html.escape(change)}</div>'
         column.markdown(
             f"""<div class="al-kpi"><div class="al-kpi-label">{html.escape(label)}</div>
@@ -113,7 +114,7 @@ def monthly_chart(monthly):
 
 def finding_header(label, flagged, headline, sentence):
     """Top of a finding card: coloured uppercase label, big headline, one plain sentence."""
-    colour = ORANGE if flagged else GREEN
+    colour = FLAG if flagged else GREEN
     st.markdown(
         f"""
         <div class="al-finding-label" style="color:{colour}">{html.escape(label)}</div>
@@ -134,7 +135,7 @@ def question(text):
 def benford_chart(table):
     import plotly.graph_objects as go
 
-    colours = [ORANGE if spike else BAR for spike in table["spike"]]
+    colours = [FLAG if spike else BAR for spike in table["spike"]]
     fig = go.Figure()
     fig.add_bar(
         x=table["digit"], y=table["actual"] * 100, marker_color=colours, name="Your data",
@@ -155,8 +156,8 @@ def benford_chart(table):
 
 
 def highlight(df, mask):
-    """Colour the cells where `mask` is True in the warning orange."""
-    style = f"background-color: #3a2616; color: {ORANGE};"
+    """Colour the cells where `mask` is True in burgundy."""
+    style = f"background-color: {FLAG_BG}; color: #f2b3be;"
     return df.style.apply(lambda _: mask.replace({True: style, False: ""}), axis=None)
 
 

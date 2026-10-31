@@ -60,13 +60,13 @@ PRD ref: `prd.md > The Core Journey`.
 
 ## Look and Feel
 Implements `prd.md > Look and Feel`.
-- **Streamlit theme** in `.streamlit/config.toml`: `base = "dark"`, `backgroundColor = "#0b1220"`, `secondaryBackgroundColor = "#152036"`, `textColor = "#eef2f7"`, `primaryColor = "#4ade80"`, `font = "sans serif"`.
+- **Streamlit theme** in `.streamlit/config.toml`: `base = "dark"`, `backgroundColor = "#132238"` (navy), `secondaryBackgroundColor = "#1b2e4a"`, `textColor = "#eef1f5"`, `primaryColor = "#5fbf8f"` (deep green), `font = "sans serif"`. Palette chosen by the learner during the build: navy, deep green, grey, burgundy.
 - **Custom CSS** (injected once from `auditlens/ui.py`), for things Streamlit can't do alone:
   - Hero: large bold headline (~2.6rem, weight 800, tight letter-spacing) with a grey (#93a0b4) second line.
-  - Number cards: rounded (14px), 1px border #26324a, small uppercase grey label, large bold value, ▲ green / ▼ orange change.
-  - Finding cards: same card style, an uppercase label coloured by verdict (green #4ade80 = normal, orange #f59e5b = red flag), one plain sentence, then a **"Question to ask →"** line.
-  - Highlighted cells in the clean-up preview: orange text on a dark orange background.
-- **Charts:** Plotly `plotly_dark` template with transparent background; normal bars #4a5b7a, flagged bars #f59e5b, Benford expected line #4ade80.
+  - Number cards: rounded (14px), 1px border #2b4163, small uppercase grey label, large bold value, ▲ green / ▼ burgundy change.
+  - Finding cards: same card style, an uppercase label coloured by verdict (deep green #5fbf8f = normal, burgundy #c4475c = red flag), one plain sentence, then a **"Question to ask →"** line.
+  - Highlighted cells in the clean-up preview: light burgundy text on a dark burgundy background.
+- **Charts:** Plotly `plotly_dark` template with transparent background; normal bars grey #5b6f8c, flagged bars burgundy #c4475c, Benford expected line deep green #5fbf8f.
 - **Copy tone:** plain, confident, auditor-like. **Never the word "AI"** in any visible text, including spinners ("Checking your data…", not "AI is thinking…").
 - **Streamlit limits:** the layout is Streamlit's single column with `st.columns` rows. It won't be pixel-identical to the PandasAI reference, but the colours, cards and headline style carry over.
 

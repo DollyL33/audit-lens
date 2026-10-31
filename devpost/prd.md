@@ -33,10 +33,10 @@ One page that moves through three stages in order. No sidebar navigation or mult
 
 ## Look and Feel
 Source: learner's screenshots of pandas-ai.com.
-- **Dark theme**: deep navy/near-black background (learner chose dark over the white version).
+- **Dark navy theme in an audit-firm palette: navy, deep green, grey and burgundy** (learner chose this during the build, replacing the original near-black + orange, which felt too much like a generic AI app).
 - Borrowed from the reference: a **big, bold headline** with a lighter grey second line; generous spacing; clean, modern sans-serif type.
 - **Rounded cards** for numbers, with a small uppercase label (e.g. "TOTAL AMOUNT") and a large value; small coloured icon accents.
-- **Finding cards** in the reference's "Insight" style: a big headline number or statement, one plain-English sentence, and a coloured accent. Green for "looks normal," a warm warning colour for a red flag.
+- **Finding cards** in the reference's "Insight" style: a big headline number or statement, one plain-English sentence, and a coloured accent. Deep green for "looks normal," burgundy for a red flag.
 - Feels like a sharp, trustworthy auditor's tool, not a flashy BI product.
 - **Never mention "AI"** anywhere the user can see: name, headings, buttons, messages (`scope.md > Inspiration & Identity`).
 - Avoid: chat boxes, "Ask a question" inputs, robot or assistant imagery.

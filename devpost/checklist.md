@@ -49,7 +49,7 @@ Build mode: learn
   Learner check: Run the messy sample through to the dashboard and check that the cards and monthly chart look right. Then upload a file with no date column and see what the app does.
   Commit: `Add number cards, monthly comparison, and top transactions`
 
-- [ ] **5. Suggestions come from NVIDIA's AI behind the scenes, with automatic fallback**
+- [x] **5. Suggestions come from NVIDIA's AI behind the scenes, with automatic fallback**
   Becomes usable: With `NVIDIA_API_KEY` in `.env` (or Streamlit secrets), the suggested fixes come from the NVIDIA model; without a key, or on any error, the built-in rules are used and the screen looks the same. No "AI" wording anywhere. README explains how to run it.
   Why now: An enhancement on top of a working app. Because the fallback already exists, a problem here can never break the demo.
   PRD ref: `prd.md > Spot the Mess and Suggested Fixes`, `prd.md > Look and Feel` (no AI wording)
@@ -86,3 +86,6 @@ Activity mode:
 - The date fix is suggested only when date formats are mixed or non-standard, and the dashboard will read already-tidy text dates/numbers itself — the clean sample file was getting a "fix" that changed nothing visible.
 - Column finder treats whole-number columns as IDs only when they count up by one or are named like an ID — a tiny file's real amounts were being mistaken for IDs. Short name hints ("no") must be whole words so "Note" isn't read as an invoice number.
 - Early checkpoint (after slice 3): learner said "looks good" and wants to grow it into a fuller Nigrini fraud-analytics dashboard later; extra Nigrini tests stay on the Later list, not in this PoC.
+- The suggester also rejects model suggestions that would damage the data (e.g. "to_number" on a names column, or "standardize_dates" on a column that is mostly not dates) — an extra safety guard not in the original spec.
+- Look changed from near-black + orange to a dark navy audit-firm palette (navy, deep green, grey, burgundy) — the learner felt the orange/black "looks like AI"; chose option B from a side-by-side preview. PRD and spec Look and Feel updated.
+- Slice 5 live NVIDIA call not run: the learner chose to skip getting a key for now. Fallback path verified by tests and in the app; the live call stays unverified until a key is added.
