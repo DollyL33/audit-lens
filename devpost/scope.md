@@ -41,6 +41,7 @@ The "oh, that's useful" beat: the Benford's chart showing where numbers deviate 
 - Two audit checks: Benford's Law and duplicates, each with a short plain-English explanation
 
 ## Later
+- Grow into a fuller **fraud analytics dashboard** based on Nigrini's methods (learner plans to study his book): first-two-digits, last-two-digits, same-same-different, relative size factor, round numbers
 - More audit tests: outliers, round-number transactions, weekend/after-hours entries, gaps in invoice sequences
 - Compliance rule checks
 - Downloadable audit report

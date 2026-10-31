@@ -6,8 +6,8 @@ Run with:  streamlit run app.py
 import pandas as pd
 import streamlit as st
 
+from auditlens import benford, detect, duplicates, questions, ui
 from auditlens import fixes as fixes_mod
-from auditlens import ui
 from auditlens.loader import LoadError, load_file
 
 st.set_page_config(page_title="Audit Lens", page_icon="🔎", layout="wide")
@@ -101,10 +101,63 @@ def show_review():
 
 
 def show_dashboard():
-    ui.section(f"Cleaned data: {state.file_name}")
-    ui.note("The audit dashboard arrives in the next steps. For now, here's your cleaned table.")
-    st.dataframe(fixes_mod.to_display(state.clean_df.head(20)), width="stretch", hide_index=True)
+    df = detect.for_analysis(state.clean_df)
+    cols = detect.find_columns(df)
+
+    ui.section(f"Audit dashboard: {state.file_name}")
+    found = [f"{label}: {cols[key]}" for key, label in
+             [("amount", "Amounts"), ("date", "Dates"), ("party", "Customer/vendor"), ("invoice", "Invoice")]
+             if cols[key]]
+    ui.note(f"{len(df):,} rows · " + (" · ".join(found) if found else "No amount, date or name columns recognised"))
+
+    ui.section("Audit findings")
+    show_benford(df, cols)
+    show_duplicates(df, cols)
     st.button("Analyse another file", on_click=start_over)
+
+
+def show_benford(df, cols):
+    with st.container(border=True):
+        if cols["amount"] is None:
+            ui.finding_header("Benford's Law · not available", False, "No amounts found",
+                              "Benford's Law needs a column of amounts, and this file doesn't seem to have one.")
+            return
+        result = benford.run(df[cols["amount"]])
+        if result["status"] == "too_few":
+            ui.finding_header("Benford's Law · too few amounts", False, f"{result['n']} amounts",
+                              f"Benford's Law needs at least {benford.MIN_COUNT} amounts of 10 or more "
+                              "to give a reliable result.")
+            ui.question(questions.benford(result))
+            return
+
+        spikes = result["table"].query("spike")["digit"].tolist()
+        flagged = not result["normal"] or bool(spikes)
+        label = f"Benford's Law · {'unusual pattern' if flagged else 'looks normal'}"
+        sentence = (f"MAD {result['mad']:.4f} across {result['n']:,} amounts (Nigrini first-digit test). "
+                    + (f"Digit {spikes[0]} appears significantly more often than expected." if len(spikes) == 1
+                       else f"Digits {', '.join(map(str, spikes))} appear significantly more often than expected."
+                       if spikes
+                       else "First digits follow the pattern expected of natural financial data."))
+        if result["caution"]:
+            sentence += f" Small sample (under {benford.CAUTION_COUNT:,} amounts): read with caution."
+        ui.finding_header(label, flagged, result["label"], sentence)
+        ui.benford_chart(result["table"])
+        ui.question(questions.benford(result))
+
+
+def show_duplicates(df, cols):
+    keys, groups = duplicates.find(df, cols)
+    keys_label = " + ".join(str(k) for k in keys) if keys else "values in every column"
+    with st.container(border=True):
+        if groups.empty:
+            ui.finding_header("Duplicates · none found", False, "No duplicates",
+                              f"No transactions share the same {keys_label} (Nigrini same-same-same test).")
+        else:
+            ui.finding_header("Duplicates · possible double entries", True,
+                              f"{len(groups)} duplicate set{'s' if len(groups) != 1 else ''}",
+                              f"Transactions with the same {keys_label} (Nigrini same-same-same test).")
+            st.dataframe(fixes_mod.to_display(groups), width="stretch", hide_index=True)
+        ui.question(questions.duplicates(groups, keys_label))
 
 
 ui.brand()

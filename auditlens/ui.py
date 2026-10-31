@@ -34,6 +34,12 @@ CSS = f"""
 .al-sub {{ color: {MUTED}; font-size: 1.1rem; max-width: 640px; margin-bottom: 1.5rem; }}
 .al-section {{ font-size: 1.3rem; font-weight: 700; margin: 1.6rem 0 .4rem; }}
 .al-note {{ color: {MUTED}; font-size: .9rem; }}
+.al-finding-label {{ font-size: .75rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }}
+.al-finding-headline {{ font-size: 1.5rem; font-weight: 800; margin: .2rem 0 .3rem; color: {INK}; }}
+.al-question {{
+  border-top: 1px solid {LINE}; margin-top: .6rem; padding-top: .7rem; color: {INK};
+}}
+.al-question b {{ color: {GREEN}; }}
 </style>
 """
 
@@ -67,6 +73,49 @@ def hero():
 
 def section(title):
     st.markdown(f'<div class="al-section">{html.escape(title)}</div>', unsafe_allow_html=True)
+
+
+def finding_header(label, flagged, headline, sentence):
+    """Top of a finding card: coloured uppercase label, big headline, one plain sentence."""
+    colour = ORANGE if flagged else GREEN
+    st.markdown(
+        f"""
+        <div class="al-finding-label" style="color:{colour}">{html.escape(label)}</div>
+        <div class="al-finding-headline">{html.escape(headline)}</div>
+        <div class="al-note">{html.escape(sentence)}</div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+def question(text):
+    st.markdown(
+        f'<div class="al-question"><b>Question to ask →</b> {html.escape(text)}</div>',
+        unsafe_allow_html=True,
+    )
+
+
+def benford_chart(table):
+    import plotly.graph_objects as go
+
+    colours = [ORANGE if spike else BAR for spike in table["spike"]]
+    fig = go.Figure()
+    fig.add_bar(
+        x=table["digit"], y=table["actual"] * 100, marker_color=colours, name="Your data",
+        hovertemplate="First digit %{x}<br>Your data: %{y:.1f}%<extra></extra>",
+    )
+    fig.add_scatter(
+        x=table["digit"], y=table["expected"] * 100, mode="lines+markers", name="Expected (Benford)",
+        line=dict(color=GREEN, width=2), hovertemplate="Expected: %{y:.1f}%<extra></extra>",
+    )
+    fig.update_layout(
+        template="plotly_dark", paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
+        height=300, margin=dict(l=10, r=10, t=10, b=10), bargap=0.25,
+        legend=dict(orientation="h", y=1.1, x=0),
+        xaxis=dict(title="First digit", tickmode="linear", dtick=1),
+        yaxis=dict(title="% of amounts", gridcolor=LINE),
+    )
+    st.plotly_chart(fig, width="stretch", config={"displayModeBar": False})
 
 
 def highlight(df, mask):

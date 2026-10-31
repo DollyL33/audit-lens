@@ -29,7 +29,7 @@ Build mode: learn
   Learner check: Upload the messy sample, look at the suggested fixes and highlighted cells, untick one fix and watch the "after" row change back, then approve.
   Commit: `Add suggested fixes with tick-box review and before/after preview`
 
-- [ ] **3. You see Benford's Law and duplicate findings with questions to ask**
+- [x] **3. You see Benford's Law and duplicate findings with questions to ask**
   Becomes usable: The dashboard shows the Benford's first-digit chart (actual vs. expected, spikes highlighted) with Nigrini's MAD verdict, and the same-same-same duplicates list, each in a finding card that ends with a "Question to ask". On the messy sample, digit 4 is flagged and the planted duplicates are listed.
   Why now: This is the unique kernel, an auditor's eye on the data, so it comes as soon as clean data exists. It's also where your feedback matters most before the rest is built.
   PRD ref: `prd.md > Audit Finding: Benford's Law`, `prd.md > Audit Finding: Duplicates`, `prd.md > Questions to Ask`, `prd.md > Automatic Column Detection`
@@ -61,7 +61,7 @@ Build mode: learn
 
 ## Hands-on Checkpoints
 
-- [ ] Early usable behavior explored — after slice 3 (the audit findings), before the rest of the dashboard is built
+- [x] Early usable behavior explored — after slice 3 (the audit findings), before the rest of the dashboard is built
 - [ ] Final kick-the-tires exploration and feedback completed
 
 ## Final Review
@@ -84,3 +84,5 @@ Activity mode:
 - Added an Audit Lens logo (magnifying glass with a mini Benford chart and one orange spike) shown at the top of every stage — the learner asked for a logo after slice 1.
 - `tidy_text` keeps the most common properly-capitalised spelling of each name instead of forcing Title Case — Title Case would have damaged codes like "INV-1000" ("Inv-1000"). Internal change; same behavior for the learner.
 - The date fix is suggested only when date formats are mixed or non-standard, and the dashboard will read already-tidy text dates/numbers itself — the clean sample file was getting a "fix" that changed nothing visible.
+- Column finder treats whole-number columns as IDs only when they count up by one or are named like an ID — a tiny file's real amounts were being mistaken for IDs. Short name hints ("no") must be whole words so "Note" isn't read as an invoice number.
+- Early checkpoint (after slice 3): learner said "looks good" and wants to grow it into a fuller Nigrini fraud-analytics dashboard later; extra Nigrini tests stay on the Later list, not in this PoC.
