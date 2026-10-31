@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audit Lens App Map</title>
+<style>
+  :root { --bg:#132238; --surface:#1b2e4a; --line:#2b4163; --ink:#eef1f5; --muted:#9fb0c6; --green:#5fbf8f; --flag:#c4475c; --bar:#5b6f8c; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 920px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { margin: 6px 0 2px; font-size: 2rem; letter-spacing: -.02em; }
+  h2 { margin: 36px 0 10px; font-size: 1.25rem; }
+  .muted { color: var(--muted); }
+  .tag { display:inline-block; font-size:.72rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase; color:var(--muted); border:1px solid var(--line); padding:3px 10px; border-radius:999px; }
+  .card { background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:16px 18px; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size:.88em; background:var(--bg); border:1px solid var(--line); padding:1px 6px; border-radius:5px; }
+  pre { background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:12px; overflow-x:auto; font-size:.85rem; }
+  svg text { fill: var(--ink); font-family: inherit; }
+  .pieces { display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; }
+  @media (max-width: 720px) { .pieces { grid-template-columns: 1fr; } }
+  .piece b { display:block; }
+  ol.route { padding-left: 0; list-style: none; counter-reset: stop; }
+  ol.route li { counter-increment: stop; position: relative; padding: 14px 16px 14px 56px; margin-bottom: 10px; background:var(--surface); border:1px solid var(--line); border-radius:12px; }
+  ol.route li::before { content: counter(stop); position:absolute; left:16px; top:14px; width:28px; height:28px; border-radius:50%; background:var(--green); color:var(--bg); font-weight:800; display:grid; place-items:center; }
+  table { width:100%; border-collapse: collapse; }
+  th, td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight:600; font-size:.9rem; }
+  details { background:var(--surface); border:1px solid var(--line); border-radius:10px; margin-top:10px; }
+  summary { cursor:pointer; padding:12px 16px; font-weight:600; }
+  summary:focus-visible, a:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+  details > div { padding: 0 16px 14px; }
+  .practice { border-left: 3px solid var(--green); }
+</style>
+</head>
+<body>
+<main>
+  <span class="tag">App map · snapshot</span>
+  <h1>Audit Lens</h1>
+  <p class="muted">A one-page guide to how the app works and where to make changes. It's a snapshot of the code at the commit noted at the bottom, so it can drift as the project changes.</p>
+
+  <h2>What it is</h2>
+  <div class="card">
+    <p style="margin-top:0">A Streamlit app that brings an internal/forensic auditor's eye to a messy spreadsheet. You upload a CSV or Excel file, approve suggested clean-up fixes with tick boxes, and get a dashboard: number cards, a monthly comparison, the biggest transactions, and two Nigrini audit tests (<b>Benford's Law</b> and <b>same-same-same duplicates</b>), each ending with a question to ask.</p>
+    <div class="pieces">
+      <div class="piece"><b>One page, three stages</b><span class="muted"><code>app.py</code> shows upload → review → dashboard, remembering the stage in <code>st.session_state</code>.</span></div>
+      <div class="piece"><b>Fix menu</b><span class="muted"><code>auditlens/fixes.py</code> holds the only six changes ever made to data. Suggestions come from <code>suggest.py</code> (NVIDIA model, optional) or built-in rules.</span></div>
+      <div class="piece"><b>Audit checks</b><span class="muted"><code>detect.py</code> finds the columns; <code>metrics.py</code>, <code>benford.py</code>, <code>duplicates.py</code> and <code>questions.py</code> do the analysis.</span></div>
+    </div>
+  </div>
+
+  <h2>Follow one invoice: "$4,850.00" → the burgundy bar → the question</h2>
+  <div class="card">
+    <svg viewBox="0 0 880 170" width="100%" role="img" aria-label="Flow: messy amount text is parsed to a number in fixes.py, its first digit is counted in benford.py, the flagged digit becomes a question in questions.py, and app.py draws the chart and card">
+      <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#9fb0c6"/></marker></defs>
+      <g font-size="13">
+        <rect x="5" y="45" width="150" height="70" rx="10" fill="#132238" stroke="#2b4163"/>
+        <text x="80" y="74" text-anchor="middle" font-weight="700">"$4,850.00"</text><text x="80" y="94" text-anchor="middle" fill="#9fb0c6">cell in your CSV</text>
+        <rect x="195" y="45" width="160" height="70" rx="10" fill="#1b2e4a" stroke="#5fbf8f"/>
+        <text x="275" y="72" text-anchor="middle" font-weight="700">fixes.py</text><text x="275" y="92" text-anchor="middle" fill="#9fb0c6">parse_number → 4850.0</text>
+        <rect x="395" y="45" width="160" height="70" rx="10" fill="#1b2e4a" stroke="#5fbf8f"/>
+        <text x="475" y="72" text-anchor="middle" font-weight="700">benford.py</text><text x="475" y="92" text-anchor="middle" fill="#9fb0c6">first digit 4 · MAD</text>
+        <rect x="595" y="45" width="160" height="70" rx="10" fill="#1b2e4a" stroke="#5fbf8f"/>
+        <text x="675" y="72" text-anchor="middle" font-weight="700">questions.py</text><text x="675" y="92" text-anchor="middle" fill="#9fb0c6">(4+1) × 1000 = $5,000</text>
+        <rect x="795" y="35" width="80" height="90" rx="10" fill="#3b2032" stroke="#c4475c"/>
+        <rect x="812" y="85" width="10" height="28" fill="#5b6f8c"/><rect x="826" y="60" width="10" height="53" fill="#c4475c"/><rect x="840" y="95" width="10" height="18" fill="#5b6f8c"/>
+        <text x="835" y="52" text-anchor="middle" font-size="11">card</text>
+        <path d="M155 80H191M355 80H391M555 80H591M755 80H791" stroke="#9fb0c6" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+        <text x="440" y="150" text-anchor="middle" fill="#9fb0c6" font-size="12">app.py › show_benford() calls these and draws the chart (ui.benford_chart) and question (ui.question)</text>
+      </g>
+    </svg>
+  </div>
+
+  <h2>Reference route: three stops</h2>
+  <p class="muted" style="margin-top:-4px">Open each file in VS Code (Cmd+P, type the name) and search for the anchor. Shared as a reference route; you can walk it any time.</p>
+  <ol class="route">
+    <li><b><code>auditlens/fixes.py</code></b>, search <code>def parse_number</code><br>
+      <span class="muted">Turns <code>"$4,850.00"</code> into <code>4850.0</code> by removing <code>$</code>, commas, spaces and brackets (<code>(120)</code> → −120). It runs only when the "Turn Amount into numbers" fix is ticked, via <code>apply_fixes</code>.</span></li>
+    <li><b><code>auditlens/benford.py</code></b>, search <code>def first_digits</code>, then <code>def run</code><br>
+      <span class="muted"><code>4850.0 → 4.85 → 4</code>. <code>run</code> counts each first digit, compares it with <code>EXPECTED</code> (30.1% … 4.6%), marks spikes with <code>z_statistic</code>, and picks Nigrini's verdict from <code>MAD_BANDS</code>.</span></li>
+    <li><b><code>auditlens/questions.py</code></b>, search <code>def benford</code><br>
+      <span class="muted">Takes the most over-represented spike digit and builds the question. <code>limit = (d + 1) * 1000</code> is why digit 4 asks about <b>$5,000</b>.</span></li>
+  </ol>
+
+  <h2>To change this, start here</h2>
+  <table>
+    <tr><th>You want to change…</th><th>Start here</th></tr>
+    <tr><td>The headline and intro text on the first screen</td><td><code>auditlens/ui.py</code> › <code>def hero</code> (search <code>Let your data speak.</code>)</td></tr>
+    <tr><td>Colours</td><td><code>.streamlit/config.toml</code> (page) and the colour constants at the top of <code>auditlens/ui.py</code> (cards, charts). Restart the app after editing the .toml.</td></tr>
+    <tr><td>Benford's verdict thresholds or minimum sample size</td><td><code>auditlens/benford.py</code> › <code>MAD_BANDS</code>, <code>MIN_COUNT</code>, <code>CAUTION_COUNT</code></td></tr>
+    <tr><td>What counts as a duplicate</td><td><code>auditlens/duplicates.py</code> › <code>key_columns</code></td></tr>
+    <tr><td>The wording of a "Question to ask"</td><td><code>auditlens/questions.py</code></td></tr>
+    <tr><td>A new clean-up fix</td><td><code>auditlens/fixes.py</code> › <code>OPERATIONS</code>, <code>apply_fix</code>, <code>suggest_by_rules</code></td></tr>
+    <tr><td>A new Nigrini test (e.g. first-two digits)</td><td>A new file in <code>auditlens/</code> like <code>benford.py</code>, then a <code>show_…</code> card function in <code>app.py</code> under "Audit findings", plus a test in <code>tests/</code></td></tr>
+    <tr><td>How column names are recognised</td><td><code>auditlens/detect.py</code> › the <code>…_HINTS</code> lists</td></tr>
+  </table>
+
+  <h2>A practice to reuse</h2>
+  <div class="card practice">
+    <p style="margin-top:0"><b>Write down what "working" looks like as something you can check, then make the check run automatically.</b></p>
+    <p>In this project, <code>prd.md › Audit Finding: Benford's Law</code> said: "a sample file with a planted spike on one digit is flagged" and "a file that follows Benford closely gets a 'looks normal' verdict." Those became <code>test_messy_sample_flags_digit_4</code> and <code>test_natural_data_looks_normal</code> in <code>tests/test_benford.py</code>, run against made-up sample files with known answers (<code>scripts/make_sample_data.py</code>).</p>
+    <p>Writing tests this way caught real mistakes during the build: a column called "Note" was mistaken for an invoice number, and a tiny file's amounts were mistaken for IDs. Both were caught by tests before you ever saw them.</p>
+    <p style="margin-bottom:0"><b>Next time:</b> before asking an agent to build something, plant the answer. Make a small sample where you already know what the result should be (a duplicate you added yourself, a spike you created), and check the tool finds it.</p>
+  </div>
+
+  <h2>Run it again</h2>
+<pre>cd "/Users/lakpasherpa/Documents/AI business project"
+source .venv/bin/activate
+streamlit run app.py          # opens http://localhost:8501
+pytest                        # runs all the checks</pre>
+  <details>
+    <summary>Optional: smarter fix suggestions with NVIDIA</summary>
+    <div class="muted">Copy <code>.env.example</code> to <code>.env</code> and add <code>NVIDIA_API_KEY=…</code> from build.nvidia.com. Without it, the built-in rules suggest the fixes. Never commit <code>.env</code>; it's already ignored by git.</div>
+  </details>
+  <p class="muted" style="margin-top:24px">Snapshot of the code at commit <code>e4c4e70</code> ("Switch to navy, deep green, grey and burgundy audit palette").</p>
+</main>
+</body>
+</html>

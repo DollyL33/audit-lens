@@ -62,23 +62,25 @@ Build mode: learn
 ## Hands-on Checkpoints
 
 - [x] Early usable behavior explored — after slice 3 (the audit findings), before the rest of the dashboard is built
-- [ ] Final kick-the-tires exploration and feedback completed
+- [x] Final kick-the-tires exploration and feedback completed
 
 ## Final Review
 
-- [ ] Final review complete — feedback resolved and learner confirms ready to ship
+Final review: learner explored the app after the palette change and reported "looks good for now". No changes requested. Verified: 34 tests pass; app starts cleanly per README.
+
+- [x] Final review complete — feedback resolved and learner confirms ready to ship
 
 ## Code Tour and App Map
 
-- [ ] Learning activity complete — guided route, focused alternative, prior practice connected, or brief recap
-- [ ] Optional edit and transfer reflection addressed — offered/declined/already covered/not applicable as appropriate
-- [ ] `devpost/app-map.html` generated from finished code, checked, and shown, including a project-grounded practice to reuse
+- [x] Learning activity complete — guided route, focused alternative, prior practice connected, or brief recap
+- [x] Optional edit and transfer reflection addressed — offered/declined/already covered/not applicable as appropriate
+- [x] `devpost/app-map.html` generated from finished code, checked, and shown, including a project-grounded practice to reuse
 
-Activity and evidence:
-Route and stops:
-Edit outcome:
-Reflection:
-Activity mode:
+Activity and evidence: Brief recap via a reference route tied to the learner's goal (understanding generated code): follow "$4,850.00" from parse_number to the flagged Benford digit to the $5,000 question. Learner acknowledged ("okk"); hands-on walking of the stops was not confirmed. During the build, learn-mode explanations named the responsible code after each slice.
+Route and stops: Reference-only route: auditlens/fixes.py › parse_number; auditlens/benford.py › first_digits, run; auditlens/questions.py › benford.
+Edit outcome: Offered (replace the placeholder hero headline in auditlens/ui.py › hero); not tried. No change made.
+Reflection: Offered at hand-off.
+Activity mode: Recap with reference route; app-map anchors checked against source at commit e4c4e70; map opened locally (visual browser check not performed by the agent).
 
 ## Revisions
 - Added an Audit Lens logo (magnifying glass with a mini Benford chart and one orange spike) shown at the top of every stage — the learner asked for a logo after slice 1.
