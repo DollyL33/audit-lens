@@ -19,7 +19,7 @@ Build mode: learn
   Learner check: Run `streamlit run app.py`, look at the first screen, upload `sample_data/messy_sales.csv`, and say whether the dark look and headline feel right. Then try uploading a non-spreadsheet file.
   Commit: `Scaffold Audit Lens: dark upload page with file preview`
 
-- [ ] **2. You can review suggested fixes with tick boxes and approve them**
+- [x] **2. You can review suggested fixes with tick boxes and approve them**
   Becomes usable: After upload, the app lists suggested fixes (from the built-in rules), highlights the messy cells, shows a before/after preview that follows the tick boxes, and "Approve & build dashboard" moves to a placeholder dashboard showing the cleaned table.
   Why now: The audit findings depend on clean amounts and dates, and duplicates must be caught after tidying. The rule-based suggester is also the backup the AI will rely on later, so it has to exist first.
   PRD ref: `prd.md > Spot the Mess and Suggested Fixes`, `prd.md > Review and Approve`, `prd.md > States and Boundaries` (nothing to clean)
@@ -82,3 +82,5 @@ Activity mode:
 
 ## Revisions
 - Added an Audit Lens logo (magnifying glass with a mini Benford chart and one orange spike) shown at the top of every stage — the learner asked for a logo after slice 1.
+- `tidy_text` keeps the most common properly-capitalised spelling of each name instead of forcing Title Case — Title Case would have damaged codes like "INV-1000" ("Inv-1000"). Internal change; same behavior for the learner.
+- The date fix is suggested only when date formats are mixed or non-standard, and the dashboard will read already-tidy text dates/numbers itself — the clean sample file was getting a "fix" that changed nothing visible.

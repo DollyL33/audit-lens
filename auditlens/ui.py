@@ -69,5 +69,11 @@ def section(title):
     st.markdown(f'<div class="al-section">{html.escape(title)}</div>', unsafe_allow_html=True)
 
 
+def highlight(df, mask):
+    """Colour the cells where `mask` is True in the warning orange."""
+    style = f"background-color: #3a2616; color: {ORANGE};"
+    return df.style.apply(lambda _: mask.replace({True: style, False: ""}), axis=None)
+
+
 def note(text):
     st.markdown(f'<div class="al-note">{html.escape(text)}</div>', unsafe_allow_html=True)
